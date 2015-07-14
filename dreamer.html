@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Include Master -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#dreamer_body').css("display", 'none');
+        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            $('body').fadeIn(1000);
+            $(".ui.work.item").addClass('active');
+
+        });
+        $(document).ajaxStop(function() {
+
+        });
+    });
+    </script>
+    <div id="master"></div>
+    <!-- Site Properities -->
+    <title>The little big things</title>
+    <link rel="stylesheet" type="text/css" href="css/dreamer.css">
+    <script src="js/dreamer.js"></script>
+</head>
+
+<body id="dreamer_body">
+    <div class="ui stackable grid">
+        <div id="world_dreamers" class="ui centered sixteen very relaxed stackable grid page">
+            <div class="row">
+                <div class="column">
+                    <h1 class="center aligned ui header">
+                        世界夢想家
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve wide column">
+                    <h3 class="center aligned ui header">
+                        人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？有多少人終其一生可以使夢想成真？<br/>The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
+                    </h3>
+                    <div class="ui divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ui two column center aligned stackable grid">
+                    <div class="three wide floated left aligned column">
+                        <div class="">
+                            <div id="career_title">
+                                <b id="career_text">
+                                    職業類別列表
+                                 </b>
+                            </div>
+                            <div id="career_menu">
+                                <div id="arrow"></div>
+                                <a class="cook_btn">餐飲</a>
+                                <a class="worker_btn">建築&營建</a>
+                                <a class="art_btn">設計</a>
+                                <a>航空</a>
+                                <a>法律</a>
+                                <a>農務</a>
+                                <a>醫療</a>
+                                <a>教育</a>
+                                <a>其他</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eight wide column">
+                        <div class="ui two column floated right aligned grid">
+                            <h1 class="ui center aligned icon header career_hint">
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <div class="ui hidden divider"></div>
+                                <i class="arrow circle outline left icon"></i>
+                                <div class="content">
+                                    Choose Career
+                                    <div class="sub header">請從左列選擇一個職業類別</div>
+                                </div>
+                            </h1>
+                            <div id="cook_slides" class="career_slide twelve wide column">
+                                <a href="story_list.html?category=catering">
+                                    <img class="ui medium image" src="img\little_head\painter.png"></img>
+                                </a>
+                                <h2 class="ui right aligned header">
+                                    餐飲業&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="sub header">
+                                        餐桌上是離不開湯的，菜肴再多，沒有湯，猶如餐桌上沒有女主人。
+                                    </div>
+                                </h2>
+                            </div>
+                            <div id="art_slides" class="career_slide twelve wide column">
+                                <a>
+                                    <img class="ui medium image" src="img\little_head\painter.png"></img>
+                                </a>
+                                <h2 class="ui right aligned header">
+                                    小畫家&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="sub header">            您們用巧思讓設計活躍在日常，使得生活中處處充滿藝術蹤跡，世界的美好不僅於山水，還有您們畫筆下的風光。
+                                    </div>
+                                </h2>
+                            </div>
+                            <div id="worker_slides" class="career_slide twelve wide column">
+                                <img class="ui medium image" src="img\little_head\worker.png"></img>
+                                <h2 class="ui right aligned header">
+                                    工人&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="sub header">是你們每天迎接第一曙晨曦, 日復一日, 年復一年, 任勞任怨, 兢兢業業, 始終戰鬥在工作第一線。
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>The Little Big <span>Things</span></h3>
+            <p class="footer-company-about">
+                The little big things all rights reserved.
+            </p>
+            <p class="footer-company-name">TLBT &copy; 2015</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>目前仍然居無定所，主要活動範圍在台南</span> Tainan, Taiwan</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">thelittlebigthings38@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Workshop</span> The little big things 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
+            </p>
+        </div>
+    </footer>
+</body>

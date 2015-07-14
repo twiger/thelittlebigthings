@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Include Master -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <div id="master"></div>
+    <link rel="image_src" href="img/logo/square_logo.png" / >
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" / >
+    <!-- Site Properities -->
+    <title>The little big things</title>
+    <script type='text/javascript' src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script type='text/javascript' src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script type='text/javascript' src="js/jquery.backstretch.min.js"></script>
+    <script type='text/javascript' src="js/story_content.js"></script>
+    <script type='text/javascript' src="js/stickyMojo.js"></script>
+    <script type='text/javascript' src="js/animatescroll.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/story_content.css">
+    <script type='text/javascript'>
+    $(document).ready(function() {
+        article_id = getURLParameter('article_id');
+        category = getURLParameter('category');
+        $('#story_content').css("display", 'none');
+        $('body').css("background-color", 'initial');
+
+        var app = angular.module('myApp', []);
+        app.controller('story_content_crtl', function($scope, $http, $filter) {
+            $scope.content = null;
+            $http({
+                method: 'GET',
+                url: 'data/article/catering.json'
+            }).
+            success(function(data, status, headers, config) {
+                //$scope.contents = data;
+
+                var article = $filter('filter')(data.articles, {
+                    "article_id": article_id
+                })[0];
+
+                console.log(article.cover_img);
+
+                $scope.article_abstraction = article.abstraction;
+                $scope.article_content = article.content;
+                $scope.article_cover = article.cover_img;
+                $scope.article_id = article_id;
+                $scope.next_id = article.next_id;
+
+                $scope.category = category;
+
+                $.backstretch(article.background_img, {
+                    duration: 5000,
+                    fade: 750
+                });
+
+            }).error(function(data, status, headers, config) {
+                console.log("Fail to load cetering.json");
+            });
+        });
+
+
+
+        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+
+            $('body').fadeIn(1000);
+            $(".ui.work.item").addClass('active');
+
+
+        });
+        $(document).ajaxStop(function() {
+
+        });
+
+        $('#story_content').bind('scroll resize', function() {
+            sticky_relocate();
+        });
+
+
+
+        $(".main.image").hover(function() {
+
+            $('.main_content').removeClass("eight wide column");
+            $('.main_content').addClass("ten wide column");
+
+            $('.padding').removeClass("three wide column");
+            $('.padding').addClass("one wide column");
+        }, function() {
+            $('.main_content').removeClass("ten wide column");
+            $('.main_content').addClass("eight wide column");
+
+            $('.padding').removeClass("one wide column");
+            $('.padding').addClass("three wide column");
+        });
+
+
+    });
+
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null
+    }
+
+    function sticky_relocate() {
+        var device_width = $(document).width();
+        var window_top = $(window).scrollTop();
+        var div_top = $('#story_text').offset().top;
+        if (device_width > 768) {
+            if (window_top > div_top) {
+                $('#sticky_nav').addClass('stick');
+            } else {
+                $('#sticky_nav').removeClass('stick');
+            }
+        }
+    }
+    </script>
+    <script type='text/javascript' src="js/angular.js"></script>
+</head>
+
+<body id="story_content" onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="ui stackable grid">
+        <div class="row">
+            <div class="one wide column"></div>
+            <div class="main_content eight wide column">
+                <div class="ui bottom massive hidden divider"></div>
+                <div id="story_text" class="ui inverted description segment">
+                    <div class="ui grid">
+                        <div class="row">
+                            <div class="icon_logo_header">
+                                <h1 class="ui inverted header">
+                                    {{article_abstraction}}
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <img class="ui main image" ng-src="{{article_cover}}" rel="image_src" type="image/jpeg">
+                    <br/>
+                    <div ng-repeat="section in article_content">
+                        <h2 id="{{'p'+$index}}" class="ui inverted dividing header">
+                            {{section.header}}
+                        </h2>
+                        <p ng-repeat="paragraph in section.segment">
+                            {{paragraph}}
+                        </p>
+                        <br/>
+                    </div>
+                <div class="fb-like" data-href="https://www.facebook.com/pages/The-Little-Big-Things-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B0%8F%E4%BA%8B/992120404140331" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                </div>
+            </div>
+            <div class="three wide padding column"></div>
+            <div class="ui sticky four wide column">
+                <div class="ui bottom massive hidden divider"></div>
+                <div id="sticky_nav" class="ui inverted nav description segment">
+                    <div class="row">
+                        <div class="left floated left aligned four wide column">
+                            <a ng-href="story_list.html?category={{category}}">
+                                <h4 class="ui red header">
+                                    <div class="content">
+                                        回到選單
+                                    </div>
+                                </h4>
+                            </a>
+                        </div>
+                        <div class="right floated right aligned four wide column">
+                            <a ng-href="story_content.html?category={{category}}&article_id={{next_id}}">
+                                <h4 class="ui teal header">
+                                    <div class="content">
+                                        下一篇
+                                    </div>
+                                </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ui inverted divider"></div>
+                    <div class="ui left floated inverted relaxed divided list">
+                        <div class="item" ng-repeat="section in article_content">
+                            <div class="content">
+                                <div class="header"><a ng-href="story_content.html?category={{category}}&article_id={{article_id}}#p{{$index}}">{{section.header}}</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom margin"></div>
+    </div>
+    
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>The Little Big <span>Things</span></h3>
+            <p class="footer-company-about">
+                The little big things all rights reserved.
+            </p>
+            <p class="footer-company-name">TLBT &copy; 2015</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>目前仍然居無定所，主要活動範圍在台南</span> Tainan, Taiwan</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">thelittlebigthings38@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Workshop</span> The little big things 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
+            </p>
+        </div>
+    </footer>
+</body>

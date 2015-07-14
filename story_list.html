@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="image_src" href="img/logo/square_logo.png" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
+    <!-- Include Master -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#story_list').css("display", 'none');
+
+        category = getURLParameter('category');
+
+        $('#story_content').css("display", 'none');
+        $('body').css("background-color", 'initial');
+
+        var app = angular.module('myApp', []);
+        app.controller('story_content_crtl', function($scope, $http) {
+            $scope.content = null;
+
+            $http({
+                method: 'GET',
+                url: 'data/article/' + category + '.json'
+            }).
+            success(function(data, status, headers, config) {
+                //$scope.contents = data;
+                $scope.articles = data.articles;
+                $scope.category = category;
+
+
+            }).error(function(data, status, headers, config) {
+                console.log("Fail to load cetering.json");
+            });
+        });
+
+        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            $('body').fadeIn(1000);
+            $(".ui.work.item").addClass('active');
+
+        });
+        $(document).ajaxStop(function() {
+        });
+
+        $('.tiny.role.image').popup();
+
+        $('.tiny.role.image').click(function() {
+            $('.ui.basic.modal').modal({
+                    blurring: true
+                })
+                .modal('show');
+        });
+
+        $('.button.circular.massive.inverted.ui.red.icon.button').click(function() {
+            $(document.body).animate({
+                'scrollTop': $('#career_list_content').offset().top
+            }, 1000);
+        });
+
+
+    });
+
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null
+    }
+    </script>
+    <script type='text/javascript' src="js/angular.js"></script>
+    <div id="master"></div>
+    <!-- Site Properities -->
+    <title>The little big things</title>
+    <link rel="stylesheet" type="text/css" href="css/story_list.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+
+<body id="story_list" ng-app="myApp" ng-controller="story_content_crtl">
+    <img class="hidden" src="img/logo/rectangle _logo.png">
+    <div class="ui stackable grid">
+        <div class="career_list_header_bg">
+            <div id="career_list_header" class="ui centered sixteen very relaxed stackable grid page">
+                <div class="row">
+                    <div class="one wide column"></div>
+                    <div class="eight wide column">
+                        <div>
+                            <button id="hidden_SL_button_for_mobile" class="pulse hidden left aligned circular massive inverted ui red icon button">
+                                <i class="arrow down icon"></i>
+                            </button>
+                            <br/>
+                            <h1 class="right aligned ui header">
+                            餐飲甘苦談
+                            </h1>
+                            <h3 class="right aligned ui header">
+                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？有多少人終其一生可以使夢想成真？The Little Big Things <br/>紀載了人們的夢想，來看看他們的故事吧！
+                        </h3>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="ui stackable grid">
+                            <div class="four wide column">
+                                <button id="hidden_SL_button" class="pulse center aligned circular massive inverted ui red icon button">
+                                    <i class="arrow down icon"></i>
+                                </button>
+                            </div>
+                            <div class="twelve wide column">
+                                <div class="categoty_menu ui images">
+                                    <a class="ui tiny role image" data-content="消防甘苦談">
+                                        <img src="data/icon/firefighting.png">
+                                    </a>
+                                    <a class="ui tiny role image" data-content="設計甘苦談">
+                                        <img src="data/icon/painter.png">
+                                    </a>
+                                    <a class="ui tiny role image" data-content="服務甘苦談">
+                                        <img src="data/icon/service.png">
+                                    </a>
+                                    <a class="ui tiny role image" data-content="建築甘苦談">
+                                        <img src="data/icon/worker.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="head_col four wide column">
+                        <img class="head_img" src="data/img/cook_small.png">
+                    </div>
+                </div>
+                <div class="ui bottom attached">
+                    <div class="ui fitted divider"></div>
+                </div>
+            </div>
+        </div>
+        <div id="career_list_content" class="ui centered sixteen very relaxed stackable grid page">
+            <div class="row" ng-repeat="article in articles">
+                <div class="ui centered stackable grid page">
+                    <div class="story_img_abst three wide column">
+                        <div class="ui fluid rounded image">
+                            <a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#" class="ui image">
+                                <img ng-src="{{article.square_img}}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="story_abst thirteen wide column">
+                        <a class="header" ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#">{{article.title}}</a>
+                        <div class="meta">
+                            <span>{{article.abstraction}}</span>
+                        </div>
+                        <div class="description">
+                            <p class="abstract description">
+                                {{article.content[0].segment[0]}}
+                                <br/> {{article.content[0].segment[1]}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ui career_list_content divider"></div>
+                </div>
+            </div>
+            <div class="bottom margin"></div>
+        </div>
+    </div>
+    <div class="ui basic modal">
+        <h1 class="ui icon inverted header">
+            <i class="warning sign icon"></i>
+            <div class="content">
+                Still Working!
+                <div class="sub header">尚未開放喔! 請持續關注我們，盡請期待!</div>
+            </div>
+        </h1>
+    </div>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>The Little Big <span>Things</span></h3>
+            <p class="footer-company-about">
+                The little big things all rights reserved.
+            </p>
+            <p class="footer-company-name">TLBT &copy; 2015</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>目前仍然居無定所，主要活動範圍在台南</span> Tainan, Taiwan</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">thelittlebigthings38@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Workshop</span> The little big things 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
+            </p>
+        </div>
+    </footer>
+</body>

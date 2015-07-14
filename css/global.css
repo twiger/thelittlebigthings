@@ -1,0 +1,60 @@
+/*******************************
+            Global
+*******************************/
+
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+    background: #F2E8DF;
+}
+
+body{
+  font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif !important;
+}
+
+.loading {
+    display: none;
+}
+
+
+#footer {
+    position: aboslute;
+    bottom:0px;
+}
+
+.hidden{
+    display:none !important;
+
+}
+
+.bottom.margin{
+    margin: 50px;
+}
+
+/*--------------
+    Header
+---------------*/
+.ui.header{
+  font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif !important;
+}
+
+.ui.title.header {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.margin_top {
+    margin-top: 6%;
+}
+
+.top_padding_cancel {
+    padding-top: 0rem !important;
+}
+
+.none.divider {
+    display: none;
+}
+
+#segment_master {
+    margin-top: 0;
+    padding-bottom: 30px;
+}

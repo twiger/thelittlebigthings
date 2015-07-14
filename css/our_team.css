@@ -1,0 +1,77 @@
+
+
+#our_team{
+	padding: 5rem 0rem !important;
+	padding-bottom: 15rem !important;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#our_team_bg{
+	background: url("../img/bg3.jpg");
+	background-size: cover;
+}
+
+.blue{
+	color:#5383d3;
+
+}
+
+.h3.center.aligned.ui.inverted.sub.header{
+	opacity:0.7;
+}
+
+.ui.brown.divider{
+	border-top:2px solid rgba(103, 50, 1, 0.7) !important;
+	border-bottom:2px solid rgba(103, 50, 1, 0.7) !important;
+}
+
+.abstract.description {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	width: 100%;
+	color:rgba(255,255,255,0.9);
+}
+
+.footer-distributed{
+	margin-top: 0px !important;
+}
+
+.role{
+	color:burlywood;
+}
+
+.role_in_modal{
+	color:saddlebrown;
+}
+
+.h3.center.aligned.ui.inverted.sub.header{
+	color:lightgrey;
+}
+
+.card.three.wide.column{
+	cursor:pointer !important;
+}
+
+.content.sub.header{
+	font-size: 1rem !important;
+	color:rgba(0, 0, 0, 0.8) !important;
+}
+
+.description > .ui.header > .sub.header{
+	color:rgba(0, 0, 0, 0.8) !important;
+}
+
+.sub.header > a{
+	color:#5383d3;
+}
+
+.sub.header > a :hover{
+	color:yellow;
+}
+
+.four.column.centered.aligned.row{
+	margin: 2rem 0rem;
+}

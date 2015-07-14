@@ -1,0 +1,103 @@
+
+
+.sub.header.tight{
+	padding:3rem;
+}
+
+#art_slides, #worker_slides, #cook_slides{
+	display:none;
+}
+
+.career_hint{
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+	color: #9c8468;
+	opacity: 0.3;
+	font: 80px 'Museo700';
+	margin-top: 100px !important;
+}
+
+.massive.divider{
+	height:300ox !important;
+}
+
+
+/*  Menu CSS from  http://codepen.io/Jeplaa/pen/IzAvx */
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+
+#career_title
+{
+	background: #F8F8F8;
+	color: #888;
+	border: none;
+	  border-radius: 3px;
+	  padding: 0 0 0 10px;
+	font: bold 13px Helvetica, sans-serif;
+	text-transform: uppercase;
+	  line-height: 40px;
+	-webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  -o-user-select: none;
+	  user-select: none;
+	margin-bottom: 7px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#career_padding
+{
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  padding: 10px 14px 0 0;
+	border: none;
+	outline: none;
+	  color: #888;
+	  font-size: 20px;
+}
+
+#career_padding:hover { color: #555; }
+
+#career_menu a
+{
+	  display: block;
+	  background: #F8F8F8;
+	  padding: 0 0 0 10px;
+	  font: bold 13px Helvetica, sans-serif;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  color: rgba(0, 0, 0, 0.4);
+	  line-height: 40px;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#career_menu a:nth-child(2)
+{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#career_menu a:last-child
+{
+	border-bottom-left-radius: 3px;
+	  border-bottom-right-radius: 3px;
+}
+
+#career_menu a:hover { 
+	color: #555; 
+	cursor:pointer;
+}
+
+#career_menu a:hover > .fa { color: #555; }
+
+#arrow
+{
+	  width: 0;
+	  height: 0;
+	  border-left: 7px solid transparent;
+	  border-right: 7px solid transparent;
+	  border-bottom: 9px solid #F8F8F8;
+	margin-left: 15px;
+}
+
+/* End Here http://codepen.io/Jeplaa/pen/IzAvx */

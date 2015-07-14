@@ -1,0 +1,45 @@
+body {
+	font-size: 16px;
+	overflow-x: hidden;
+	background-color: initial !important;
+}
+
+p{
+    line-height:2.33;
+    color:#F5F5F5;
+}
+
+.ui.inverted.list .list > .item .header, .ui.inverted.list > .item .header{
+    color:#F5F5F5;
+}
+
+.ui.inverted.dividing.header{
+    color:#F5F5F5;
+}
+
+.inverted.description.segment{
+
+	background-color:rgba(0,0,0,0.6) !important;
+}
+
+.nav.description.segment{
+	width:250px;
+}
+
+#sticky_nav.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.icon_logo{
+	width:60px !important;
+	padding-right: 0px !important;
+	margin-right: -10px !important;
+}
+
+.icon_logo_header{
+    margin:10px;
+}
+

@@ -1,0 +1,84 @@
+
+/*--------------
+    Photo Scroll
+---------------*/
+.city.scroll.image{
+    width:100% !important;
+}
+
+.photo.marker.eat{
+    position:absolute;
+    z-index:+100;
+    top:87%;
+    left:12%;
+}
+
+/*----------------------
+    Content
+-------------------------*/
+
+#what_is_TLBT{
+    padding: 5rem 0rem !important;
+    background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
+	background-position: -17% 96%, 103% 96%;
+	background-repeat:no-repeat;
+}
+
+.what_is_TLBT_bg{
+    background-image:url("../data/img/paper-bg.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+#why_TLBT{
+    padding: 5rem 0rem !important;
+    background-color:white;
+}
+
+.fadein_row{
+    visibility:hidden;
+}
+
+#new_stories{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    background-color:seashell;
+}
+
+.abstract.description{
+    text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+}
+
+
+/*--------------
+    New Profile
+---------------*/
+
+.ui.items > .item > .content > .description{
+    max-width:98% !important;
+}
+
+/*--------------
+    Footer
+---------------*/
+
+.ui.inverted.segment, .ui.inverted.black.segment{
+    background-color:#0B0D1A !important;
+}
+
+
+/*******************************
+          Responsive
+*******************************/
+
+/* Mobile Only */
+@media only screen and (max-width : 768px) {
+	
+  
+}
+
+

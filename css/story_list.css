@@ -76,6 +76,11 @@
     font-size:2rem;
 }
 
+.brown{
+    color:maroon;
+
+}
+
 .pulse {
 	-webkit-animation-name: 'pulse_animation';
 	-webkit-animation-duration: 3000ms;

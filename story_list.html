@@ -11,6 +11,8 @@
     <!-- Include Master -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <script type="text/javascript" src="dist/jssor.js"></script>
+    <script type="text/javascript" src="dist/jssor.slider.js"></script>
     <script>
     $(document).ready(function() {
         $('#story_list').css("display", 'none');
@@ -61,6 +63,47 @@
             }, 1000);
         });
 
+
+        //Related to slide show
+        var options = {
+            $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+            $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+            $AutoPlayInterval: 0, //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            $PauseOnHover: 4, //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+            $ArrowKeyNavigation: true, //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+            $SlideEasing: $JssorEasing$.$EaseLinear, //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+            $SlideDuration: 1600, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
+            $SlideWidth: 140, //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+            //$SlideHeight: 100,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+            $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
+            $DisplayPieces: 7, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+            $UISearchMode: 1, //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+            $PlayOrientation: 1, //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+            $DragOrientation: 1 //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+        };
+
+        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+        //responsive code begin
+        //you can remove responsive code if you don't want the slider scales while window resizes
+        function ScaleSlider() {
+
+            var bodyWidth = document.body.clientWidth;
+            if (bodyWidth)
+                jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 2000));
+            else
+                window.setTimeout(ScaleSlider, 30);
+        }
+        ScaleSlider();
+
+        $(window).bind("load", ScaleSlider);
+        $(window).bind("resize", ScaleSlider);
+        $(window).bind("orientationchange", ScaleSlider);
+        //responsive code end
+
     });
 
     function getURLParameter(name) {
@@ -76,6 +119,15 @@
 </head>
 
 <body id="story_list" ng-app="myApp" ng-controller="story_content_crtl">
+    <!-- Loading Screen -->
+    <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+        <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">
+        </div>
+        <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+        </div>
+    </div>
     <img class="hidden" src="img/logo/rectangle _logo.png">
     <div class="ui stackable grid">
         <div class="career_list_header_bg">
@@ -145,28 +197,71 @@
                             人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？
                             有多少人終其一生可以使夢想成真？<br/>
                             The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
-                            </h3>
+                    </h3>
+                    <div class="ui hidden divider"><br/></div>
                 </div>
-                <div class="row">
-                    <div class="categoty_menu ui images">
-                        <a class="ui tiny role image" data-content="消防甘苦談">
-                            <img src="data/icon/firefighting.png">
-                        </a>
-                        <a class="ui tiny role image" data-content="設計甘苦談">
-                            <img src="data/icon/painter.png">
-                        </a>
-                        <a class="ui tiny role image" data-content="服務甘苦談">
-                            <img src="data/icon/service.png">
-                        </a>
-                        <a class="ui tiny role image" data-content="建築甘苦談">
-                            <img src="data/icon/worker.png">
-                        </a>
-                        <a class="ui tiny role image" data-content="老師甘苦談">
-                            <img src="data/icon/teacher.png">
-                        </a>
-                        <a class="ui tiny role image" data-content="傳播甘苦談">
-                            <img src="data/icon/media.png">
-                        </a>
+                <div id="slider1_container" style="width: 980px;height: 130px; top: 10px;overflow: hidden;" class="row">
+                    <div u="slides" style="width: 100%;height: 130px; top: 10px; overflow: hidden;left: 0px;" class="categoty_menu ui images">
+                        <div>
+                            <a class="ui tiny role image" data-content="我很清楚指令，也明白做消防員，不應該一命換一命，我們只是希望，能救一個是一個。">
+                                <img src="data/icon/firefighting.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="藝術家要做的事情並不是向絕望屈服，而是要找到一劑排遣精神空虛的解藥。">
+                                <img src="data/icon/painter.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="兩位裡面請喔~！吧檯在這，逃生出口在那裡，廁所在前面，兩位坐這。">
+                                <img src="data/icon/service.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="你累了嗎？ 精力充沛！ 保力達蠻牛！">
+                                <img src="data/icon/worker.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="來~來~看我這裡，這題會考喔~！OK~？">
+                                <img src="data/icon/teacher.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="歡迎您收看XX電台，接下來這一小時將由我來陪你一起度過。">
+                                <img src="data/icon/media.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="不要擔心程式運作有問題。因為如果他一切正常，那你就失業了。">
+                                <img src="data/icon/computer.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="感謝您的搭乘，祝您旅途愉快。">
+                                <img src="data/icon/skygirl.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="這人都醉成這樣了，我看就用不著打麻藥了，能省則省，打了也是浪費。">
+                                <img src="data/icon/doctor.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="不能養成良好的理財習慣，即使擁有博士學位，也難讓你脫離貧窮。">
+                                <img src="data/icon/ecnomy.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="是不是都無所謂。不管他有沒有殺人，都和我無關。檢察廳的證據不足，所以他被無罪釋放了，這就是法。">
+                                <img src="data/icon/law.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a class="ui tiny role image" data-content="道歉有用的話，那要警察幹嘛！">
+                                <img src="data/icon/police.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

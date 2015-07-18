@@ -12,9 +12,9 @@
     padding-right: 0rem !important;
     padding-bottom: 2rem !important;
     padding-left: 0rem !important;
-    background-image:url("../data/img/pic1.png"), url("../data/img/pic2.png");
-	background-position: -6% 5001%, 112% 226%;
-	background-repeat:no-repeat;
+    //background-image:url("../data/img/pic1.png"), url("../data/img/pic2.png");
+	//background-position: -6% 5001%, 112% 226%;
+	//background-repeat:no-repeat;
 }
 
 #career_list_header h3 {

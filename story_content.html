@@ -33,7 +33,7 @@
             $scope.content = null;
             $http({
                 method: 'GET',
-                url: 'data/article/catering.json'
+                url: 'data/article/' + category + '.json'
             }).
             success(function(data, status, headers, config) {
                 //$scope.contents = data;

@@ -44,8 +44,7 @@
             $(".ui.work.item").addClass('active');
 
         });
-        $(document).ajaxStop(function() {
-        });
+        $(document).ajaxStop(function() {});
 
         $('.tiny.role.image').popup();
 
@@ -61,7 +60,6 @@
                 'scrollTop': $('#career_list_content').offset().top
             }, 1000);
         });
-
 
     });
 
@@ -81,6 +79,7 @@
     <img class="hidden" src="img/logo/rectangle _logo.png">
     <div class="ui stackable grid">
         <div class="career_list_header_bg">
+            <!--
             <div id="career_list_header" class="ui centered sixteen very relaxed stackable grid page">
                 <div class="row">
                     <div class="one wide column"></div>
@@ -95,7 +94,7 @@
                             </h1>
                             <h3 class="right aligned ui header">
                             人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？有多少人終其一生可以使夢想成真？The Little Big Things <br/>紀載了人們的夢想，來看看他們的故事吧！
-                        </h3>
+                            </h3>
                         </div>
                         <br/>
                         <br/>
@@ -132,8 +131,47 @@
                     <div class="ui fitted divider"></div>
                 </div>
             </div>
+        -->
+            <div id="career_list_header" class="ui centered very relaxed stackable grid page">
+                <div class="row">
+                    <button id="hidden_SL_button_for_mobile" class="pulse hidden left aligned circular massive inverted ui red icon button">
+                        <i class="arrow down icon"></i>
+                    </button>
+                    <br/>
+                    <h1 class="centered aligned ui header">
+                            各行各業甘苦談
+                            </h1>
+                    <h3 class="centered aligned ui header">
+                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？
+                            有多少人終其一生可以使夢想成真？<br/>
+                            The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
+                            </h3>
+                </div>
+                <div class="row">
+                    <div class="categoty_menu ui images">
+                        <a class="ui tiny role image" data-content="消防甘苦談">
+                            <img src="data/icon/firefighting.png">
+                        </a>
+                        <a class="ui tiny role image" data-content="設計甘苦談">
+                            <img src="data/icon/painter.png">
+                        </a>
+                        <a class="ui tiny role image" data-content="服務甘苦談">
+                            <img src="data/icon/service.png">
+                        </a>
+                        <a class="ui tiny role image" data-content="建築甘苦談">
+                            <img src="data/icon/worker.png">
+                        </a>
+                        <a class="ui tiny role image" data-content="老師甘苦談">
+                            <img src="data/icon/teacher.png">
+                        </a>
+                        <a class="ui tiny role image" data-content="傳播甘苦談">
+                            <img src="data/icon/media.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="career_list_content" class="ui centered sixteen very relaxed stackable grid page">
+        <div id="career_list_content" class="ui centered very relaxed stackable grid page">
             <div class="row" ng-repeat="article in articles">
                 <div class="ui centered stackable grid page">
                     <div class="story_img_abst three wide column">
@@ -170,6 +208,63 @@
             </div>
         </h1>
     </div>
+    <!--
+    <div class="ui bottom attached segment pushable">
+        <div class="ui visible inverted left vertical sidebar menu">
+            <a class="item">
+                <i class="home icon"></i> Home
+            </a>
+            <a class="item">
+                <i class="block layout icon"></i> Topics
+            </a>
+            <a class="item">
+                <i class="smile icon"></i> Friends
+            </a>
+            <a class="item">
+                <i class="calendar icon"></i> History
+            </a>
+        </div>
+        <div class="pusher">
+            <div class="ui basic segment">
+                <div id="" class="ui stackable grid page">
+                    <div class="ui hidden divider"></div>
+                    <h1 class="left aligned ui header">
+                        各行各業甘苦談
+                    </h1>
+                    <h3 class="left aligned ui header">
+                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？<br/>
+                            有多少人終其一生可以使夢想成真？<br/>
+                            The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
+                    </h3>
+                    <div class="ui divider"></div>
+                    <div class="row" ng-repeat="article in articles">
+                        <div class="story_img_abst three wide column">
+                            <div class="ui fluid rounded image">
+                                <a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#" class="ui image">
+                                    <img ng-src="{{article.square_img}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="story_abst ten wide column">
+                            <a class="header" ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#">{{article.title}}</a>
+                            <div class="meta">
+                                <span>{{article.abstraction}}</span>
+                            </div>
+                            <div class="description">
+                                <p class="abstract description">
+                                    {{article.content[0].segment[0]}}
+                                    <br/> {{article.content[0].segment[1]}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ui career_list_content divider"></div>
+                    </div>
+                    <div class="bottom margin"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>The Little Big <span>Things</span></h3>

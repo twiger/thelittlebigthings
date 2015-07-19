@@ -45,6 +45,7 @@
                 .modal({
                     onHide: function() {
                         window.scrollTo(0, temp_pos_h);
+                        $.mobile.silentScroll(temp_pos_h)
                     }
                 })
                 .modal('setting', 'transition', 'fade up')

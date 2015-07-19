@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Include Master -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
-    <link rel="image_src" href="img/logo/square_logo.png" / >
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" / >
+    <link rel="image_src" href="img/logo/square_logo.png" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
     <script>
     $(document).ready(function() {
         $('body').css("display", 'none');
@@ -31,18 +32,28 @@
         });
 
         $('.card.three.wide.column').click(function() {
-            var temp_pos_h = $(window).scrollTop();
-            var target_modal = '.ui.' + $(this).attr('id') + '.modal';
-            $(target_modal)
-                .modal({
-                    onHide: function() {
-                        window.scrollTo(0, temp_pos_h);
-                    }
-                })
-                .modal('setting', 'transition', 'fade up')
-                .modal('show');
+            showModal(this);
         });
+
+        $(".card.three.wide.column").on("tap", function() {
+            $(this).hide();
+        });
+
     });
+
+    function showModal(target) {
+        var temp_pos_h = $(window).scrollTop();
+        var target_modal = '.ui.' + $(target).attr('id') + '.modal';
+        $(target_modal)
+            .modal({
+                onHide: function() {
+                    window.scrollTo(0, temp_pos_h);
+                }
+            })
+            .modal('setting', 'transition', 'fade up')
+            .modal('show');
+
+    }
     </script>
     <div id="master"></div>
     <!-- Site Properities -->

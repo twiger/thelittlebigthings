@@ -38,28 +38,21 @@
         }
 
         $('.card.three.wide.column').click(function() {
-            showModal(this);
+            var temp_pos_h = $(window).scrollTop();
+            var target_modal = '.ui.' + $(this).attr('id') + '.modal';
+            $(target_modal)
+                .modal({
+                    onHide: function() {
+                        window.scrollTo(0, temp_pos_h);
+                    }
+                })
+                .modal('setting', 'transition', 'fade up')
+                .modal('show');
         });
 
-        $(".card.three.wide.column").on("tap", function() {
-            showModal(this);
-        });
 
     });
 
-    function showModal(target) {
-        var temp_pos_h = $(window).scrollTop();
-        var target_modal = '.ui.' + $(target).attr('id') + '.modal';
-        $(target_modal)
-            .modal({
-                onHide: function() {
-                    window.scrollTo(0, temp_pos_h);
-                }
-            })
-            .modal('setting', 'transition', 'fade up')
-            .modal('show');
-
-    }
     </script>
     <div id="master"></div>
     <!-- Site Properities -->

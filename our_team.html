@@ -39,6 +39,7 @@
 
         $('.card.three.wide.column').click(function() {
             var temp_pos_h = $(window).scrollTop();
+            alert(temp_pos_h);
             var target_modal = '.ui.' + $(this).attr('id') + '.modal';
             $(target_modal)
                 .modal({

@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Include Master -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
@@ -43,12 +42,7 @@
             $(target_modal)
                 .modal({
                     onHide: function() {
-                        if (!isMobile) {
-                            window.scrollTo(0, temp_pos_h);
-                        }
-                        else{
-                            $.mobile.silentScroll(temp_pos_h)
-                        }
+                        window.scrollTo(0, temp_pos_h);
                     }
                 })
                 .modal('setting', 'transition', 'fade up')
@@ -57,7 +51,6 @@
 
 
     });
-
     </script>
     <div id="master"></div>
     <!-- Site Properities -->

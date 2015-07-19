@@ -44,7 +44,7 @@
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('body').fadeIn(1000);
             $(".ui.work.item").addClass('active');
-
+            ResponsiveWeb();
         });
         $(document).ajaxStop(function() {});
 

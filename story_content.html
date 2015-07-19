@@ -44,11 +44,7 @@
 
                 console.log(article.cover_img);
 
-                $scope.article_abstraction = article.abstraction;
-                $scope.article_content = article.content;
-                $scope.article_cover = article.cover_img;
-                $scope.article_id = article_id;
-                $scope.next_id = article.next_id;
+                $scope.article = article;
 
                 $scope.category = category;
 
@@ -141,15 +137,18 @@
                         <div class="row">
                             <div class="icon_logo_header">
                                 <h1 class="ui inverted header">
-                                    {{article_abstraction}}
+                                    {{article.abstraction}}
                                 </h1>
+                                <h5 class="ui inverted_blue header">
+                                    {{article.editors}}
+                                </h5>
                             </div>
                         </div>
                     </div>
                     <br/>
-                    <img class="ui main image" ng-src="{{article_cover}}" rel="image_src" type="image/jpeg">
+                    <img class="ui main image" ng-src="{{article.cover_img}}" rel="image_src" type="image/jpeg">
                     <br/>
-                    <div ng-repeat="section in article_content">
+                    <div ng-repeat="section in article.content">
                         <h2 id="{{'p'+$index}}" class="ui inverted dividing header">
                             {{section.header}}
                         </h2>
@@ -158,6 +157,9 @@
                         </p>
                         <br/>
                     </div>
+                    <h5 class="ui right floated red header">
+                    你的一個小小動作，將會使每個孩子多一點點機會看見他們可能的未來
+                </h5>
                 <div class="fb-like" data-href="https://www.facebook.com/pages/The-Little-Big-Things-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B0%8F%E4%BA%8B/992120404140331" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 </div>
             </div>
@@ -176,7 +178,7 @@
                             </a>
                         </div>
                         <div class="right floated right aligned four wide column">
-                            <a ng-href="story_content.html?category={{category}}&article_id={{next_id}}">
+                            <a ng-href="story_content.html?category={{category}}&article_id={{article.next_id}}">
                                 <h4 class="ui teal header">
                                     <div class="content">
                                         下一篇
@@ -187,9 +189,9 @@
                     </div>
                     <div class="ui inverted divider"></div>
                     <div class="ui left floated inverted relaxed divided list">
-                        <div class="item" ng-repeat="section in article_content">
+                        <div class="item" ng-repeat="section in article.content">
                             <div class="content">
-                                <div class="header"><a ng-href="story_content.html?category={{category}}&article_id={{article_id}}#p{{$index}}">{{section.header}}</a></div>
+                                <div class="header"><a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#p{{$index}}">{{section.header}}</a></div>
                             </div>
                         </div>
                     </div>
@@ -214,7 +216,7 @@
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+1 555 123456</p>
+                <p>聯絡方式</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>

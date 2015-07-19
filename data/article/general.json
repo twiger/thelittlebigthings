@@ -1,18 +1,19 @@
 {
     "articles": [{
         "title": "Juice Clinic - 鮮果診所",
-        "article_id": "catering_article_1",
-        "next_id": "catering_article_2",
+        "article_id": "article_1",
+        "next_id": "article_2",
         "abstraction": "當醫生脫下白袍，以新鮮蔬果調劑身心的另類診所",
+        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 欣愉 - 文編 X 婷玟 - 美編 X 鴨子 - 攝影 X 花生 》",
         "background_img": [
-            "data/article/img/catering/catering_article_1/1.jpg",
-            "data/article/img/catering/catering_article_1/2.jpg",
-            "data/article/img/catering/catering_article_1/3.jpg",
-            "data/article/img/catering/catering_article_1/4.jpg",
-            "data/article/img/catering/catering_article_1/5.jpg"
+            "data/article/img/article_1/1.jpg",
+            "data/article/img/article_1/2.jpg",
+            "data/article/img/article_1/3.jpg",
+            "data/article/img/article_1/4.jpg",
+            "data/article/img/article_1/5.jpg"
         ],
-        "cover_img": "data/article/img/catering/catering_article_1/cover.jpg",
-        "square_img": "data/article/img/catering/catering_article_1/square.jpg",
+        "cover_img": "data/article/img/article_1/cover.jpg",
+        "square_img": "data/article/img/article_1/square.jpg",
         "content": [{
             "header": "依照需求，調劑最適合自己的「一杯」處方",
             "segment": [
@@ -45,17 +46,18 @@
 
     }, {
         "title": "瑞比冰淇林",
-        "article_id": "catering_article_2",
-        "next_id": "catering_article_3",
+        "article_id": "article_2",
+        "next_id": "article_3",
         "abstraction": "從教課書離家出走 老師改賣冰淇淋",
+        "editors" : "《 採編 X 廷軒.茜文.曉淇 - 逐字 X 婷玟 - 文編 X 婷玟 - 美編 X 花生 - 攝影 X 花生 》",
         "background_img": [
-            "data/article/img/catering/catering_article_2/1.jpg",
-            "data/article/img/catering/catering_article_2/2.jpg",
-            "data/article/img/catering/catering_article_2/3.jpg",
-            "data/article/img/catering/catering_article_2/4.jpg"
+            "data/article/img/article_2/1.jpg",
+            "data/article/img/article_2/2.jpg",
+            "data/article/img/article_2/3.jpg",
+            "data/article/img/article_2/4.jpg"
         ],
-        "cover_img": "data/article/img/catering/catering_article_2/cover.jpg",
-        "square_img": "data/article/img/catering/catering_article_2/square.jpg",
+        "cover_img": "data/article/img/article_2/cover.jpg",
+        "square_img": "data/article/img/article_2/square.jpg",
         "content": [{
             "header": "發揮食材最大特色，每口都是原汁原味",
             "segment": [
@@ -84,17 +86,18 @@
         }]
     }, {
         "title": "咖啡館 x 紀錄工坊",
-        "article_id": "catering_article_3",
-        "next_id": "catering_article_4",
+        "article_id": "article_3",
+        "next_id": "article_4",
         "abstraction": "浪漫的影像咖啡工作室，以快門捕捉光影與咖啡香氣",
+        "editors" : "《 採編 X 曉琪.茜文 - 逐字 X 欣愉 - 文編 X 欣愉 - 美編 X 雅云 - 攝影 X 欣愉 》",
         "background_img": [
-            "data/article/img/catering/catering_article_3/1.jpg",
-            "data/article/img/catering/catering_article_3/2.jpg",
-            "data/article/img/catering/catering_article_3/3.jpg",
-            "data/article/img/catering/catering_article_3/4.jpg"
+            "data/article/img/article_3/1.jpg",
+            "data/article/img/article_3/2.jpg",
+            "data/article/img/article_3/3.jpg",
+            "data/article/img/article_3/4.jpg"
         ],
-        "cover_img": "data/article/img/catering/catering_article_3/cover.jpg",
-        "square_img": "data/article/img/catering/catering_article_3/square.jpg",
+        "cover_img": "data/article/img/article_3/cover.jpg",
+        "square_img": "data/article/img/article_3/square.jpg",
         "content": [{
             "header": "以快門紀錄動人時刻，分享故事的咖啡廳",
             "segment": [
@@ -125,15 +128,16 @@
         }]
     }, {
         "title": "自由插畫工作者",
-        "article_id": "catering_article_4",
-        "next_id": "catering_article_1",
+        "article_id": "article_4",
+        "next_id": "article_5",
         "abstraction": "一雙繪製夢想的手 - 自由插畫工作者",
+        "editors" : "《 採編 X 茜文 - 逐字 X 婷玟 - 文編 X 茜文 - 美編 X 雅云 - 攝影 X 茜文 》",
         "background_img": [
-            "data/article/img/catering/catering_article_4/1.jpg",
-            "data/article/img/catering/catering_article_4/2.jpg"
+            "data/article/img/article_4/1.jpg",
+            "data/article/img/article_4/2.jpg"
         ],
-        "cover_img": "data/article/img/catering/catering_article_4/cover.jpg",
-        "square_img": "data/article/img/catering/catering_article_4/square.jpg",
+        "cover_img": "data/article/img/article_4/cover.jpg",
+        "square_img": "data/article/img/article_4/square.jpg",
         "content": [{
             "header": "用雙手畫出無數個夢想，轉個彎才發現初衷",
             "segment": [
@@ -152,6 +156,42 @@
             "segment": [
                 "小讀者夢想成為一名插畫家嗎？想要「擁有個人設計品牌」嗎？那你的「自制力」就要夠高，因為沒有人在背後要求你，就很難維持應有的效率，同時還要一直充實自己，假設在公司上班，很容易從同事身上發現自己的不足，會因此趕快補足缺少的能力，但是個人工作沒有競爭，就容易停留在原地無法進步，所以要一直學習新的東西。面對現在的社會觀念和部分家長的想法，總是認為「畫畫可以當飯吃嗎？」這或許正是他們踏出夢想的第一個困境，JR舉當紅的文創者兼插畫家「馬來膜」為例：「我認為，一方面他有過人的觀察力、一方面是他有毅力每天都畫畫，所以當插畫家這件事情很不簡單，尤其你又要養活自己更不簡單。」希望能有擁有個人設計品牌的他更是堅毅地說：「如果你能夠堅持不間斷這個興趣，至少可以累積一些東西，不管能不能成為幾米，應該都還是會有一些成績的。」沒有人可以論定你的選擇，因為身後的努力是無人知曉的，必須學會自己擦汗、拭淚，就算捱餓作畫也是心甘情願！",
                 "最後，JR分享給小讀者的是－當自由工作者很適合養一隻貓，因為和電腦相處的時間很長，小貓會一直跑來撒嬌，此時的你就有機會起來休息、跟牠玩耍，聽起來是不是很療癒呢？"
+            ]
+        }]
+    }, {
+        "title": "美格牙醫",
+        "article_id": "article_5",
+        "next_id": "article_1",
+        "abstraction": "給你一口人見人愛的牙齒－牙醫師的自白",
+        "editors" : "《 採編 X 廷軒.茜文 -  文編 X 茜文 - 美編 X 鴨子 - 攝影 X 診所提供 》",
+        "background_img": [
+            "data/article/img/article_5/1.jpg",
+            "data/article/img/article_5/2.jpg",
+            "data/article/img/article_5/3.jpg",
+            "data/article/img/article_5/4.jpg"
+        ],
+        "cover_img": "data/article/img/article_5/cover.jpg",
+        "square_img": "data/article/img/article_5/square.jpg",
+        "content": [{
+            "header": "工作者的一天 ▋一天十小時以上 勞累也不拒診",
+            "segment": [
+                "郭醫師的診所每天都要看診，看診時間有三個時段，分別是：九點到十二點、兩點半到六點、六點半到九點。郭醫師大多為中年人和老年人看診，所以白天是他最為繁忙的時候。他有位同事是兒童牙科醫師，病人以小朋友為主，下午看診多半是學齡前的兒童，晚上則是他的重頭戲。",
+                "一天三個時段、十個小時以上在診所工作，聽起來是不是很疲憊？郭醫師說，每個病人的狀況不同，有時候必須預約看診，他通常會安排五點半到六點都是較簡單的治療，例如拔乳牙，希望能在六點休息，讓醫護人員可以用餐，為六點半的看診儲備體力。如果九點沒有病人，有時候郭醫師會走路回家當運動或是去按摩、紓壓。我們不禁好奇，倘若在準備休診前，面對臨時「報到」的病人該怎麼辦？郭醫師說，雖然身心疲倦，但還是不會拒絕看診，畢竟為患者根除病痛是他們的職責，經常因此直到十點多才休診，等到踏入家門時，小孩都已入睡。如果有要跟同事或醫師之間討論事情，大概都是十一點開始連絡，處理完公事後，十二點的鐘聲也響了。",
+                "此外，病例的部分，因為病人是陸陸續續進入診療室，無法當場寫完，郭醫師在病歷上編號，請護士小姐接續完成，若是健保的作業都是要當天上傳到健保局。"
+            ]
+        }, {
+            "header": "甘苦談 ▋鑲金假牙 更是嵌入感激與幸福",
+            "segment": [
+                "「那為什麼我會當牙醫，應該是說我以前跟外公外婆住的時候，我印象很深刻，那時候我外婆要幫我拔牙，就用線綁的，綁在門上，再幫我扯下來……。」這是郭醫師夢想成為牙醫師的一個初衷，而真正成為一名牙醫師後，才能體會這份工作的苦澀與甘甜。",
+                "牙醫辛苦的是，除了上述提及的上班時間長之外，生理上，會因為久坐而長繭，心理上，則是醫療糾紛。行醫的人難免都會碰上「醫療糾紛」，郭醫師也坦承，正是因為如此，所以才會到處都要錄音、錄影，而他更是表明，如果是有按照著正道去治療，問題都可以迎刃而解，若是碰上難以溝通的病人時，為了減輕醫療糾紛所帶出來的傷害，最後大多以賠償落幕。",
+                "然而，從事牙醫數年，郭醫師依然樂此不疲的關鍵是什麼呢？他說，工作就是為了謀生，而謀生之餘又可以帶給他人快樂，是最值得的事情了！尤其是在為病人「裝假牙」的時刻，透過自己的雙手與技術，使病人因此獲得舒適及方便，而後又介紹其他人來看診，豈不是樂事一件！得到這份幸福，他感謝父母支持他重考、提供生活費讓他去美國求學，以及在Buffalo的指導老師們，使他今日不管是活動假牙還是固定假牙，都可以賴以維生，並且帶給病患張嘴大笑的自信與享受美食的快樂。",
+                "小讀者是否懷有醫生夢？想像自己身穿白袍、訓練有素的診療病患呢？郭醫師告訴我們，行醫除了要具備耐力、毅力以外，還要注意到技術或知識更新的部分，以臺灣來說，政府有規定每六年要換執照，必須修習180個學分，所以周末通常會參加相關的演講，不僅可以取得學分，也能透過演講汲取新知識。而美國的執照，則是每年要修滿21個學分，所以當時在美國的郭醫師，在接近考試的時候，下班回家還要準備美國的執照學分，必須要讀書、上網考試，方可得以換得新的執照。",
+                "另外，郭醫師建議小讀者們，如果你對牙醫師一職有興趣，可以從旁觀察牙醫的一天，進一步了解這個工作在做些什麼。以前的他嚮往「導遊」這份工作，就獨自報名歐洲團，天天跟隨在導遊身後，觀察、學習、吸收、消化，再考慮這份工作是否適合自己。他說：「我姊姊當時如願成了一名律師後，才發現必須經常去處理離婚事件或是身亡後的相關事宜，她歷經一段時間才嘗試去接受。」只要我們肯花心思去觀察，我們就有多一種選擇的機會。"
+            ]
+        }, {
+            "header": "後記 ▋",
+            "segment": [
+                "郭醫師的求學之路很特別，曾考上北醫藥學系，讀過成大復健物理治療系，最後在北醫牙醫完成學業，那時解嚴沒有多久，嚮往國外生活的他，期盼可以透過一份工作得以移民，後來如願申請到了位於美國的假牙學校，經過了一大段波折，郭醫師取得公民證、醫師執照，最後還是選擇留在美麗的台灣。"
             ]
         }]
     }]

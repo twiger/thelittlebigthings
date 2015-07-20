@@ -3,21 +3,21 @@
 
 <head>
     <!-- Standard Meta -->
-    <title>生涯規畫 - The little big things</title>
-    <meta name="description" content="生涯規畫X甘苦談X職業 - 每個人在社會上都在從事一件最重要的小事，快來尋找你有興趣的故事吧！如果你有意願和更多人分享自己工作背後的心路歷程，歡迎私訊或e-mail我們!">
+    <title>生涯規劃 - The little big things</title>
+    <meta name="description" content="生涯規劃X甘苦談X職業 - 每個人在社會上都在從事一件最重要的小事，快來尋找你有興趣的故事吧！如果你有意願和更多人分享自己工作背後的心路歷程，歡迎私訊或e-mail我們!">
     <meta name="keywords" content="升學,生涯規畫,職業,甘苦談">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Include Master -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-    <link rel="image_src" href="img/logo/square_logo.png" / >
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" / >
+    <link rel="image_src" href="img/logo/square_logo.png" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
     <script>
     $(document).ready(function() {
         var display_what_is_TLBT = false;
         var display_why_TLBT = false;
-        
+
         $('#homepage_body').css("display", 'none');
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('#homepage_body').fadeIn(1000);
@@ -27,23 +27,23 @@
         $(document).ajaxStop(function() {
 
         });
-        
-        $(window).scroll(function(){
-             if ($('#what_is_TLBT_header').visible() ){
-                if (display_what_is_TLBT == false){
-                    $('#what_is_TLBT > .fadein_row').transition('fade down','2000ms');
+
+        $(window).scroll(function() {
+            if ($('#what_is_TLBT_header').visible()) {
+                if (display_what_is_TLBT == false) {
+                    $('#what_is_TLBT > .fadein_row').transition('fade down', '2000ms');
                     display_what_is_TLBT = true;
                 }
-             }
-             if ($('#why_TLBT_header').visible() ){
-                if (display_why_TLBT == false){
-                    $('#why_TLBT > .fadein_row').transition('fade down','1500ms');
+            }
+            if ($('#why_TLBT_header').visible()) {
+                if (display_why_TLBT == false) {
+                    $('#why_TLBT > .fadein_row').transition('fade down', '1500ms');
                     display_why_TLBT = true;
                 }
-             }
+            }
         });
-        
-        
+
+
     });
     </script>
     <div id="master"></div>
@@ -59,50 +59,53 @@
             <img class="ui city scroll image" src="img/city3.jpg">
         </div>
         <div class="what_is_TLBT_bg">
-        <div id="what_is_TLBT" class="ui centered sixteen very relaxed stackable grid page">
-            <div class="row">
-                <div class="column">
-                    <h1 id="what_is_TLBT_header" class="center aligned ui header">
+            <div id="what_is_TLBT" class="ui centered sixteen very relaxed stackable grid page">
+                <div class="row">
+                    <div class="column">
+                        <h1 id="what_is_TLBT_header" class="center aligned ui header">
                         什麼是 TLBT ?
                     </h1>
+                    </div>
                 </div>
-            </div>
-            <div class="fadein_row row">
-                <div class="ten wide column">
-                    <h3 class="center aligned ui header">
+                <div class="fadein_row row">
+                    <div class="ten wide column">
+                        <h3 class="center aligned ui header">
                         The little big things 是一個介紹各行各業甘苦談的網路平台，<br/>我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，<br/>分享給更多孩子知道！
                     </h3>
-                    <a><h4 class="center aligned ui orange  header">連絡我們 : Thelittlebigthings38@gmail.com</h4></a>
-                </div>
-            </div>
-            <div class="fadein_row row">
-                <div class="ui four column center aligned stackable grid">
-                    <div class="column">
-                        <div class="ui red icon header">
-                            <i class="comments icon"></i> 實地訪談
-                        </div>
-                        <p>團隊會與您聯繫並且簽定訪問合約<br/>及確定
-                            訪談時間，約兩個小時。</p>
-                    </div>
-                    <div class="column">
-                        <div class="ui icon header">
-                            <i class="newspaper icon"></i> 文章編撰
-                        </div>
-                        <p>採訪完後，團隊會將內容進行編撰，<br/>並且
-                            經由受訪者同意後，將文章分享！</p>
-                    </div>
-                    <div class="column">
-                        <div class="ui blue icon header">
-                            <i class="world icon"></i> 平台推廣
-                        </div>
-                        <p>希望利用學校輔導室及網路平台，<br/>讓更多
-                            孩子能夠閱讀到各行各業的工作故事！</p>
+                        <a><h4 class="center aligned ui orange  header">連絡我們 : Thelittlebigthings38@gmail.com</h4></a>
                     </div>
                 </div>
+                <div class="fadein_row row">
+                    <div class="ui four column center aligned stackable grid">
+                        <div class="column">
+                            <div class="ui red icon header">
+                                <i class="comments icon"></i> 實地訪談
+                            </div>
+                            <p>團隊會與您聯繫並且簽定訪問合約
+                                <br/>及確定 訪談時間，約兩個小時。
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div class="ui icon header">
+                                <i class="newspaper icon"></i> 文章編撰
+                            </div>
+                            <p>採訪完後，團隊會將內容進行編撰，
+                                <br/>並且 經由受訪者同意後，將文章分享！
+                            </p>
+                        </div>
+                        <div class="column">
+                            <div class="ui blue icon header">
+                                <i class="world icon"></i> 平台推廣
+                            </div>
+                            <p>希望利用學校輔導室及網路平台，
+                                <br/>讓更多 孩子能夠閱讀到各行各業的工作故事！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
             </div>
-            <div class="row">
-            </div>
-        </div>
         </div>
         <div id="why_TLBT" class="ui centered sixteen very relaxed stackable grid page">
             <div class="row">
@@ -132,7 +135,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
     <div class="ui footer hidden divider"></div>
     <footer class="footer-distributed">

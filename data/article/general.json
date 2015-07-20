@@ -4,7 +4,7 @@
         "article_id": "article_1",
         "next_id": "article_2",
         "abstraction": "當醫生脫下白袍，以新鮮蔬果調劑身心的另類診所",
-        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 欣愉 - 文編 X 婷玟 - 美編 X 鴨子 - 攝影 X 花生 》",
+        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 廷軒 - 文編 X 欣愉 - 美編 X 鴨子 - 攝影 X 花生 》",
         "background_img": [
             "data/article/img/article_1/1.jpg",
             "data/article/img/article_1/2.jpg",
@@ -89,7 +89,7 @@
         "article_id": "article_3",
         "next_id": "article_4",
         "abstraction": "浪漫的影像咖啡工作室，以快門捕捉光影與咖啡香氣",
-        "editors" : "《 採編 X 曉琪.茜文 - 逐字 X 欣愉 - 文編 X 欣愉 - 美編 X 雅云 - 攝影 X 欣愉 》",
+        "editors" : "《 採編 X 曉琪.茜文 - 文編 X 欣愉 - 美編 X 雅云 - 攝影 X 欣愉 》",
         "background_img": [
             "data/article/img/article_3/1.jpg",
             "data/article/img/article_3/2.jpg",

@@ -11,14 +11,14 @@
         "art_editor": "鴨子",
         "photography" : "花生",
         "background_img": [
-            "data/article/img/article_1/1.jpg",
-            "data/article/img/article_1/2.jpg",
-            "data/article/img/article_1/3.jpg",
-            "data/article/img/article_1/4.jpg",
-            "data/article/img/article_1/5.jpg"
+            "https://i.imgur.com/HEftouG.jpg",
+            "https://i.imgur.com/dsj0dQm.jpg",
+            "https://i.imgur.com/sv5SVJb.jpg",
+            "https://i.imgur.com/EocViuF.jpg",
+            "https://i.imgur.com/MqfnXJe.jpg"
         ],
-        "cover_img": "data/article/img/article_1/cover.jpg",
-        "square_img": "data/article/img/article_1/square.jpg",
+        "cover_img": "https://i.imgur.com/4LYEoXf.jpg",
+        "square_img": "https://i.imgur.com/RLZUCFH.jpg",
         "content": [{
             "header": "依照需求，調劑最適合自己的「一杯」處方",
             "segment": [
@@ -61,13 +61,13 @@
         "art_editor": "花生",
         "photography" : "花生",
         "background_img": [
-            "data/article/img/article_2/1.jpg",
-            "data/article/img/article_2/2.jpg",
-            "data/article/img/article_2/3.jpg",
-            "data/article/img/article_2/4.jpg"
+            "https://i.imgur.com/zpJtvT4.jpg",
+            "https://i.imgur.com/IkEmMbe.jpg",
+            "https://i.imgur.com/OGoQi6k.jpg",
+            "https://i.imgur.com/1vFSRmH.jpg"
         ],
-        "cover_img": "data/article/img/article_2/cover.jpg",
-        "square_img": "data/article/img/article_2/square.jpg",
+        "cover_img": "https://i.imgur.com/Zo0Uhhp.jpg",
+        "square_img": "https://i.imgur.com/YhLQRtm.jpg",
         "content": [{
             "header": "發揮食材最大特色，每口都是原汁原味",
             "segment": [
@@ -106,13 +106,13 @@
         "art_editor": "雅云",
         "photography" : "欣愉",
         "background_img": [
-            "data/article/img/article_3/1.jpg",
-            "data/article/img/article_3/2.jpg",
-            "data/article/img/article_3/3.jpg",
-            "data/article/img/article_3/4.jpg"
+            "https://i.imgur.com/AK2Ms7t.jpg",
+            "https://i.imgur.com/DEiDJXu.jpg",
+            "https://i.imgur.com/wr0qBsO.jpg",
+            "https://i.imgur.com/ai0ZrHE.jpg"
         ],
-        "cover_img": "data/article/img/article_3/cover.jpg",
-        "square_img": "data/article/img/article_3/square.jpg",
+        "cover_img": "https://i.imgur.com/zg4jFzd.jpg",
+        "square_img": "https://i.imgur.com/6opQAGX.jpg",
         "content": [{
             "header": "以快門紀錄動人時刻，分享故事的咖啡廳",
             "segment": [
@@ -153,11 +153,11 @@
         "art_editor": "雅云",
         "photography" : "茜文",
         "background_img": [
-            "data/article/img/article_4/1.jpg",
-            "data/article/img/article_4/2.jpg"
+            "https://i.imgur.com/yzdyMqA.jpg",
+            "https://i.imgur.com/hegZb6F.jpg"
         ],
-        "cover_img": "data/article/img/article_4/cover.jpg",
-        "square_img": "data/article/img/article_4/square.jpg",
+        "cover_img": "https://i.imgur.com/tMrLpn9.jpg",
+        "square_img": "https://i.imgur.com/0PVddHB.jpg",
         "content": [{
             "header": "用雙手畫出無數個夢想，轉個彎才發現初衷",
             "segment": [
@@ -190,13 +190,13 @@
         "art_editor": "鴨子",
         "photography" : "診所",
         "background_img": [
-            "data/article/img/article_5/1.jpg",
-            "data/article/img/article_5/2.jpg",
-            "data/article/img/article_5/3.jpg",
-            "data/article/img/article_5/4.jpg"
+            "https://i.imgur.com/Ajq46p6.jpg",
+            "https://i.imgur.com/0Krm0j9.jpg",
+            "https://i.imgur.com/UT94QcS.jpg",
+            "https://i.imgur.com/dAffm1U.jpg"
         ],
-        "cover_img": "data/article/img/article_5/cover.jpg",
-        "square_img": "data/article/img/article_5/square.jpg",
+        "cover_img": "https://i.imgur.com/myrZg6V.jpg",
+        "square_img": "https://i.imgur.com/YjIm3TE.jpg",
         "content": [{
             "header": "工作者的一天 ▋一天十小時以上 勞累也不拒診",
             "segment": [

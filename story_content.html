@@ -10,8 +10,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <div id="master"></div>
-    <link rel="image_src" href="img/logo/square_logo.png" / >
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" / >
+    <link rel="image_src" href="img/logo/square_logo.png" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
     <!-- Site Properities -->
     <title>The little big things</title>
     <script type='text/javascript' src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -133,14 +133,46 @@
                 <div class="ui bottom massive hidden divider"></div>
                 <div id="story_text" class="ui inverted description segment">
                     <div class="ui grid">
-                        <div class="row">
-                            <div class="icon_logo_header">
-                                <h1 class="ui inverted header">
-                                    {{article.abstraction}}
-                                </h1>
-                                <h5 class="ui inverted_blue header">
-                                    {{article.editors}}
-                                </h5>
+                        <div class="icon_logo_header">
+                            <h1 class="ui inverted header">
+                                {{article.abstraction}}
+                            </h1>
+                        </div>
+                        <div class="five column row">
+                            <div class="narrow column">
+                                <div class="ui breadcrumb">
+                                    <div class="inverted_blue  section">採編</div>
+                                    <i class="comments inverted_blue icon divider"></i>
+                                    <div class="inverted_blue  section">{{article.interview}}</div>
+                                </div>
+                            </div>
+                            <div class="narrow column">
+                                <div class="ui breadcrumb">
+                                    <div class="inverted_blue  section">逐字</div>
+                                    <i class="file text outline inverted_blue icon divider"></i>
+                                    <div class="inverted_blue  section">{{article.transcript}}</div>
+                                </div>
+                            </div>
+                            <div class="narrow column">
+                                <div class="ui breadcrumb">
+                                    <div class="inverted_blue  section">文編</div>
+                                    <i class="edit inverted_blue icon divider"></i>
+                                    <div class="inverted_blue  section">{{article.editor}}</div>
+                                </div>
+                            </div>
+                            <div class="narrow column">
+                                <div class="ui breadcrumb">
+                                    <div class="inverted_blue  section">美編</div>
+                                    <i class="paint brush inverted_blue icon divider"></i>
+                                    <div class="inverted_blue  section">{{article.art_editor}}</div>
+                                </div>
+                            </div>
+                            <div class="narrow column">
+                                <div class="ui breadcrumb">
+                                    <div class="inverted_blue  section">攝影</div>
+                                    <i class="photo inverted_blue icon divider"></i>
+                                    <div class="inverted_blue  section">{{article.photography}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -159,7 +191,7 @@
                     <h5 class="ui right floated red header">
                     你的一個小小動作，將會使每個孩子多一點點機會看見他們可能的未來
                 </h5>
-                <div class="fb-like" data-href="https://www.facebook.com/pages/The-Little-Big-Things-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B0%8F%E4%BA%8B/992120404140331" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                    <div class="fb-like" data-href="https://www.facebook.com/pages/The-Little-Big-Things-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B0%8F%E4%BA%8B/992120404140331" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 </div>
             </div>
             <div class="three wide padding column"></div>
@@ -199,7 +231,6 @@
         </div>
         <div class="bottom margin"></div>
     </div>
-    
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>The Little Big <span>Things</span></h3>

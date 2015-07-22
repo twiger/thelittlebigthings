@@ -4,7 +4,7 @@
         "article_id": "article_1",
         "next_id": "article_2",
         "abstraction": "當醫生脫下白袍，以新鮮蔬果調劑身心的另類診所",
-        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 廷軒 - 文編 X 欣愉 - 美編 X 鴨子 - 攝影 X 花生 》",
+        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 茜文.廷軒 - 文編 X 欣愉 - 美編 X 鴨子 - 攝影 X 花生 》",
         "background_img": [
             "data/article/img/article_1/1.jpg",
             "data/article/img/article_1/2.jpg",
@@ -163,7 +163,7 @@
         "article_id": "article_5",
         "next_id": "article_1",
         "abstraction": "給你一口人見人愛的牙齒－牙醫師的自白",
-        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 婷玟 - 文編 X 茜文 - 美編 X 鴨子 - 攝影 X 診所提供 》",
+        "editors" : "《 採編 X 廷軒.茜文 - 逐字 X 曉淇 - 文編 X 茜文 - 美編 X 鴨子 - 攝影 X 診所提供 》",
         "background_img": [
             "data/article/img/article_5/1.jpg",
             "data/article/img/article_5/2.jpg",

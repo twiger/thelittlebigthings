@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Include Master -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <div id="master"></div>
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
@@ -49,8 +48,8 @@
                 $scope.category = category;
 
                 $.backstretch(article.background_img, {
-                    duration: 5000,
-                    fade: 750
+                    duration: 10000,
+                    fade: 1000
                 });
 
             }).error(function(data, status, headers, config) {
@@ -72,10 +71,24 @@
 
         $('#story_content').bind('scroll resize', function() {
             sticky_relocate();
+            if ($(document).width() < 768) {
+                $('.photo.image')
+                    .dimmer('show');
+            }
         });
 
+        //Fix me : Can not get the element!?
+        $('.nav.header').click(function() {
+            alert("!");
+        });
+
+        $('.photo.image')
+            .dimmer({
+                on: 'hover'
+            });
 
 
+        /*
         $(".main.image").hover(function() {
 
             $('.main_content').removeClass("eight wide column");
@@ -90,7 +103,7 @@
             $('.padding').removeClass("one wide column");
             $('.padding').addClass("three wide column");
         });
-
+        */
 
     });
 
@@ -112,6 +125,7 @@
     }
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
 </head>
 
 <body id="story_content" onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
@@ -176,21 +190,33 @@
                             </div>
                         </div>
                     </div>
-                    <br/>
-                    <img class="ui main image" ng-src="{{article.cover_img}}" rel="image_src" type="image/jpeg">
-                    <br/>
-                    <div ng-repeat="section in article.content">
-                        <h2 id="{{'p'+$index}}" class="ui inverted dividing header">
+                    <div class="image row">
+                        <div class="ui photo image">
+                            <div class="ui inverted dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <h3 class="ui header">想看看主角的工作環境嗎?</h3>
+                                        <div class="ui secondary button">觀看相簿</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="ui main image" ng-src="{{article.cover_img}}" rel="image_src" type="image/jpeg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div ng-repeat="section in article.content">
+                            <h2 id="{{'p'+$index}}" class="ui inverted dividing header">
                             {{section.header}}
                         </h2>
-                        <p ng-repeat="paragraph in section.segment">
-                            {{paragraph}}
-                        </p>
-                        <br/>
+                            <p ng-repeat="paragraph in section.segment">
+                                {{paragraph}}
+                            </p>
+                            <br/>
+                        </div>
                     </div>
                     <h5 class="ui right floated red header">
                     你的一個小小動作，將會使每個孩子多一點點機會看見他們可能的未來
-                </h5>
+                    </h5>
                     <div class="fb-like" data-href="https://www.facebook.com/pages/The-Little-Big-Things-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%B0%8F%E4%BA%8B/992120404140331" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 </div>
             </div>
@@ -211,7 +237,7 @@
                         <div class="right floated right aligned four wide column">
                             <a ng-href="story_content.html?category={{category}}&article_id={{article.next_id}}">
                                 <h4 class="ui teal header">
-                                    <div class="content">
+                                    <div class="next_article content">
                                         下一篇
                                     </div>
                                 </h4>
@@ -222,7 +248,7 @@
                     <div class="ui left floated inverted relaxed divided list">
                         <div class="item" ng-repeat="section in article.content">
                             <div class="content">
-                                <div class="header"><a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#p{{$index}}">{{section.header}}</a></div>
+                                <div class="nav header"><a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#p{{$index}}">{{section.header}}</a></div>
                             </div>
                         </div>
                     </div>

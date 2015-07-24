@@ -19,9 +19,11 @@
         var display_why_TLBT = false;
 
         $('#homepage_body').css("display", 'none');
+
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
+            $(".full_img").css("height", $(window).height() - $("#segment_master").height());
             ResponsiveWeb();
         });
         $(document).ajaxStop(function() {
@@ -66,11 +68,12 @@
             });
         });
 
-        /*
+
         $("#owl-example").owlCarousel({
-            items:1
+            singleItem: true,
+            autoHeight: true
         });
-        */
+
 
 
     });
@@ -88,13 +91,32 @@
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="ui stackable grid">
+        <
         <div class="top_padding_cancel sixteen wide column">
             <img class="ui city scroll image" src="img/city3.jpg">
         </div>
         <!--
         <div class="row">
             <div id="owl-example" class="owl-carousel">
-                <div class="full_img"><img class="ui city scroll image" src="img/what_1.jpg"></div>
+                <div id="slide_1" class="full_img">
+                    <div class="ui centered sixteen very relaxed stackable page grid">
+                        <div class="row">
+                            <div class="column">
+                                <h1 class="center aligned ui inverted header">
+                                    <span class="blue">什麼是 TLBT </span>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="ten wide column">
+                                <h3 class="light_gray center aligned ui inverted sub header">
+                                    <span class="black">The little big things</span> 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
+                                </h3>
+                                <h4 class="center aligned ui dark_red header">連絡我們 : Thelittlebigthings38@gmail.com</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="full_img"><img class="ui city scroll image" src="img/what_2.jpg"></div>
                 <div class="full_img"><img class="ui city scroll image" src="img/what_3.jpg"></div>
                 <div class="full_img"><img class="ui city scroll image" src="img/what_4.jpg"></div>

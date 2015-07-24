@@ -79,6 +79,44 @@
 }
 
 /*--------------
+    Slide Show
+
+
+#owl-example{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#slide_1{
+    background-image: url("../img/what_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem;
+}
+
+.blue{
+    color:#5b94ef;
+
+}
+
+.black{
+    color:black;
+}
+
+.dark_red{
+    color:maroon !important;
+}
+
+.light_gray{
+    color:ghostwhite !important;
+}
+
+.ui.brown.divider{
+    border-top:2px solid rgba(103, 50, 1, 0.7) !important;
+    border-bottom:2px solid rgba(103, 50, 1, 0.7) !important;
+}
+---------------*/
+
+/*--------------
     New Profile
 ---------------*/
 

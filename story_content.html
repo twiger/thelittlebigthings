@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="css/story_content.css">
     <script type='text/javascript'>
     $(document).ready(function() {
+        var slide_img;
         article_id = getURLParameter('article_id');
         category = getURLParameter('category');
         $('#story_content').css("display", 'none');
@@ -51,6 +52,8 @@
                     duration: 10000,
                     fade: 1000
                 });
+
+                slide_img = article.background_img;
 
             }).error(function(data, status, headers, config) {
                 console.log("Fail to load cetering.json");
@@ -88,6 +91,11 @@
             });
 
 
+        $('.photo.button').click(function() {
+            openPhotoSwipe(slide_img);
+        });
+
+
         /*
         $(".main.image").hover(function() {
 
@@ -105,7 +113,40 @@
         });
         */
 
+
+
     });
+
+    var openPhotoSwipe = function(image_list) {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        // build items array
+        var items = [], temp_item;
+        for (i = 0; i < image_list.length; i++) {
+            temp_item = {
+                html: '<img class="ui big slide image" src="' + image_list[i] + '" rel="image_src" type="image/jpeg">'
+            }
+            items.push(temp_item);
+        }
+
+        // define options (if needed)
+        var options = {
+            // optionName: 'option value'
+            // for example:
+            index: 0 // start at first slide
+        };
+
+        // Initializes and opens PhotoSwipe
+        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+        gallery.init();
+    }
+
+    function showPhotoGallary() {
+        $("#owl-example").owlCarousel({
+            singleItem: true
+        });
+    }
 
     function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null
@@ -126,6 +167,13 @@
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <!-- For photoswipe -->
+    <link rel="stylesheet" href="dist/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="dist/photoswipe/default-skin/default-skin.css">
+    <!-- Core JS file -->
+    <script src="dist/photoswipe/photoswipe.min.js"></script>
+    <!-- UI JS file -->
+    <script src="dist/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
 <body id="story_content" onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
@@ -196,7 +244,7 @@
                                 <div class="content">
                                     <div class="center">
                                         <h3 class="ui header">想看看主角的工作環境嗎?</h3>
-                                        <div class="ui secondary button">觀看相簿</div>
+                                        <div class="ui secondary photo button">觀看相簿</div>
                                     </div>
                                 </div>
                             </div>
@@ -255,7 +303,53 @@
                 </div>
             </div>
         </div>
-        <div class="bottom margin"></div>
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+                <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer-distributed">
         <div class="footer-left">
@@ -272,7 +366,7 @@
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>聯絡方式</p>
+                <p>+1 555 123456</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>

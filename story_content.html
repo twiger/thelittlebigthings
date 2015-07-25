@@ -122,10 +122,17 @@
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
         // build items array
-        var items = [], temp_item;
+        var items = [],
+            temp_item;
         for (i = 0; i < image_list.length; i++) {
-            temp_item = {
-                html: '<img class="ui big slide image" src="' + image_list[i] + '" rel="image_src" type="image/jpeg">'
+            if (i == 0) {
+                temp_item = {
+                    html: '<img class="ui huge slide image" src="' + image_list[i] + '" rel="image_src" type="image/jpeg">'
+                }
+            } else {
+                temp_item = {
+                    html: '<img class="ui big slide image" src="' + image_list[i] + '" rel="image_src" type="image/jpeg">'
+                }
             }
             items.push(temp_item);
         }

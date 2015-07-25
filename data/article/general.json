@@ -12,14 +12,24 @@
         "art_editor": "鴨子",
         "photography" : "花生",
         "background_img": [
-            "https://i.imgur.com/HEftouG.jpg",
-            "https://i.imgur.com/dsj0dQm.jpg",
-            "https://i.imgur.com/sv5SVJb.jpg",
-            "https://i.imgur.com/EocViuF.jpg",
-            "https://i.imgur.com/MqfnXJe.jpg"
+            "http://i.imgur.com/HEftouG.jpg",
+            "http://i.imgur.com/dsj0dQm.jpg",
+            "http://i.imgur.com/sv5SVJb.jpg",
+            "http://i.imgur.com/EocViuF.jpg",
+            "http://i.imgur.com/MqfnXJe.jpg"
         ],
-        "cover_img": "https://i.imgur.com/4LYEoXf.jpg",
-        "square_img": "https://i.imgur.com/RLZUCFH.jpg",
+        "photo_gallary":[
+            "http://i.imgur.com/HEftouG.jpg",
+            "http://i.imgur.com/dsj0dQm.jpg",
+            "http://i.imgur.com/sv5SVJb.jpg",
+            "http://i.imgur.com/EocViuF.jpg",
+            "http://i.imgur.com/MqfnXJe.jpg",
+            "http://i.imgur.com/RCDGU0L.jpg",
+            "http://i.imgur.com/cdzbYPr.jpg",
+            "http://i.imgur.com/XDOjEvJ.jpg"
+        ],
+        "cover_img": "http://i.imgur.com/4LYEoXf.jpg",
+        "square_img": "http://i.imgur.com/RLZUCFH.jpg",
         "content": [{
             "header": "依照需求，調劑最適合自己的「一杯」處方",
             "segment": [
@@ -63,13 +73,23 @@
         "art_editor": "花生",
         "photography" : "花生",
         "background_img": [
-            "https://i.imgur.com/zpJtvT4.jpg",
-            "https://i.imgur.com/IkEmMbe.jpg",
-            "https://i.imgur.com/OGoQi6k.jpg",
-            "https://i.imgur.com/1vFSRmH.jpg"
+            "http://i.imgur.com/zpJtvT4.jpg",
+            "http://i.imgur.com/IkEmMbe.jpg",
+            "http://i.imgur.com/OGoQi6k.jpg",
+            "http://i.imgur.com/1vFSRmH.jpg"
         ],
-        "cover_img": "https://i.imgur.com/Zo0Uhhp.jpg",
-        "square_img": "https://i.imgur.com/YhLQRtm.jpg",
+        "photo_gallary":[
+            "http://i.imgur.com/zpJtvT4.jpg",
+            "http://i.imgur.com/IkEmMbe.jpg",
+            "http://i.imgur.com/OGoQi6k.jpg",
+            "http://i.imgur.com/1vFSRmH.jpg",
+            "http://i.imgur.com/37it8MD.jpg",
+            "http://i.imgur.com/NfJMUuJ.jpg",
+            "http://i.imgur.com/Gz0MWty.jpg",
+            "http://i.imgur.com/X3ipHUZ.jpg"
+        ],
+        "cover_img": "http://i.imgur.com/Zo0Uhhp.jpg",
+        "square_img": "http://i.imgur.com/YhLQRtm.jpg",
         "content": [{
             "header": "發揮食材最大特色，每口都是原汁原味",
             "segment": [
@@ -109,13 +129,24 @@
         "art_editor": "雅云",
         "photography" : "欣愉",
         "background_img": [
-            "https://i.imgur.com/AK2Ms7t.jpg",
-            "https://i.imgur.com/DEiDJXu.jpg",
-            "https://i.imgur.com/wr0qBsO.jpg",
-            "https://i.imgur.com/ai0ZrHE.jpg"
+            "http://i.imgur.com/AK2Ms7t.jpg",
+            "http://i.imgur.com/DEiDJXu.jpg",
+            "http://i.imgur.com/wr0qBsO.jpg",
+            "http://i.imgur.com/ai0ZrHE.jpg"
         ],
-        "cover_img": "https://i.imgur.com/zg4jFzd.jpg",
-        "square_img": "https://i.imgur.com/6opQAGX.jpg",
+        "photo_gallary":[
+            "http://i.imgur.com/AK2Ms7t.jpg",
+            "http://i.imgur.com/DEiDJXu.jpg",
+            "http://i.imgur.com/wr0qBsO.jpg",
+            "http://i.imgur.com/ai0ZrHE.jpg",
+            "http://i.imgur.com/6Im0YiW.jpg",
+            "http://i.imgur.com/IZGMIe2.jpg",
+            "http://i.imgur.com/m9g3aJK.jpg",
+            "http://i.imgur.com/gl14Rl3.jpg",
+            "http://i.imgur.com/R5G3lIh.jpg"
+        ],
+        "cover_img": "http://i.imgur.com/zg4jFzd.jpg",
+        "square_img": "http://i.imgur.com/6opQAGX.jpg",
         "content": [{
             "header": "以快門紀錄動人時刻，分享故事的咖啡廳",
             "segment": [
@@ -157,11 +188,15 @@
         "art_editor": "雅云",
         "photography" : "茜文",
         "background_img": [
-            "https://i.imgur.com/yzdyMqA.jpg",
-            "https://i.imgur.com/hegZb6F.jpg"
+            "http://i.imgur.com/yzdyMqA.jpg",
+            "http://i.imgur.com/hegZb6F.jpg"
         ],
-        "cover_img": "https://i.imgur.com/tMrLpn9.jpg",
-        "square_img": "https://i.imgur.com/0PVddHB.jpg",
+        "photo_gallary":[
+            "http://i.imgur.com/yzdyMqA.jpg",
+            "http://i.imgur.com/hegZb6F.jpg"
+        ],
+        "cover_img": "http://i.imgur.com/tMrLpn9.jpg",
+        "square_img": "http://i.imgur.com/0PVddHB.jpg",
         "content": [{
             "header": "用雙手畫出無數個夢想，轉個彎才發現初衷",
             "segment": [
@@ -195,13 +230,23 @@
         "art_editor": "鴨子",
         "photography" : "診所",
         "background_img": [
-            "https://i.imgur.com/Ajq46p6.jpg",
-            "https://i.imgur.com/0Krm0j9.jpg",
-            "https://i.imgur.com/UT94QcS.jpg",
-            "https://i.imgur.com/dAffm1U.jpg"
+            "http://i.imgur.com/Ajq46p6.jpg",
+            "http://i.imgur.com/0Krm0j9.jpg",
+            "http://i.imgur.com/UT94QcS.jpg",
+            "http://i.imgur.com/dAffm1U.jpg"
         ],
-        "cover_img": "https://i.imgur.com/myrZg6V.jpg",
-        "square_img": "https://i.imgur.com/YjIm3TE.jpg",
+        "photo_gallary":[
+            "http://i.imgur.com/Ajq46p6.jpg",
+            "http://i.imgur.com/0Krm0j9.jpg",
+            "http://i.imgur.com/UT94QcS.jpg",
+            "http://i.imgur.com/dAffm1U.jpg",
+            "http://i.imgur.com/kgRi3NS.jpg",
+            "http://i.imgur.com/QhUh25B.jpg",
+            "http://i.imgur.com/HFO1aqM.jpg",
+            "http://i.imgur.com/Euf3N5q.jpg"
+        ],
+        "cover_img": "http://i.imgur.com/myrZg6V.jpg",
+        "square_img": "http://i.imgur.com/YjIm3TE.jpg",
         "content": [{
             "header": "工作者的一天 ▋一天十小時以上 勞累也不拒診",
             "segment": [

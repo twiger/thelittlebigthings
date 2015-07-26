@@ -12,12 +12,7 @@ $(document)
         });
 
 
-        $('img')
-            .visibility({
-                type: 'image',
-                transition: 'fade in',
-                duration: 1000
-            });
+        
         /*
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -48,6 +43,8 @@ function ResponsiveWeb() {
     }
 
     if (device_width < 768) {
+        $('#slide_for_mobile').toggleClass("hidden");
+
         $('.title.header').toggleClass("icon");
         document.getElementById('master_logo').src = 'img/logo/rectangle_logo_for_phone.png';
         $('.icon_logo').css("display", "none");

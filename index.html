@@ -68,13 +68,15 @@
             });
         });
 
-        
-        $("#owl-example").owlCarousel({
-            singleItem: true,
-            autoHeight: true,
-            autoPlay:10000
-        });
-        
+        if ($(document).width() > 768) {
+            $("#owl-example").owlCarousel({
+                singleItem: true,
+                autoHeight: true,
+                autoPlay: 10000,
+                slideSpeed: 500
+            });
+        }
+
 
 
 
@@ -93,14 +95,12 @@
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="ui stackable grid">
-        <!--
-        <div class="top_padding_cancel sixteen wide column">
-            <img class="ui city scroll image" src="img/index_7.jpg">
+        <div id="slide_for_mobile" class="hidden top_padding_cancel sixteen wide column">
+            <img class="ui city scroll image" src="img/slide_h_1.jpg">
         </div>
-        -->
-        <div class="row">
+        <div id="slide_for_laptop" class="row">
             <div id="owl-example" class="owl-carousel">
-                <div class="full_img"><img class="ui city scroll image" src="img/slide_4.jpg"></div>
+                <div class="full_img"><img class="ui city scroll image" src="img/slide_1.jpg"></div>
                 <div class="full_img"><img class="ui city scroll image" src="img/slide_2.jpg"></div>
             </div>
         </div>

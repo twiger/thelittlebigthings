@@ -17,8 +17,16 @@
     Content
 -------------------------*/
 
+#slide_for_mobile{
+
+}
+
+#slide_for_laptop{
+
+}
+
 #what_is_TLBT{
-    padding: 5rem 0rem !important;
+    padding: 5rem 0.5rem !important;
     background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
 	background-position: -17% 96%, 103% 96%;
 	background-repeat:no-repeat;
@@ -31,7 +39,7 @@
 }
 
 #why_TLBT{
-    padding: 5rem 0rem !important;
+    padding: 5rem 0.5rem !important;
     background-color:white;
 }
 

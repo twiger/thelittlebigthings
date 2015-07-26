@@ -24,10 +24,10 @@
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
             $(".full_img").css("height", $(window).height() - $("#segment_master").height());
-            ResponsiveWeb();
+
         });
         $(document).ajaxStop(function() {
-
+            ResponsiveWeb();
         });
 
         $(window).scroll(function() {
@@ -67,15 +67,11 @@
                 console.log("Fail to load cetering.json");
             });
         });
-
-        if ($(document).width() > 768) {
-            $("#owl-example").owlCarousel({
-                singleItem: true,
-                autoHeight: true,
-                autoPlay: 10000,
-                slideSpeed: 500
-            });
-        }
+        $("#tlbthings_slide").owlCarousel({
+            autoPlay: 5000,
+            slideSpeed: 500,
+            items: 3
+        });
 
 
 
@@ -95,13 +91,70 @@
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="ui stackable grid">
-        <div id="slide_for_mobile" class="hidden top_padding_cancel sixteen wide column">
-            <img class="ui city scroll image" src="img/slide_h_1.jpg">
-        </div>
-        <div id="slide_for_laptop" class="row">
-            <div id="owl-example" class="owl-carousel">
-                <div class="full_img"><img class="ui city scroll image" src="img/slide_1.jpg"></div>
-                <div class="full_img"><img class="ui city scroll image" src="img/slide_2.jpg"></div>
+        <div id="tlbthings" class="ui centered sixteen stackable grid page">
+            <div class="stackable row">
+                <div class="five wide column">
+                    <h2 class="ui light header">The Little Big Things<br/> All Rights Reserved.</h2>
+                    <p>
+                        每個人在社會上都在從事一件最重要的小事，快來尋找你有興趣的故事吧！
+                    </p>
+                </div>
+                <div class="eleven wide column">
+                    <div id="tlbthings_slide" class="owl-carousel">
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\電話師傅.jpg" alt="電話師傅">
+                            <h4>電話師傅</h4>
+                            <p>你能想像電話打不通有多不方便嗎？</p>
+                            <p>幸好，有一群修電話線的師傅，可以熟練得把各種顏色的線接起來，讓我們和家人朋友保持連線。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\拉麵.jpg" alt="拉麵">
+                            <h4>拉麵師傅</h4>
+                            <p>每到用餐時間，拉麵店得廚房裡顯得十分熱鬧，一群人忙進忙出的，就為了把一碗碗拉麵端到客人桌上。</p>
+                            <p>今天晚餐吃什麼呢？不如就來碗拉麵吧！</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\便利商店.jpg" alt="便利商店">
+                            <h4>便利商店店員</h4>
+                            <p>你今天有走進便利商店嗎？</p>
+                            <p>從商品上架到煮咖啡，再從繳費到寄收包裹，隨著便利商店的功能越多，店員們也更忙碌了。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\麵攤.jpg" alt="麵攤">
+                            <h4>麵攤老闆</h4>
+                            <p>巷口的麵攤，總是最有人情味的地方。</p>
+                            <p>老闆娘的手不停地煮著麵，卻也不忘在你結帳時來一句「餛飩乾麵很好吃齁！」不知道彼此姓名卻超級親切。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\研究員.jpg" alt="研究員">
+                            <h4>研究員</h4>
+                            <p>事實上有好多研究員每天都在不斷努力，研究著這世界發生的每一件事，想要更了解這世界，也以讓世界更美好為目標努力著。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\計程車司機.jpg" alt="計程車司機">
+                            <h4>計程車司機</h4>
+                            <p>不論什麼時段，什麼天氣，他們總是在大街小巷裡穿梭，只要帶著地址，就可以抵達目的地，</p>
+                            <p>有時，還附贈附近旅遊資訊，或是他們家裡的大小事。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\園丁.jpg" alt="園丁">
+                            <h4>園丁</h4>
+                            <p>他們對院子裡的花草樹木瞭若指掌，他們知道要澆多少水，要給多少養分，才能讓花開得漂亮，葉子綠得可愛。</p>
+                            <p>他們是園丁，一群有著綠手指的人 。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\機場地勤.jpg" alt="機場地勤">
+                            <h4>機場地勤</h4>
+                            <p>出國前總是會碰上機場的地勤人員，她們埋頭處理著大大小小事。</p>
+                            <p>熟練的辦理各種手續，好讓旅人們能夠順順利利搭上飛機，飛向目的地。</p>
+                        </div>
+                        <div class="item">
+                            <img class="ui image" src="img\tlbthings\鞋店.jpg" alt="鞋店">
+                            <h4>鞋店店員</h4>
+                            <p>服裝店裡總有好幾雙手不停的整理架上的商品，讓顧客可以一眼就看到所有的選擇，挑選後也幫忙復位。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="what_is_TLBT_bg">

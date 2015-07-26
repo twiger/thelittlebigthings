@@ -17,6 +17,20 @@
     Content
 -------------------------*/
 
+#tlbthings{
+    background-color: white;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+h2.ui.light.header{
+    color:dimgray;
+}
+
+.item{
+    margin: 1rem;
+}
+
 #slide_for_mobile{
 
 }
@@ -27,9 +41,9 @@
 
 #what_is_TLBT{
     padding: 5rem 0.5rem !important;
-    background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
-	background-position: -17% 96%, 103% 96%;
-	background-repeat:no-repeat;
+    //background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
+	//background-position: -17% 96%, 103% 96%;
+	//background-repeat:no-repeat;
 }
 
 .what_is_TLBT_bg{

@@ -43,7 +43,6 @@ function ResponsiveWeb() {
     }
 
     if (device_width < 768) {
-        $('#slide_for_mobile').toggleClass("hidden");
 
         $('.title.header').toggleClass("icon");
         document.getElementById('master_logo').src = 'img/logo/rectangle_logo_for_phone.png';

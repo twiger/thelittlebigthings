@@ -31,7 +31,7 @@
 
         });
         $(document).ajaxStop(function() {
-            
+
         });
 
         $(window).scroll(function() {
@@ -266,13 +266,15 @@
     </div>
     <div id="new_list_content" class="ui centered very relaxed stackable grid page">
         <div class="row">
-            <div class="fourteen wide column">
-                <h1 id="what_is_TLBT_header" class="ui dividing header">
+            <div class="ui stackable grid page">
+                <div class="fourteen wide column">
+                    <h1 id="what_is_TLBT_header" class="ui dividing header">
                         <div class="content">
                              最新文章
-                        <div class="sub header">The little big things 將會持續的訪問各行各業，帶給學生更多故事</div>
+                            <div class="sub header">The little big things 將會持續的訪問各行各業，帶給學生更多故事</div>
                         </div>
                     </h1>
+                </div>
             </div>
         </div>
         <div class="row" ng-repeat="article in articles">

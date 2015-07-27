@@ -23,11 +23,6 @@
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
-            $("#owl-carousel").delay(1000).owlCarousel({
-                autoPlay: 8000,
-                slideSpeed: 500,
-                items: 3
-            });
 
         });
         $(document).ajaxStop(function() {
@@ -72,7 +67,11 @@
             });
         });
 
-
+        $("#owl-carousel").owlCarousel({
+            autoPlay: 8000,
+            slideSpeed: 500,
+            items: 3
+        });
 
 
 

@@ -54,7 +54,8 @@ body {
 
 #segment_master {
     margin-top: 0;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.3);
     -moz-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
     -webkit-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
@@ -63,4 +64,19 @@ body {
 .padding_logo {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
+}
+
+
+@media only screen and (min-width: 1400px){
+    .ui.page.grid{
+        padding-left:10%;
+        padding-right: 10%;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .ui.page.grid{
+        padding-left:6%;
+        padding-right: 6%;
+    }
 }

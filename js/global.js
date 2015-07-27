@@ -40,15 +40,17 @@ function ResponsiveWeb() {
 
     if (device_width < 1200) {
         $('.menu_icon').css("display", "none");
+        $('.ui.stackable.centered.page.grid').toggleClass("page");
     }
 
     if (device_width < 768) {
 
-        $('.title.header').toggleClass("icon");
+        $('#master_menu').addClass("vertical");
+        $('.menu_icon').css("display", "block");
         document.getElementById('master_logo').src = 'img/logo/rectangle_logo_for_phone.png';
         $('.icon_logo').css("display", "none");
-        $('#hidden_SL_button_for_mobile').toggleClass("hidden");
-        $('#hidden_SL_button').toggleClass("hidden");
+        //$('#hidden_SL_button_for_mobile').toggleClass("hidden");
+        //$('#hidden_SL_button').toggleClass("hidden");
         $('.categoty_menu').toggleClass("hidden");
         $('.head_col').attr("style", "display: none !important");
         $('.icon_logo_header').removeClass("thirteen wide column")

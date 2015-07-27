@@ -70,10 +70,13 @@
         });
         $(document).ajaxStop(function() {
 
+            
         });
 
         var scrollShowDimmer = true;
         $('#story_content').bind('scroll resize', function() {
+            var nav_width = $('#sticky_nav_width').width();
+            $('#sticky_nav').css("width", nav_width);
             sticky_relocate();
             if (scrollShowDimmer) {
                 $('.photo.image').dimmer('show');
@@ -278,7 +281,7 @@
                 </div>
             </div>
             <div class="three wide padding column"></div>
-            <div class="ui sticky four wide column">
+            <div id="sticky_nav_width" class="ui three wide column">
                 <div class="ui bottom massive hidden divider"></div>
                 <div id="sticky_nav" class="ui inverted nav description segment">
                     <div class="row">

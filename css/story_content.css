@@ -23,14 +23,14 @@ p {
 }
 
 .nav.description.segment {
-    width: 250px;
+
 }
 
 #sticky_nav.stick {
     position: fixed;
     top: 0;
-    z-index: 10000;
-    border-radius: 0 0 0.5em 0.5em;
+    z-index: 1000;
+    border-radius: 0.5rem 0.5rem 0.5em 0.5em;
 }
 
 .icon_logo {

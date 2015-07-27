@@ -70,10 +70,17 @@
         $("#owl-carousel").owlCarousel({
             autoPlay: 8000,
             slideSpeed: 500,
-            lazyLoad:true,
-            items: 3,
+            lazyLoad: true,
+            itemsCustom: [
+                [0, 1],
+                [400, 1],
+                [700, 2],
+                [1000, 2],
+                [1200, 2],
+                [1600, 2]
+            ],
             pagination: false,
-            navigation:true,
+            navigation: true,
         });
 
 
@@ -93,14 +100,15 @@
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="ui stackable grid">
-        <div id="tlbthings" class="ui centered sixteen stackable grid page">
-            <div class="stackable row">
-                <div class="five wide column">
-                    <h2 class="ui light header">The Little Big Things<br/> All Rights Reserved.</h2>
-                    <p>
-                        每個人在社會上都在從事一件最重要的小事，快來尋找你有興趣的故事吧！
-                    </p>
-                    <h2 class="ui light header">最新動態<h2>
+        <div id="tlbthings">
+            <div class="ui centered sixteen stackable grid page">
+                <div class="stackable row">
+                    <div class="five wide column">
+                        <h2 class="ui light header">The Little Big Things<br/> All Rights Reserved.</h2>
+                        <p>
+                            每個人在社會上都在從事一件最重要的小事，快來尋找你有興趣的故事吧！
+                        </p>
+                        <h2 class="ui light header">最新動態<h2>
                     <div class="ui middle aligned animated relaxed list">
                         <div class="item">    
                             <h4 class="ui header">
@@ -194,6 +202,7 @@
                 </div>
             </div>
         </div>
+        <div class="ui divider"></div>
         <div class="what_is_TLBT_bg">
             <div id="what_is_TLBT" class="ui centered sixteen very relaxed stackable grid page">
                 <div class="row">
@@ -206,7 +215,7 @@
                 <div class="fadein_row row">
                     <div class="ten wide column">
                         <h3 class="center aligned ui header">
-                        The little big things 是一個介紹各行各業甘苦談的網路平台，<br/>我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，<br/>分享給更多孩子知道！
+                        The little big things 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
                     </h3>
                     <a><h4 class="center aligned ui orange  header">連絡我們 : Thelittlebigthings38@gmail.com</h4></a>
                 </div>
@@ -243,6 +252,7 @@
             </div>
         </div>
     </div>
+    <div class="ui divider"></div>
     <div id="why_TLBT" class="ui centered sixteen very relaxed stackable grid page">
         <div class="row">
             <div class="column">
@@ -253,7 +263,7 @@
             </div>
         </div>
         <div class="fadein_row row">
-            <div class="ten wide column">
+            <div class="twelve wide column">
                 <h3 class="ui dividing blue header">
                         你的夢想是什麼
                     </h3>
@@ -271,6 +281,7 @@
             </div>
         </div>
     </div>
+    <div class="ui divider"></div>
     <div id="new_list_content" class="ui centered very relaxed stackable grid page">
         <div class="row">
             <div class="ui stackable grid page">

@@ -23,11 +23,15 @@
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
-            $(".full_img").css("height", $(window).height() - $("#segment_master").height());
+            $("#owl-carousel").owlCarousel({
+                autoPlay: 8000,
+                slideSpeed: 500,
+                items: 3
+            });
 
         });
         $(document).ajaxStop(function() {
-
+            
         });
 
         $(window).scroll(function() {
@@ -67,11 +71,7 @@
                 console.log("Fail to load cetering.json");
             });
         });
-        $("#tlbthings_slide").owlCarousel({
-            autoPlay: 8000,
-            slideSpeed: 500,
-            items: 3
-        });
+
 
 
 
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="eleven wide column">
-                    <div id="tlbthings_slide" class="owl-carousel">
+                    <div id="owl-carousel" class="owl-carousel">
                         <div class="item">
                             <img class="ui image" src="img\tlbthings\電話師傅.jpg" alt="電話師傅">
                             <h4>電話師傅</h4>

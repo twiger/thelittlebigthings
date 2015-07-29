@@ -19,10 +19,10 @@
 
 #tlbthings{
     background-color: white;
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    //padding-top: 5rem !important;
+    //padding-bottom: 5rem !important;
+    //padding-right: 1.5rem;
+    //padding-left: 1.5rem;
 }
 
 h2.ui.light.header{
@@ -30,7 +30,7 @@ h2.ui.light.header{
 }
 
 .slide {
-    margin: 1rem;
+    //margin: 1rem;
 }
 
 .chocolate{
@@ -48,6 +48,9 @@ h2.ui.light.header{
 
 #what_is_TLBT{
     padding: 5rem 0.5rem !important;
+    background-image:url("../data/img/paper-bg.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
     //background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
 	//background-position: -17% 96%, 103% 96%;
 	//background-repeat:no-repeat;
@@ -109,41 +112,59 @@ h2.ui.light.header{
 
 /*--------------
     Slide Show
-
-
-#owl-example{
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-#slide_1{
-    background-image: url("../img/what_1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 5rem;
-}
-
-.blue{
-    color:#5b94ef;
-
-}
-
-.black{
-    color:black;
-}
-
-.dark_red{
-    color:maroon !important;
-}
-
-.light_gray{
-    color:ghostwhite !important;
-}
-
-.ui.brown.divider{
-    border-top:2px solid rgba(103, 50, 1, 0.7) !important;
-    border-bottom:2px solid rgba(103, 50, 1, 0.7) !important;
-}
 ---------------*/
+
+.ui.slide.page.grid{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.ui.inverted.slide.head.segment{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    padding:2rem;
+    width:100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.slide.gardener{
+    background-image: url("../img/tlbthings/園丁.jpg");
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.slide.bookstore_clerk{
+    background-image: url("../img/tlbthings/書店店員.jpg");
+    background-size: cover;
+    background-position-y: 46%;
+}
+
+.slide.convenience_store{
+    background-image: url("../img/tlbthings/便利商店.jpg");
+    background-size: cover;
+    background-position-y: 46%;
+}
+
+.convenience_store.margin.left{
+    margin-left: 25%;
+}
+
+.owl-controls.clickable{
+    display:none !important;
+}
+
+
+.mobile.header{
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+
+.hide.segment{
+    padding: 0.3rem;
+}
+
+
+
 
 /*--------------
     New Profile

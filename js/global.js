@@ -38,13 +38,20 @@ function ResponsiveWeb() {
     var device_height = $(document).height();
     var footer_pos = $('#footer').position();
 
+    if (device_width < 2000) {
+
+        $('.laptop').removeClass("hidden");
+        $('.mobile').addClass("hidden");
+    }
+
     if (device_width < 1200) {
         $('.menu_icon').css("display", "none");
         $('.ui.stackable.centered.page.grid').toggleClass("page");
     }
 
     if (device_width < 768) {
-
+        $('.laptop').addClass("hidden");
+        $('.mobile').removeClass("hidden");
         $('#master_menu').addClass("vertical");
         $('#master_menu').css("text-align","left");
         $('.menu_icon').css("display", "block");

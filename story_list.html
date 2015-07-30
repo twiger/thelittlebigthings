@@ -15,6 +15,15 @@
     <script type="text/javascript" src="dist/jssor.slider.js"></script>
     <script>
     $(document).ready(function() {
+        $(window).load(function() {
+            // Animate loader off screen
+            setTimeout(
+                function() {
+                    //do something special
+                    $(".se-pre-con").fadeOut("slow");
+                }, 2500);
+        });
+        
         $('#story_list').css("display", 'none');
 
         category = getURLParameter('category');
@@ -121,6 +130,7 @@
 </head>
 
 <body id="story_list" ng-app="myApp" ng-controller="story_content_crtl">
+    <div class="se-pre-con"></div>
     <img class="hidden" src="img/logo/rectangle _logo.png">
     <div class="ui stackable grid">
         <div class="career_list_header_bg">

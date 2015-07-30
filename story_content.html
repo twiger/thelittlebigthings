@@ -28,6 +28,16 @@
         $('#story_content').css("display", 'none');
         $('body').css("background-color", 'initial');
 
+
+        $(window).load(function() {
+            // Animate loader off screen
+            setTimeout(
+                function() {
+                    //do something special
+                    $(".se-pre-con").fadeOut("slow");
+                }, 2500);
+        });
+
         var app = angular.module('myApp', []);
         app.controller('story_content_crtl', function($scope, $http, $filter) {
             $scope.content = null;
@@ -189,6 +199,7 @@
 </head>
 
 <body id="story_content" onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
+    <div class="se-pre-con"></div>
     <div id="fb-root"></div>
     <script>
     (function(d, s, id) {

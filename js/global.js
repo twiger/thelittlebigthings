@@ -12,7 +12,7 @@ $(document)
         });
 
 
-        
+
         /*
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -38,6 +38,7 @@ function ResponsiveWeb() {
     var device_height = $(document).height();
     var footer_pos = $('#footer').position();
 
+
     if (device_width < 2000) {
 
         $('.laptop').removeClass("hidden");
@@ -53,7 +54,7 @@ function ResponsiveWeb() {
         $('.laptop').addClass("hidden");
         $('.mobile').removeClass("hidden");
         $('#master_menu').addClass("vertical");
-        $('#master_menu').css("text-align","left");
+        $('#master_menu').css("text-align", "left");
         $('.menu_icon').css("display", "block");
         document.getElementById('master_logo').src = 'img/logo/rectangle_logo_for_phone.png';
         $('.icon_logo').css("display", "none");

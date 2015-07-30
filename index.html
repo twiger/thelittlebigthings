@@ -18,6 +18,15 @@
         var display_what_is_TLBT = false;
         var display_why_TLBT = false;
 
+        $(window).load(function() {
+            // Animate loader off screen
+            setTimeout(
+                function() {
+                    //do something special
+                    $(".se-pre-con").fadeOut("slow");
+                }, 2500);
+        });
+
         $('#homepage_body').css("display", 'none');
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
@@ -91,9 +100,11 @@
     <link rel="stylesheet" href="dist/owl.carousel.css">
     <link rel="stylesheet" href="dist/owl.theme.css">
     <script src="dist/owl.carousel.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </head>
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
+    <div class="se-pre-con"></div>
     <div class="ui stackable grid">
         <div id="tlbthings">
             <div class="ui inverted slide head segment laptop">

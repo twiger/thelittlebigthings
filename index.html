@@ -13,6 +13,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <link rel="image_src" href="img/logo/square_logo.png" alt="生涯規劃 The Little Big Things" title="生涯規劃 The Little Big Things" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="生涯規劃 The Little Big Things" title="生涯規劃 The Little Big Things" />
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script src="js/global.js"></script>
     <script>
     $(document).ready(function() {
         var display_what_is_TLBT = false;
@@ -30,6 +32,7 @@
         $('#homepage_body').css("display", 'none');
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            ResponsiveWeb();
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
             $(".slide.inset.laptop").css("height", $(window).height() - $("#segment_master").height());

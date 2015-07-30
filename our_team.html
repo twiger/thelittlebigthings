@@ -11,6 +11,8 @@
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script src="js/global.js"></script>
     <script>
     var isMobile = false; //initiate as false
     // device detection
@@ -21,6 +23,7 @@
         
         $(window).load(function() {
             // Animate loader off screen
+            ResponsiveWeb();
             setTimeout(
                 function() {
                     //do something special
@@ -33,7 +36,6 @@
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             $('body').fadeIn(1000);
             $(".ui.team.item").addClass('active');
-            ResponsiveWeb();
         });
         $(document).ajaxStop(function() {
 

@@ -1,6 +1,5 @@
 $(document)
     .ready(function() {
-        ResponsiveWeb();
 
 
         $(window).resize(function() {

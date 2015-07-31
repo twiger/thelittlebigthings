@@ -26,6 +26,10 @@
     left:12%;
 }
 
+.remove_top {
+    padding-top: 0rem !important;
+}
+
 /*----------------------
     Content
 -------------------------*/

@@ -166,6 +166,10 @@ h2.ui.light.header{
     margin-left: 25%;
 }
 
+.gardener.margin.right{
+    margin-right: 12%;
+}
+
 .owl-controls.clickable{
     display:none !important;
 }

@@ -109,24 +109,6 @@ h2.ui.light.header{
 }
 
 
-.abstract.description {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    width: 100%;
-}
-
-.description {
-    max-width: 100% !important;
-}
-
-.brown{
-    color:maroon;
-
-}
-
 /*--------------
     Slide Show
 ---------------*/
@@ -186,13 +168,43 @@ h2.ui.light.header{
 
 
 
-
 /*--------------
     New Profile
 ---------------*/
 
 .ui.items > .item > .content > .description{
     max-width:98% !important;
+}
+
+
+/*--------------
+    Latest Article
+---------------*/
+
+.abstract.description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    width: 100%;
+}
+
+.description {
+    max-width: 100% !important;
+}
+
+.brown{
+    color:maroon;
+
+}
+
+.remove_margin_bottom{
+    margin-bottom: 0rem !important;
+}
+
+.meta.margin_top{
+    margin-top: 2rem;
 }
 
 /*--------------

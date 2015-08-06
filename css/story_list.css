@@ -63,19 +63,6 @@
     height: 300ox !important;
 }
 
-.abstract.description {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    width: 100%;
-}
-
-.description {
-    max-width: 100% !important;
-}
-
 .ui.triangle.fitted.divider {
     border-top: 2px solid rgba(94, 66, 46, 0.3) !important;
 }
@@ -114,3 +101,33 @@
 	100% { -webkit-transform: scale(1.0); }
 }
 
+
+/*--------------
+    Latest Article
+---------------*/
+
+.abstract.description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    width: 100%;
+}
+
+.description {
+    max-width: 100% !important;
+}
+
+.brown{
+    color:maroon;
+
+}
+
+.remove_margin_bottom{
+    margin-bottom: 0rem !important;
+}
+
+.meta.margin_top{
+    margin-top: 2rem;
+}

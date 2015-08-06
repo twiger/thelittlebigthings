@@ -78,3 +78,9 @@ p {
     left: 0;
     margin: auto;
 }
+
+.ui.attached.button{
+    margin-top: -0.1rem;
+    margin:auto;
+    width:99.6%;
+}

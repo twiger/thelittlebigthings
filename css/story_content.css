@@ -13,7 +13,6 @@
 
 body {
     font-size: 16px;
-    overflow-x: hidden;
     background-color: initial !important;
 }
 
@@ -44,6 +43,7 @@ p {
     top: 0;
     z-index: 1000;
     border-radius: 0.5rem 0.5rem 0.5em 0.5em;
+    width:17%;
 }
 
 .icon_logo {
@@ -83,4 +83,14 @@ p {
     margin-top: -0.1rem;
     margin:auto;
     width:99.6%;
+}
+
+.move_top{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.move_top::selection{
+    background-color: black;
 }

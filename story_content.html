@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Include Master -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
     <div id="master"></div>
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <script src="js/global.js"></script>
     <!-- Site Properities -->
     <title>The little big things</title>
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
+    <script src="js/global.js"></script>
     <script type='text/javascript' src="js/jquery.backstretch.min.js"></script>
     <script type='text/javascript' src="js/story_content.js"></script>
     <script type='text/javascript' src="js/stickyMojo.js"></script>
@@ -79,6 +78,14 @@
             $('body').fadeIn(1000);
             $(".ui.work.item").addClass('active');
 
+            $('.move_top.button').click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1000);
+                console.log("test");
+            });
+
+
         });
         $(document).ajaxStop(function() {
 
@@ -100,6 +107,7 @@
                 $('.photo.image').dimmer('show');
                 scrollShowDimmer = false;
             }
+
         });
 
         if ($(document).width() > 768) {
@@ -122,6 +130,19 @@
         $('.photo.button').click(function() {
             openPhotoSwipe(slide_img);
         });
+
+        // It is a bug need to be fixed
+        /*
+        $('.move_top.button').click(function() {
+            disable_scroll();
+            $('html, body').animate({
+                scrollTop: 0
+            }, 1000,function(){
+                enable_scroll();
+                console.log("t1");
+            });
+        });
+*/
 
 
 
@@ -174,6 +195,8 @@
         var device_width = $(document).width();
         var window_top = $(window).scrollTop();
         var div_top = $('#story_text').offset().top;
+        var threshold_for_move_top = $('#story_text').offset().top;
+        // For laptop nav div
         if (device_width > 768) {
             if (window_top > div_top) {
                 $('#sticky_nav').addClass('stick');
@@ -181,6 +204,53 @@
                 $('#sticky_nav').removeClass('stick');
             }
         }
+        // For mobile move_up button
+        else {
+            if (window_top > threshold_for_move_top) {
+                $('.move_top').removeClass("hidden");
+            } else {
+                $('.move_top').addClass("hidden");
+            }
+        }
+
+
+    }
+
+
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    function keydown(e) {
+        for (var i = keys.length; i--;) {
+            if (e.keyCode === keys[i]) {
+                preventDefault(e);
+                return;
+            }
+        }
+    }
+
+    function wheel(e) {
+        preventDefault(e);
+    }
+
+    function disable_scroll() {
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = wheel;
+        document.onkeydown = keydown;
+    }
+
+    function enable_scroll() {
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = document.onkeydown = null;
     }
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
@@ -315,7 +385,7 @@
                             <button class="mobile fluid ui bottom attached photo button">觀看相簿</button>
                         </div>
                     </div>
-                    <div class="row">
+                    <div id="article_content" class="row">
                         <div ng-repeat="section in article.content">
                             <h2 ng-if="section.header != ''" id="{{'p'+$index}}" class="ui inverted dividing header">
                             {{section.header}}
@@ -367,6 +437,9 @@
                 </div>
             </div>
         </div>
+        <button class="mobile move_top circular google plus ui icon button">
+            <i class="icon arrow up"></i>
+        </button>
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
             <!-- Background of PhotoSwipe. 

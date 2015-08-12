@@ -52,6 +52,7 @@ function ResponsiveWeb() {
     if (device_width < 768) {
         $('.laptop').addClass("hidden");
         $('.mobile').removeClass("hidden");
+        $('.move_top').addClass("hidden");
         $('#master_menu').addClass("vertical");
         $('#master_menu').css("text-align", "left");
         $('.menu_icon').css("display", "block");
@@ -72,3 +73,5 @@ function ResponsiveWeb() {
     }
 
 };
+
+

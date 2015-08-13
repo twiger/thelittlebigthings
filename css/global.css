@@ -28,7 +28,7 @@ body {
     margin: 50px;
 }
 
-p, span{
+p {
     font-size: 15px;
     line-height: 1.5rem !important;
 }

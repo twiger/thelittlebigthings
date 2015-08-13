@@ -10,8 +10,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
@@ -65,9 +65,9 @@
         });
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            ResponsiveWeb();
             $('body').fadeIn(1000);
             $(".ui.work.item").addClass('active');
-            ResponsiveWeb();
         });
         $(document).ajaxStop(function() {});
 
@@ -253,28 +253,27 @@
         </div>
         <div id="career_list_content" class="ui centered very relaxed stackable grid page">
             <div class="row" ng-repeat="article in articles">
-                <div class="ui centered stackable grid page">
-                    <div class="story_img_abst three wide column">
-                        <div class="ui fluid rounded image">
-                            <a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#" class="ui image">
+                <div class="ui centered stackable grid">
+                        <div class="story_img_abst three wide column">
+                            <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
                                 <img ng-src="{{article.square_img}}">
                             </a>
                         </div>
-                    </div>
-                    <div class="story_abst thirteen wide column">
-                        <a class="header" ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#">
-                            <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                            <h5 class="ui remove_margin_bottom right floated header">...more</h5>
-                        </a>
-                        <div class="meta margin_top">
-                            <span class="brown">{{article.abstraction}}</span>
-                        </div>
-                        <div class="description">
-                            <p class="abstract description">
-                                {{article.content[0].segment[0]}}
-                                <br/> {{article.content[0].segment[1]}}
-                                <br/> {{article.content[1].segment[0]}}
-                            </p>
+                        <div class="story_abst thirteen wide column">
+                            <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
+                                <h5 class="ui remove_margin_bottom right floated header">...more</h5>
+                            </a>
+                            <div class="meta margin_top">
+                                <span class="brown">{{article.abstraction}}</span>
+                            </div>
+                            <div class="description">
+                                <p class="abstract description">
+                                    {{article.content[0].segment[0]}}
+                                    <br/> {{article.content[0].segment[1]}}
+                                    <br/> {{article.content[1].segment[0]}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="ui career_list_content divider"></div>

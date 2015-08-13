@@ -10,8 +10,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <link rel="stylesheet" href="dist/owl.carousel.css">
@@ -59,11 +59,11 @@
 
         /* FadeIn Animation */
         $(window).bind('scroll', function() {
-            var pos_y  = window.pageYOffset || document.documentElement.scrollTop;
+            var pos_y = window.pageYOffset || document.documentElement.scrollTop;
 
             // Display Why TLBt exist
             //if ($('#why_TLBT_header').visible()) {
-            if( pos_y > $('#owl-carousel').position().top + 100 ){
+            if (pos_y > $('#owl-carousel').position().top + 100) {
                 if (display_why_TLBT == false) {
                     $('#why_TLBT > .fadein_row').transition('fade down', '1500ms');
                     display_why_TLBT = true;
@@ -299,11 +299,9 @@
                 <div class="row" ng-repeat="article in articles">
                     <div class="ui centered stackable grid">
                         <div class="story_img_abst three wide column">
-                            <div class="ui fluid rounded image">
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui image">
-                                    <img ng-src="{{article.square_img}}">
-                                </a>
-                            </div>
+                            <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
+                                <img ng-src="{{article.square_img}}">
+                            </a>
                         </div>
                         <div class="story_abst thirteen wide column">
                             <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">

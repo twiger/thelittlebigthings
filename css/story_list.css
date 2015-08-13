@@ -35,7 +35,8 @@
 }
 
 #career_list_content {
-    padding: 5rem 2rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
     background: white;
 }
 .ui.fluid.rounded.image{
@@ -111,7 +112,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     width: 100%;
 }

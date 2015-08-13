@@ -92,3 +92,7 @@
 .padding{
 	padding:1rem;
 }
+
+.ui.modal > .content > .image + .description{
+	width:100%;
+}

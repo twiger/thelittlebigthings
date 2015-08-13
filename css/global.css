@@ -4,7 +4,6 @@
 
 html {
     font-size: 16px;
-    overflow-x: hidden;
     background: #F2E8DF;
 }
 
@@ -58,6 +57,7 @@ body {
     margin-top: 0;
     padding-bottom: 15px;
     padding-top: 15px;
+    z-index:+100;
     box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.3);
     -moz-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
     -webkit-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
@@ -68,23 +68,30 @@ body {
     padding-bottom: 3rem !important;
 }
 
-#master_menu{
-    text-align:right;
-}
-
 
 
 
 @media only screen and (min-width: 1400px){
     .ui.page.grid{
-        padding-left:10%;
-        padding-right: 10%;
+        padding-left:10% !important;
+        padding-right: 10% !important;
     }
 }
 
 @media only screen and (min-width: 992px){
     .ui.page.grid{
-        padding-left:6%;
-        padding-right: 6%;
+        padding-left:6% !important;
+        padding-right: 6% !important;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .ui.page.grid{
+        padding-left:6% !important;
+        padding-right: 6% !important;
+    }
+
+    #new_list_content{
+        padding:5rem 2rem !important;
     }
 }

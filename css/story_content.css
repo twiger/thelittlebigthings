@@ -87,8 +87,8 @@ p {
 
 .move_top{
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 4rem !important;
+    right: 2rem !important;
 }
 
 .move_top::selection{

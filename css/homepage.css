@@ -19,13 +19,6 @@
     width:100% !important;
 }
 
-.photo.marker.eat{
-    position:absolute;
-    z-index:+100;
-    top:87%;
-    left:12%;
-}
-
 .remove_top {
     padding-top: 0rem !important;
 }
@@ -104,8 +97,13 @@ h2.ui.light.header{
 
 
 #new_list_content {
-    padding: 5rem 2rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
     background-color: initial;
+}
+
+h1#what_is_TLBT_header{
+    width:100%;
 }
 
 

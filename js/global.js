@@ -1,38 +1,7 @@
-$(document)
-    .ready(function() {
-
-
-        $(window).resize(function() {
-            ResponsiveWeb();
-        });
-
-        $('#drop_about').click(function() {
-            $('.ui.pointing.dropdown').dropdown();
-        });
-
-
-
-        /*
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-        */
-
-
-    });
-
 
 function ResponsiveWeb() {
+    console.log("Execute RW");
+
     var device_width = $(document).width();
     var device_height = $(document).height();
     var footer_pos = $('#footer').position();
@@ -56,7 +25,7 @@ function ResponsiveWeb() {
         $('#master_menu').addClass("vertical");
         $('#master_menu').css("text-align", "left");
         $('.menu_icon').css("display", "block");
-        document.getElementById('master_logo').src = 'img/logo/rectangle_logo_for_phone.png';
+        //document.getElementById('master_logo').src = '/img/logo/rectangle_logo_for_phone.png';
         $('.icon_logo').css("display", "none");
         $('.categoty_menu').toggleClass("hidden");
         $('.head_col').attr("style", "display: none !important");

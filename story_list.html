@@ -3,11 +3,15 @@
 
 <head>
     <!-- Standard Meta -->
+    <title>職業誌 X 最重要的小事 The little big things</title>
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
+    <meta name="description" content="The little big things (TLBT) 是一個介紹各行各業甘苦談的網路平台 (職業誌)，讓孩子能藉由閱讀這些故事，規劃自己未來的生涯。">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="image_src" href="img/logo/square_logo.png" />
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
+    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
@@ -17,6 +21,14 @@
     <script src="js/global.js"></script>
     <script>
     $(document).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $(window).resize(function() {
+            ResponsiveWeb();
+        });
+
         $(window).load(function() {
             // Animate loader off screen
             setTimeout(
@@ -25,10 +37,8 @@
                     $(".se-pre-con").fadeOut("slow");
                 }, 2000);
         });
-        
-        $('#story_list').css("display", 'none');
 
-        category = getURLParameter('category');
+        $('#story_list').css("display", 'none');
 
         $('#story_content').css("display", 'none');
         $('body').css("background-color", 'initial');
@@ -36,6 +46,8 @@
         var app = angular.module('myApp', []);
         app.controller('story_content_crtl', function($scope, $http) {
             $scope.content = null;
+
+            category = getURLParameter('category');
 
             $http({
                 method: 'GET',
@@ -61,15 +73,6 @@
 
         $('.tiny.role.image').popup();
 
-        /*
-        $('.tiny.role.image').click(function() {
-            $('.ui.basic.modal').modal({
-                    blurring: true
-                })
-                .modal('show');
-        });
-        */
-
         $('.button.circular.massive.inverted.ui.red.icon.button').click(function() {
             $(document.body).animate({
                 'scrollTop': $('#career_list_content').offset().top
@@ -77,7 +80,7 @@
         });
 
 
-        //Related to slide show
+        /*  Related to carier head slide show */
         var options = {
             $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
             $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
@@ -106,10 +109,11 @@
 
             var bodyWidth = document.body.clientWidth;
             if (bodyWidth)
-                jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 2000));
+                jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1600));
             else
                 window.setTimeout(ScaleSlider, 30);
         }
+
         ScaleSlider();
 
         $(window).bind("load", ScaleSlider);
@@ -133,79 +137,30 @@
 
 <body id="story_list" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="se-pre-con"></div>
-    <img class="hidden" src="img/logo/rectangle _logo.png">
     <div class="ui stackable grid">
         <div class="career_list_header_bg">
-            <!--
-            <div id="career_list_header" class="ui centered sixteen very relaxed stackable grid page">
-                <div class="row">
-                    <div class="one wide column"></div>
-                    <div class="eight wide column">
-                        <div>
-                            <button id="hidden_SL_button_for_mobile" class="pulse hidden left aligned circular massive inverted ui red icon button">
-                                <i class="arrow down icon"></i>
-                            </button>
-                            <br/>
-                            <h1 class="right aligned ui header">
-                            餐飲甘苦談
-                            </h1>
-                            <h3 class="right aligned ui header">
-                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？有多少人終其一生可以使夢想成真？The Little Big Things <br/>紀載了人們的夢想，來看看他們的故事吧！
-                            </h3>
-                        </div>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div class="ui stackable grid">
-                            <div class="four wide column">
-                                <button id="hidden_SL_button" class="pulse center aligned circular massive inverted ui red icon button">
-                                    <i class="arrow down icon"></i>
-                                </button>
-                            </div>
-                            <div class="twelve wide column">
-                                <div class="categoty_menu ui images">
-                                    <a class="ui tiny role image" data-content="消防甘苦談">
-                                        <img src="data/icon/firefighting.png">
-                                    </a>
-                                    <a class="ui tiny role image" data-content="設計甘苦談">
-                                        <img src="data/icon/painter.png">
-                                    </a>
-                                    <a class="ui tiny role image" data-content="服務甘苦談">
-                                        <img src="data/icon/service.png">
-                                    </a>
-                                    <a class="ui tiny role image" data-content="建築甘苦談">
-                                        <img src="data/icon/worker.png">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="head_col four wide column">
-                        <img class="head_img" src="data/img/cook_small.png">
-                    </div>
-                </div>
-                <div class="ui bottom attached">
-                    <div class="ui fitted divider"></div>
-                </div>
-            </div>
-        -->
             <div id="career_list_header" class="ui centered very relaxed stackable grid page">
+                <div class="row">
+                    <h1 class="centered aligned ui header">
+                            各行各業甘苦談
+                        </h1>
+                    <div class="ui hidden divider"></div>
+                </div>
+                <div class="row">
+                    <div class="ten wide column">
+                        <h3 class="centered aligned ui header">
+                            人因夢想而偉大！
+                            有多少人終其一生可以使夢想成真？
+                            The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
+                        </h3>
+                    </div>
+                </div>
                 <div class="row">
                     <button id="hidden_SL_button_for_mobile" class="pulse hidden left aligned circular massive inverted ui red icon button">
                         <i class="arrow down icon"></i>
                     </button>
-                    <br/>
-                    <h1 class="centered aligned ui header">
-                            各行各業甘苦談
-                            </h1>
-                    <h3 class="centered aligned ui header">
-                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？
-                            有多少人終其一生可以使夢想成真？<br/>
-                            The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
-                    </h3>
-                    <div class="ui hidden divider"><br/></div>
                 </div>
-                <div id="slider1_container" style="width: 980px;height: 130px; top: 10px;overflow: hidden;" class="row">
+                <div id="slider1_container" style="width: 980px;height: 130px; top: 10px;overflow: hidden;" class="row laptop">
                     <div u="slides" style="width: 100%;height: 130px; top: 10px; overflow: hidden;left: 0px;" class="categoty_menu ui images">
                         <div>
                             <a class="ui tiny role image" data-content="我很清楚指令，也明白做消防員，不應該一命換一命，我們只是希望，能救一個是一個。">

@@ -16,7 +16,6 @@
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script src="js/global.js"></script>
     <script type='text/javascript' src="js/jquery.backstretch.min.js"></script>
-    <script type='text/javascript' src="js/story_content.js"></script>
     <script type='text/javascript' src="js/stickyMojo.js"></script>
     <script type='text/javascript' src="js/animatescroll.js"></script>
     <link rel="stylesheet" type="text/css" href="css/story_content.css">
@@ -406,24 +405,26 @@
             <div id="sticky_nav_width" class="ui three wide column">
                 <div class="ui bottom massive hidden divider"></div>
                 <div id="sticky_nav" class="ui inverted nav description segment">
-                    <div class="row">
-                        <div class="left floated left aligned four wide column">
-                            <a ng-href="story_list.html?category={{category}}">
-                                <h4 class="ui red header">
+                    <div class="ui two column grid">
+                        <div class="row">
+                            <div class="column">
+                                <a ng-href="story_list.html?category={{category}}">
+                                    <h4 class="ui red header">
                                     <div class="content">
                                         回到選單
                                     </div>
                                 </h4>
-                            </a>
-                        </div>
-                        <div class="right floated right aligned four wide column">
-                            <a ng-href="story_content.html?category={{category}}&article_id={{article.next_id}}">
-                                <h4 class="ui teal header">
+                                </a>
+                            </div>
+                            <div class="right aligned column">
+                                <a ng-href="story_content.html?category={{category}}&article_id={{article.next_id}}">
+                                    <h4 class="ui teal header">
                                     <div class="next_article content">
                                         下一篇
                                     </div>
                                 </h4>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="ui inverted divider"></div>

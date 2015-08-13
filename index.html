@@ -3,24 +3,36 @@
 
 <head>
     <!-- Standard Meta -->
-    <title>職業誌X最重要的小事 The little big things</title>
+    <title>職業誌 X 最重要的小事 The little big things</title>
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
     <meta name="description" content="The little big things (TLBT) 是一個介紹各行各業甘苦談的網路平台 (職業誌)，讓孩子能藉由閱讀這些故事，規劃自己未來的生涯。">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <!-- Include Master -->
-    <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <!-- Include Master -->
+    <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" href="dist/owl.carousel.css">
+    <link rel="stylesheet" href="dist/owl.theme.css">
+    <script src="dist/owl.carousel.js"></script>
     <script src="js/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <script>
     $(document).ready(function() {
         var display_what_is_TLBT = false;
         var display_why_TLBT = false;
 
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $(window).resize(function() {
+            ResponsiveWeb();
+        });
+
+        /* Laoding Animation */
         $(window).load(function() {
             // Animate loader off screen
             setTimeout(
@@ -37,6 +49,7 @@
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
             $(".slide.inset.laptop").css("height", $(window).height() - $("#segment_master").height());
+            $("#owl-carousel").css("width", $(window).width());
             $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
 
         });
@@ -44,21 +57,29 @@
 
         });
 
-        $(window).scroll(function() {
-            if ($('#what_is_TLBT_header').visible()) {
-                if (display_what_is_TLBT == false) {
-                    $('#what_is_TLBT > .fadein_row').transition('fade down', '1200ms');
-                    display_what_is_TLBT = true;
+        /* FadeIn Animation */
+        $(window).bind('scroll', function() {
+            var pos_y  = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Display Why TLBt exist
+            //if ($('#why_TLBT_header').visible()) {
+            if( pos_y > $('#owl-carousel').position().top + 100 ){
+                if (display_why_TLBT == false) {
+                    $('#why_TLBT > .fadein_row').transition('fade down', '1500ms');
+                    display_why_TLBT = true;
                 }
             }
-            if ($('#why_TLBT_header').visible()) {
-                if (display_why_TLBT == false) {
-                    $('#why_TLBT > .fadein_row').transition('fade down', '1200ms');
-                    display_why_TLBT = true;
+
+            // Display What is TLBT
+            if (pos_y > $('#why_TLBT').position().top + 200) {
+                if (display_what_is_TLBT == false) {
+                    $('#what_is_TLBT > .fadein_row').transition('fade down', '1500ms');
+                    display_what_is_TLBT = true;
                 }
             }
         });
 
+        /* Loading Data by angularJS */
         var app = angular.module('myApp', []);
         app.controller('story_content_crtl', function($scope, $http, $filter) {
             $scope.content = null;
@@ -73,14 +94,13 @@
                     "status": "new"
                 });
 
-                console.log(articles);
-
                 $scope.articles = articles;
 
             }).error(function(data, status, headers, config) {
                 console.log("Fail to load cetering.json");
             });
         });
+
 
         $("#owl-carousel").owlCarousel({
             autoPlay: 6000,
@@ -93,18 +113,16 @@
 
 
 
+
     });
     </script>
     <div id="master"></div>
     <!-- Site Properities -->
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
     <script type='text/javascript' src="js/angular.js"></script>
-    <script src="js/jquery.DEPreLoad.js"></script>
-    <script src="js/jquery.visible.js"></script>
-    <link rel="stylesheet" href="dist/owl.carousel.css">
-    <link rel="stylesheet" href="dist/owl.theme.css">
-    <script src="dist/owl.carousel.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </head>
 
 <body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
@@ -118,7 +136,7 @@
                 <h2 class="ui centered aligned header">每一件最重要的小事</h2>
             </div>
             <div class="ui centered sixteen stackable grid">
-                <div class="stackable remove_top row">
+                <div class="stackable row">
                     <div class="sixteen wide column">
                         <div id="owl-carousel" class="owl-carousel owl-theme">
                             <div class="item">
@@ -268,21 +286,18 @@
                     </div>
                 </div>
             </div>
-            <div id="new_list_content" class="ui centered very relaxed stackable grid page">
+            <div id="new_list_content" class="ui very relaxed stackable page grid">
                 <div class="row">
-                    <div class="ui stackable grid page">
-                        <div class="fourteen wide column">
-                            <h1 id="what_is_TLBT_header" class="ui dividing header">
+                    <h1 id="what_is_TLBT_header" class="ui dividing header">
                         <div class="content">
-                             最新文章
+                            最新文章
                             <div class="sub header">The little big things 將會持續的訪問各行各業，帶給學生更多故事</div>
                         </div>
                     </h1>
-                        </div>
-                    </div>
                 </div>
+                <div class="row"></div>
                 <div class="row" ng-repeat="article in articles">
-                    <div class="ui centered stackable grid page">
+                    <div class="ui centered stackable grid">
                         <div class="story_img_abst three wide column">
                             <div class="ui fluid rounded image">
                                 <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui image">
@@ -306,8 +321,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="ui career_list_content divider"></div>
                     </div>
+                    <div class="ui career_list_content divider"></div>
                 </div>
                 <div class="bottom margin"></div>
             </div>

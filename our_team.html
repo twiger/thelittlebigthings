@@ -3,16 +3,23 @@
 
 <head>
     <!-- Standard Meta -->
+    <title>職業誌 X 最重要的小事 The little big things</title>
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
+    <meta name="description" content="The little big things (TLBT) 是一個介紹各行各業甘苦談的網路平台 (職業誌)，讓孩子能藉由閱讀這些故事，規劃自己未來的生涯。">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌X最重要的小事 The Little Big Things" title="職業誌X最重要的小事 The Little Big Things" />
     <!-- Include Master -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
-    <link rel="stylesheet" type="text/css" href="css/global.css">
     <script src="js/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <script>
     var isMobile = false; //initiate as false
     // device detection
@@ -20,10 +27,18 @@
         isMobile = true;
 
     $(document).ready(function() {
-        
+
+
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $(window).resize(function() {
+            ResponsiveWeb();
+        });
+
         $(window).load(function() {
             // Animate loader off screen
-            ResponsiveWeb();
             setTimeout(
                 function() {
                     //do something special
@@ -34,6 +49,8 @@
 
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            
+            ResponsiveWeb();
             $('body').fadeIn(1000);
             $(".ui.team.item").addClass('active');
         });
@@ -52,11 +69,6 @@
             var temp_pos_h = $(window).scrollTop();
             var target_modal = '.ui.' + $(this).attr('id') + '.modal';
             $(target_modal)
-                .modal({
-                    onHide: function() {
-                        window.scrollTo(0, temp_pos_h);
-                    }
-                })
                 .modal('setting', 'transition', 'fade up')
                 .modal('show');
         });
@@ -84,7 +96,7 @@
             </div>
             <div class="row">
                 <div class="ten wide column">
-                    <h3 class="center aligned ui inverted sub header">
+                    <h3 class="center aligned ui inverted header">
                         沒有這群幕後功臣 The Little Big Things 將永遠只是構想
                     </h3>
                     <div class="ui brown divider"></div>
@@ -117,7 +129,7 @@
                         <br/>
                     </p>
                     <div class="ui ting_wn modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/ting_wn.jpg">
                             </div>
@@ -170,7 +182,7 @@
                         一直覺得如果可以在更小的年紀確定自己的志向，那麼夢想就可以走得更順更遠。期許TLBT能提供一個平台讓大家接觸更多工作選項，也把每個工作的幸福或艱辛帶到大家面前。過程中也慢慢體會到，世界之所以能好好運轉就是因為這些每個人在努力的小事推動的，因此，每件小事都極其重要。
                     </p>
                     <div class="ui s_ting modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/s_ting.jpg">
                             </div>
@@ -206,7 +218,7 @@
                         希望這個平台可以協助孩子們對於各行各業有更多想像與認識，並且及早思考未來的方向，同時關心社會上每個角落正在發生的每一件小事，每個人的努力與貢獻就像零件一樣讓社會這個齒輪得以運轉。也期許我們的工作團隊在未來能以更成熟、完備的樣貌落實我們的理念。
                     </p>
                     <div class="ui sheng_yu modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/sheng_yu.jpg">
                             </div>
@@ -242,7 +254,7 @@
                         願這網站能跳脫出一般思維、刻板印象，給予孩子的未來與夢想，鋪上一條更廣、更遼闊的想像空間。
                     </p>
                     <div class="ui yu_fu modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/yu_fu.jpg">
                             </div>
@@ -286,7 +298,7 @@
                         <br/>也感謝執行長大大讓我任性的專職插畫設計。
                     </p>
                     <div class="ui duck modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/duck.jpg">
                             </div>
@@ -328,7 +340,7 @@
                         因緣際會下進入了TLBT，既然進來了就決定賴著不走了哈哈！願TLBT能讓小朋友的未來有更多的選擇性，亦做出最好的(符合的)選擇！也希望大家會喜歡我的插畫喔嘻嘻！
                     </p>
                     <div class="ui rola modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/rola.jpg">
                             </div>
@@ -364,7 +376,7 @@
                         改變，從現在的國中生開始。希望十年後的每個人，都能找到自己最適合、也最開心的小事。
                     </p>
                     <div class="ui peanut modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/peanut.jpg">
                             </div>
@@ -402,7 +414,7 @@
                         <br>歡迎跟我聊聊天，但目前他還是空的就是了xd
                     </p>
                     <div class="ui jenny modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/jenny.jpg">
                             </div>
@@ -442,7 +454,7 @@
                         教育這份使命感，一直告訴我該做更多有意義的事情，只要能影響一個孩子，我們所做的就值得了！真心希望每個孩子都能找到最適合自己的路！:)
                     </p>
                     <div class="ui eshen modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/eshen.jpg">
                             </div>
@@ -478,7 +490,7 @@
                         自己也有一個位於中學時期的妹妹，又是立志當老師，因此對於此團隊的理念與目標十分贊同。雖然自己只是盡棉薄之力，但絕對是很用心地投入，期許在我們TLBT團隊的努力之下，孩子們能從中得到一點省思或收穫，便是最大的成就感了！
                     </p>
                     <div class="ui sh_chi modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/sh_chi.jpg">
                             </div>
@@ -515,7 +527,7 @@
                         <br/> 期望這個平台能夠帶孩子們看得更遠，看得更多。 找到自己真正想要的未來。
                     </p>
                     <div class="ui lin_yu modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/lin_yu.jpg">
                             </div>
@@ -552,7 +564,7 @@
                         很高興能夠參與這個團隊，即使能盡上微薄之力也在所不辭！
                     </p>
                     <div class="ui spidermen modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/spidermen.jpg">
                             </div>
@@ -590,7 +602,7 @@
                         在代課的這一年，接觸了許多孩子，在課堂中不經意的聊天下，才發現原來孩子對未來想從事的職業，所知道的東西是如此的不足，甚至也不知該如何準備起，在和老師及朋友的討論過後，就決定要來架設一個撰有各行各業故事的平台，然後連結學校輔導室，讓更多孩子能更早去思考，更有方向去準備自己的未來志向。很感謝在這個平台什麼都沒有的情況下，有一群身懷絕技又對教育有熱情的夥伴們加入TLBT團隊，沒有他們，TLBT這個夢就只會繼續被我放在心裡，希望TLBT在成熟之後，能真的落實到各個學生周遭，並且能把我們的初衷傳達給他們！
                     </p>
                     <div class="ui mimi modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/mimi.jpg">
                             </div>
@@ -626,7 +638,7 @@
                         我是代表 EDU‧ELF 團隊來幫忙 TLBT 架設網站的軟體工程師，原本只是想來打雜的，但不小心被 TLBT 的理念感動了，覺得這個平台真的能讓孩子們對未來的職業有更多想像，更早的開始思考什麼職業適合自己，該如何努力才能成為夢想中的那個人。因此，在使命感的驅使下，我希望能盡我最大的力量，幫助因為 TLBT 聚集起來的這群人，做好每件最重要的小事，完成我們共同的夢想。
                     </p>
                     <div class="ui zhengying modal">
-                        <div class="content">
+                        <div class="image content">
                             <div class="image">
                                 <img class="ui fluid circular image" src="img/team/zhengying.jpg">
                             </div>

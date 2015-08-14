@@ -30,12 +30,15 @@ body {
 
 p {
     font-size: 15px;
-    line-height: 1.5rem !important;
+    line-height: 2rem !important;
 }
-
 /*--------------
     Header
 ---------------*/
+
+span.menu_text {
+    font-size: 15px;
+}
 
 .ui.header {
     font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif !important;
@@ -61,7 +64,7 @@ p {
     margin-top: 0;
     padding-bottom: 15px;
     padding-top: 15px;
-    z-index:+100;
+    z-index: +100;
     box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.3);
     -moz-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
     -webkit-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
@@ -72,35 +75,29 @@ p {
     padding-bottom: 3rem !important;
 }
 
-
-
-
-@media only screen and (min-width: 1400px){
-    .ui.page.grid{
-        padding-left:10% !important;
+@media only screen and (min-width: 1400px) {
+    .ui.page.grid {
+        padding-left: 10% !important;
         padding-right: 10% !important;
     }
 }
 
-@media only screen and (min-width: 992px){
-    .ui.page.grid{
-        padding-left:6% !important;
+@media only screen and (min-width: 992px) {
+    .ui.page.grid {
+        padding-left: 6% !important;
         padding-right: 6% !important;
     }
 }
 
-@media only screen and (max-width: 767px){
-    .ui.page.grid{
-        padding-left:6% !important;
+@media only screen and (max-width: 767px) {
+    .ui.page.grid {
+        padding-left: 6% !important;
         padding-right: 6% !important;
     }
-
-    #new_list_content{
-        padding:5rem 2rem !important;
+    #new_list_content {
+        padding: 5rem 2rem !important;
     }
-    #career_list_content{
-        padding:5rem 3rem !important;
+    #career_list_content {
+        padding: 5rem 3rem !important;
     }
-
-
 }

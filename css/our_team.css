@@ -41,6 +41,8 @@
 .abstract.description {
 	text-overflow: ellipsis;
 	overflow: hidden;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
@@ -95,4 +97,8 @@
 
 .ui.modal > .content > .image + .description{
 	width:100%;
+}
+
+.our_team_margin{
+	padding: 1rem !important;
 }

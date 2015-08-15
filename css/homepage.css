@@ -126,12 +126,14 @@ h1#what_is_TLBT_header{
     background-image: url("../img/tlbthings/gardener.jpg");
     background-size: cover;
     background-position-y: 50%;
+    background: url("../img/tlbthings/gardener.jpg") 0% 50% / cover no-repeat;
 }
 
 .slide.bookstore_clerk{
     background-image: url("../img/tlbthings/bookstore_clerk.jpg");
     background-size: cover;
     background-position-y: 46%;
+    background: url("../img/tlbthings/bookstore_clerk.jpg") 0% 46% / cover no-repeat;
 }
 
 h4.ui.bookstore_clerk.right.aligned.inverted.header{
@@ -143,6 +145,7 @@ h4.ui.bookstore_clerk.right.aligned.inverted.header{
     background-image: url("../img/tlbthings/convenience_store.jpg");
     background-size: cover;
     background-position-y: 46%;
+    background: url("../img/tlbthings/convenience_store.jpg") 0% 46% / cover no-repeat;
 }
 
 .convenience_store.margin.left{

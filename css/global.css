@@ -32,9 +32,39 @@ p {
     font-size: 15px;
     line-height: 2rem !important;
 }
+
+.transition_red {
+    -o-transition: .3s !important;
+    -ms-transition: .3s !important;
+    -moz-transition: .3s !important;
+    -webkit-transition: .3s !important;
+    transition: .3s !important;
+    color:black;
+}
+
+.transition_red:hover {
+    color: #f26f60 !important;
+    border-color: #f26f60 !important;
+}
+
+.transition_red.active{
+    color: black !important;
+    border-color: black !important;
+    font-weight: 600 !important;
+}
+
+
 /*--------------
     Header
 ---------------*/
+
+.logo_img{
+    width:8.6rem !important;
+}
+
+.sub.logo.header{
+    font:normal 36px 'Cookie', cursive;
+}
 
 span.menu_text {
     font-size: 15px;
@@ -42,6 +72,14 @@ span.menu_text {
 
 .ui.header {
     font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif !important;
+}
+
+.non-pointer{
+    cursor: default !important;
+}
+
+.no-margin{
+    margin: 0rem !important;
 }
 
 .ui.title.header {

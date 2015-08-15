@@ -53,10 +53,12 @@
             $("#owl-carousel").css("width", $(window).width());
             $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
 
-        });
-        $(document).ajaxStop(function() {
 
         });
+        $(document).ajaxStop(function() {});
+
+
+
 
         /* FadeIn Animation */
         $(window).bind('scroll', function() {
@@ -97,10 +99,12 @@
 
                 $scope.articles = articles;
 
+
             }).error(function(data, status, headers, config) {
                 console.log("Fail to load cetering.json");
             });
         });
+
 
 
         $("#owl-carousel").owlCarousel({
@@ -305,31 +309,33 @@
                 <div class="row"></div>
                 <div class="row" ng-repeat="article in articles">
                     <div class="ui centered stackable grid">
-                        <div class="story_img_abst three wide column">
-                            <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
-                                <img ng-src="{{article.square_img}}">
-                            </a>
+                        <div class="row">
+                            <div class="story_img_abst three wide column">
+                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
+                                    <img ng-src="{{article.square_img}}">
+                                </a>
+                            </div>
+                            <div class="story_abst thirteen wide column">
+                                <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                    <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
+                                    <h5 class="ui remove_margin_bottom right floated header transition_red">...more</h5>
+                                </a>
+                                <div class="meta margin_top">
+                                    <span class="brown abstraction">{{article.abstraction}}</span>
+                                </div>
+                                <div class="description">
+                                    <p class="abstract description">
+                                        {{article.content[0].segment[0]}}
+                                        <br/> {{article.content[0].segment[1]}}
+                                        <br/> {{article.content[1].segment[0]}}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="story_abst thirteen wide column">
-                            <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
-                                <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                <h5 class="ui remove_margin_bottom right floated header">...more</h5>
-                            </a>
-                            <div class="meta margin_top">
-                                <span class="brown abstraction">{{article.abstraction}}</span>
-                            </div>
-                            <div class="description">
-                                <p class="abstract description">
-                                    {{article.content[0].segment[0]}}
-                                    <br/> {{article.content[0].segment[1]}}
-                                    <br/> {{article.content[1].segment[0]}}
-                                </p>
-                            </div>
+                        <div class="row">
                         </div>
                     </div>
-                    <div class="ui career_list_content divider"></div>
                 </div>
-                <div class="bottom margin"></div>
             </div>
         </div>
         <div class="ui footer hidden divider"></div>

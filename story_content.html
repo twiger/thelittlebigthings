@@ -410,9 +410,18 @@
             <div id="sticky_nav_width" class="ui three wide column">
                 <div class="ui bottom massive hidden divider"></div>
                 <div id="sticky_nav" class="ui inverted nav description segment">
-                    <div class="ui two column grid">
+                    <div class="ui grid">
                         <div class="row">
-                            <div class="column">
+                            <div class="four wide left aligned column">
+                                <a ng-href="story_content.html?category={{category}}&article_id={{article.prev_id}}">
+                                    <h4 class="ui teal header">
+                                    <div class="next_article content">
+                                        <i class="chevron left inverted_blue icon"></i>
+                                    </div>
+                                    </h4>
+                                </a>
+                            </div>
+                            <div class="eight wide column">
                                 <a ng-href="story_list.html?category={{category}}">
                                     <h4 class="ui inverted red header">
                                     <div class="content">
@@ -421,13 +430,13 @@
                                 </h4>
                                 </a>
                             </div>
-                            <div class="right aligned column">
+                            <div class="four wide right aligned column">
                                 <a ng-href="story_content.html?category={{category}}&article_id={{article.next_id}}">
                                     <h4 class="ui teal header">
                                     <div class="next_article content">
-                                        下一篇
+                                        <i class="chevron right inverted_blue icon"></i>
                                     </div>
-                                </h4>
+                                    </h4>
                                 </a>
                             </div>
                         </div>

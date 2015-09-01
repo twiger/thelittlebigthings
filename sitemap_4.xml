@@ -17,12 +17,12 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_5</loc>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_1</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_4</loc>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_2</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
@@ -32,17 +32,27 @@
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_4</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_5</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_6</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_1</loc>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_7</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_2</loc>
+  <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_8</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
 </url>

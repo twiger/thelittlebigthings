@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
 
 <head>
     <!-- Standard Meta -->
-    <title>職業誌 X 最重要的小事 The little big things</title>
+    <title>{{ article.web_title }}</title>
     <link rel="icon" href="img/logo/square_logo.png" type="image/ico" />
     <meta http-equiv="content-language" content="zh-tw">
-    <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
-    <meta name="description" content="The little big things (TLBT) 是一個介紹各行各業甘苦談的網路平台 (職業誌)，讓孩子能藉由閱讀這些故事，規劃自己未來的生涯。">
+    <meta name="keywords" content="The little big things，最重要的小事，TLBT，職業介紹，生涯規畫，職業誌，甘苦談">
+    <meta name="description" content="{{ article.web_description }}">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -17,7 +17,6 @@
     <div id="master"></div>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <!-- Site Properities -->
-    <title>The little big things</title>
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script src="js/global.js"></script>
     <script type='text/javascript' src="js/jquery.backstretch.min.js"></script>
@@ -268,7 +267,7 @@
     <script src="dist/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
-<body id="story_content" onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
+<body id="story_content">
     <div class="se-pre-con"></div>
     <div id="fb-root"></div>
     <script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html onscroll="sticky_relocate()" ng-app="myApp" ng-controller="story_content_crtl">
+<html ng-app="myApp" ng-controller="story_content_crtl">
 
 <head>
     <!-- Standard Meta -->
@@ -215,8 +215,6 @@
                 $('.move_top').addClass("hidden");
             }
         }
-
-
     }
 
 
@@ -267,7 +265,7 @@
     <script src="dist/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
-<body id="story_content">
+<body id="story_content" onscroll="sticky_relocate()">
     <div class="se-pre-con"></div>
     <div id="fb-root"></div>
     <script>

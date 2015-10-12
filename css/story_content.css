@@ -94,3 +94,7 @@ p {
 .move_top::selection{
     background-color: black;
 }
+
+.sub.header.title{
+    font-size: 1.5rem !important;
+}

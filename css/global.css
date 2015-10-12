@@ -53,6 +53,11 @@ p {
     font-weight: 600 !important;
 }
 
+.meta.margin_topright.floated{
+    float: right;
+    margin-right: 0.5rem;
+}
+
 
 /*--------------
     Header

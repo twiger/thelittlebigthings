@@ -307,14 +307,14 @@
                     <h1 id="what_is_TLBT_header" class="ui dividing header">
                         <div class="content">
                             最新文章
-                            <div class="sub header">The little big things 將會持續的訪問各行各業，帶給學生更多故事</div>
+                            <div class="sub header">The little big things 將會持續的訪問各行各業，帶給讀著們更多精彩故事...</div>
                         </div>
                     </h1>
                 </div>
                 <div class="row"></div>
                 <div class="row" ng-repeat="article in articles">
                     <div class="ui centered stackable grid">
-                        <div class="row">
+                        <div class="article row">
                             <div class="story_img_abst three wide column">
                                 <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
                                     <img ng-src="{{article.square_img}}">
@@ -327,7 +327,7 @@
                                 </a>
                                 <div class="meta margin_top">
                                     <span class="brown abstraction">{{article.abstraction}}</span>
-                                    <div class="meta margin_topright floated">{{article.deploy_time}}</div>
+                                    <div class="right_floated">{{article.deploy_time}}</div>
                                 </div>
                                 <div class="description">
                                     <p class="abstract description">
@@ -339,6 +339,7 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="ui hidden divider"></div>
                         </div>
                     </div>
                 </div>

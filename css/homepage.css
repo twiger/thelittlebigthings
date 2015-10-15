@@ -122,42 +122,42 @@ h1#what_is_TLBT_header{
     z-index: 100;
 }
 
-.slide.worker{
-    background-image: url("../img/tlbthings/worker.jpg");
+.slide.slide_1{
+    background-image: url("../img/tlbthings/slide_1.jpg");
     background-size: cover;
     background-position-y: 77%;
-    background: url("../img/tlbthings/worker.jpg") 0% 77% / cover no-repeat;
+    background: url("../img/tlbthings/slide_1.jpg") 0% 77% / cover no-repeat;
 }
 
-.slide.bookstore_clerk{
-    background-image: url("../img/tlbthings/bookstore_clerk.jpg");
-    background-size: cover;
-    background-position-y: 46%;
-    background: url("../img/tlbthings/bookstore_clerk.jpg") 0% 46% / cover no-repeat;
-}
 
-h4.ui.bookstore_clerk.right.aligned.inverted.header{
-    margin-right: 2%;
-    margin-top: 9%;
-}
-
-.slide.convenience_store{
-    background-image: url("../img/tlbthings/convenience_store.jpg");
-    background-size: cover;
-    background-position-y: 46%;
-    background: url("../img/tlbthings/convenience_store.jpg") 0% 46% / cover no-repeat;
-}
-
-.worker.margin.right{
+.slide_1.margin.right{
     margin-right: 8%;
     margin-top: 6% !important;
 }
 
-.convenience_store.margin.left{
-    margin-left: 15%;
-    margin-top: -3% !important;
+.slide.slide_2{
+    background-image: url("../img/tlbthings/slide_2.jpg");
+    background-size: cover;
+    background-position-y: 46%;
+    background: url("../img/tlbthings/slide_2.jpg") 0% 46% / cover no-repeat;
 }
 
+h4.ui.slide_2.left.aligned.inverted.header{
+    margin-left: 2%;
+    margin-top: -1%;
+}
+
+.slide.slide_3{
+    background-image: url("../img/tlbthings/slide_3.jpg");
+    background-size: cover;
+    background-position-y: 46%;
+    background: url("../img/tlbthings/slide_3.jpg") 0% 46% / cover no-repeat;
+}
+
+h4.ui.slide_3.right.aligned.inverted.header{
+    margin-right: 18%;
+    margin-top: 14%;
+}
 
 .owl-controls.clickable{
     display:none !important;

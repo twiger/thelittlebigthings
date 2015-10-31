@@ -65,6 +65,12 @@
             });
         });
 
+        app.filter('reverse', function() {
+            return function(items) {
+                return items.slice().reverse();
+            };
+        });
+
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             ResponsiveWeb();
             $('body').fadeIn(1000);
@@ -252,8 +258,8 @@
                 </div>
             </div>
         </div>
-        <div id="career_list_content" class="ui centered very relaxed stackable grid page">
-            <div class="row" ng-repeat="article in articles">
+        <div id="career_list_content" class="ui very relaxed stackable grid page">
+            <div class="row" ng-repeat="article in articles | reverse">
                 <div class="ui centered stackable grid">
                     <div class="row">
                         <div class="story_img_abst three wide column">
@@ -264,18 +270,18 @@
                         <div class="story_abst thirteen wide column">
                             <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
                                 <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                <h5 class="ui remove_margin_bottom right floated header transition_red">...more</h5>
+                                <h5 class="ui remove_margin_bottom right floated header transition_red">{{article.deploy_time}}</h5>
                             </a>
                             <div class="meta margin_top">
                                 <span class="brown">{{article.abstraction}}</span>
-                                <div class="right_floated">{{article.deploy_time}}</div>
+                                <div class="right_floated more transition_red">...more</div>
                             </div>
                             <div class="description">
-                                <p class="abstract description">
-                                    {{article.content[0].segment[0]}}
-                                    <br/> {{article.content[0].segment[1]}}
-                                    <br/> {{article.content[1].segment[0]}}
-                                </p>
+                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                    <p class="abstract description">
+                                        {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}}
+                                    </p>
+                                </a>
                                 <div class="ui hidden divider"></div>
                             </div>
                         </div>

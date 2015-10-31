@@ -133,9 +133,9 @@
         "status": "old",
         "abstraction": "浪漫的影像咖啡工作室，以快門捕捉光影與咖啡香氣",
         "interview":"曉琪.茜文",
-        "editor":"欣愉",
+        "editor":"婷玟",
         "art_editor": "雅云",
-        "photography" : "欣愉",
+        "photography" : "花生.欣愉",
         "background_img": [
             "http://i.imgur.com/AK2Ms7t.jpg",
             "http://i.imgur.com/DEiDJXu.jpg",
@@ -195,7 +195,7 @@
         "status": "old",
         "abstraction": "一雙繪製夢想的手 - 自由插畫工作者",
         "interview":"茜文",
-        "editor":"茜文",
+        "editor":"婷玟",
         "art_editor": "雅云",
         "photography" : "茜文",
         "background_img": [
@@ -491,7 +491,7 @@
         "status": "new",
         "abstraction": "永遠只呈現最美麗的樣貌",
         "interview": "茜文.欣愉",
-        "editor" : "思婷",
+        "editor" : "琳育",
         "art_editor" : "雅云",
         "photography" : "花生",
         "background_img": [
@@ -553,7 +553,7 @@
         "interview": "茜文",
         "editor" : "欣愉",
         "art_editor" : "雅云",
-        "photography" : "茜文",
+        "photography" : "哲良",
         "background_img": [
             "http://i.imgur.com/N3VepDf.jpg",
             "http://i.imgur.com/gXI13fF.jpg",
@@ -661,11 +661,11 @@
         "next_id": "article_1",
         "prev_id": "article_11",
         "status": "new",
-        "abstraction": "拍下每個幸福的瞬間",
+        "abstraction": "調劑治癒身心靈藥方的專業朋友",
         "interview": "茜文",
         "editor" : "欣愉",
         "art_editor" : "阿粘",
-        "photography" : "茜文",
+        "photography" : "欣愉",
         "background_img": [
             "http://i.imgur.com/Wz4TvkQ.jpg",
             "http://i.imgur.com/KvpLae5.jpg",

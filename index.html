@@ -106,6 +106,12 @@
             });
         });
 
+        app.filter('reverse', function() {
+            return function(items) {
+                return items.slice().reverse();
+            };
+        });
+
 
 
         $("#owl-carousel").owlCarousel({
@@ -150,7 +156,7 @@
                                     <div class="ui slide page grid">
                                         <div class="row">
                                             <div class="column">
-                                                <h4 class="ui slide_1 margin right aligned inverted header">
+                                                <h4 class="ui slide_1 margin left aligned inverted header">
                                                 你知道一棟房子是怎麼蓋出來的嗎？<br/><br/>
                                                 建築工人，是工地裡最前線的作業人員。<br/>
                                                 通常都是體力吃重的工作，所以大多數也都是男性為主。<br/>
@@ -320,7 +326,7 @@
                     </h1>
                 </div>
                 <div class="row"></div>
-                <div class="row" ng-repeat="article in articles">
+                <div class="row" ng-repeat="article in articles | reverse">
                     <div class="ui centered stackable grid">
                         <div class="article row">
                             <div class="story_img_abst three wide column">
@@ -331,17 +337,17 @@
                             <div class="story_abst thirteen wide column">
                                 <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
                                     <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                    <h5 class="ui remove_margin_bottom right floated header transition_red">...more</h5>
+                                    <h5 class="ui remove_margin_bottom right floated header transition_red">{{article.deploy_time}}</h5>
                                 </a>
                                 <div class="meta margin_top">
                                     <span class="brown abstraction">{{article.abstraction}}</span>
-                                    <div class="right_floated">{{article.deploy_time}}</div>
+                                    <div class="right_floated more transition_red">...more</div>
                                 </div>
                                 <div class="description">
                                     <p class="abstract description">
                                         {{article.content[0].segment[0]}}
-                                        <br/> {{article.content[0].segment[1]}}
-                                        <br/> {{article.content[1].segment[0]}}
+                                        {{article.content[0].segment[1]}}
+                                        {{article.content[1].segment[0]}}
                                     </p>
                                 </div>
                             </div>

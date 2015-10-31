@@ -130,9 +130,10 @@ h1#what_is_TLBT_header{
 }
 
 
-.slide_1.margin.right{
-    margin-right: 8%;
-    margin-top: 6% !important;
+.slide_1.margin.left{
+    margin-left: 19%;
+    margin-top: -1% !important;
+    color:rgba(0,0,0,0.7) !important;
 }
 
 .slide.slide_2{
@@ -145,6 +146,7 @@ h1#what_is_TLBT_header{
 h4.ui.slide_2.left.aligned.inverted.header{
     margin-left: 2%;
     margin-top: -1%;
+    color:rgba(255,255,255,0.9);
 }
 
 .slide.slide_3{
@@ -157,6 +159,7 @@ h4.ui.slide_2.left.aligned.inverted.header{
 h4.ui.slide_3.right.aligned.inverted.header{
     margin-right: 18%;
     margin-top: 14%;
+    color:rgba(0,0,0,0.75) !important;
 }
 
 .owl-controls.clickable{
@@ -192,6 +195,9 @@ h4.ui.slide_3.right.aligned.inverted.header{
     margin-top: 1rem !important;
 }
 
+.more{
+    cursor: pointer;
+}
 
 .abstract.description {
     o-text-overflow: ellipsis;
@@ -201,8 +207,9 @@ h4.ui.slide_3.right.aligned.inverted.header{
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     max-height: 10rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .right_floated {

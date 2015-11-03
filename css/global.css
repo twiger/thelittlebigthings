@@ -114,6 +114,15 @@ span.menu_text {
     padding-bottom: 3rem !important;
 }
 
+.display_for_mobile {
+    display: none;
+}
+
+.display_for_laptop {
+    display: block;
+}
+
+
 @media only screen and (min-width: 1400px) {
     .ui.page.grid {
         padding-left: 10% !important;
@@ -138,5 +147,11 @@ span.menu_text {
     }
     #career_list_content {
         padding: 5rem 3rem !important;
+    }
+    .display_for_laptop {
+        display: none;
+    }
+    .display_for_mobile {
+        display: block;
     }
 }

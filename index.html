@@ -98,20 +98,13 @@
                     "status": "new"
                 });
 
-                $scope.articles = articles;
+                $scope.articles = articles.reverse();
 
 
             }).error(function(data, status, headers, config) {
                 console.log("Fail to load cetering.json");
             });
         });
-
-        app.filter('reverse', function() {
-            return function(items) {
-                return items.slice().reverse();
-            };
-        });
-
 
 
         $("#owl-carousel").owlCarousel({
@@ -326,7 +319,7 @@
                     </h1>
                 </div>
                 <div class="row"></div>
-                <div class="row" ng-repeat="article in articles | reverse">
+                <div class="row" ng-repeat="article in articles">
                     <div class="ui centered stackable grid">
                         <div class="article row">
                             <div class="story_img_abst three wide column">
@@ -337,18 +330,20 @@
                             <div class="story_abst thirteen wide column">
                                 <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
                                     <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                    <h5 class="ui remove_margin_bottom right floated header transition_red">{{article.deploy_time}}</h5>
+                                    <h5 class="ui remove_margin_bottom right floated header transition_red display_for_laptop">{{article.deploy_time}}</h5>
                                 </a>
                                 <div class="meta margin_top">
-                                    <span class="brown abstraction">{{article.abstraction}}</span>
-                                    <div class="right_floated more transition_red">...more</div>
+                                    <span class="brown">{{article.organization}}</span>
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="right_floated display_for_laptop more transition_red">...more</a>
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
                                 </div>
                                 <div class="description">
-                                    <p class="abstract description">
-                                        {{article.content[0].segment[0]}}
-                                        {{article.content[0].segment[1]}}
-                                        {{article.content[1].segment[0]}}
-                                    </p>
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                        <p class="abstract description">
+                                            {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}}
+                                        </p>
+                                    </a>
+                                    <div class="ui hidden divider"></div>
                                 </div>
                             </div>
                         </div>

@@ -21,6 +21,10 @@ p {
     color: #F5F5F5;
 }
 
+.fluid_comments{
+    width:100%;
+}
+
 .ui.inverted.list .list > .item .header,
 .ui.inverted.list > .item .header {
     color: #F5F5F5;

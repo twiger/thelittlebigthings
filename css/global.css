@@ -104,6 +104,7 @@ span.menu_text {
     padding-bottom: 15px;
     padding-top: 15px;
     z-index: +100;
+    width:101%;
     box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.3);
     -moz-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
     -webkit-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);

@@ -1,4 +1,14 @@
 
+function detectIEBrowser() {
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+            alert("很抱歉，我們暫時不支援 IE ( Internet Explorer ) 瀏覽器，為了讓您無礙的翻閱我們的故事，請改用 Chrome 或 Firefox，謝謝。");
+
+   return false;
+}
 
 function ResponsiveWeb() {
     console.log("Execute RW");
@@ -43,5 +53,3 @@ function ResponsiveWeb() {
     }
 
 };
-
-

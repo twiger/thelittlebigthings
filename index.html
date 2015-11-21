@@ -3,7 +3,7 @@
 
 <head>
     <!-- Standard Meta -->
-    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/TLBT.jpg" rel="image_src"/>
+    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/TLBT.jpg" rel="image_src" />
     <title>職業誌 X 最重要的小事 The little big things</title>
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業介紹，職業誌，甘苦談">
@@ -48,6 +48,8 @@
         $('#homepage_body').css("display", 'none');
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+
+            detectIEBrowser();
             ResponsiveWeb();
             $('#homepage_body').fadeIn(1000);
             $(".about.text").addClass('active');
@@ -65,9 +67,7 @@
         /* FadeIn Animation */
         $(window).bind('scroll', function() {
             var pos_y = window.pageYOffset || document.documentElement.scrollTop;
-
             // Display Why TLBt exist
-            //if ($('#why_TLBT_header').visible()) {
             if (pos_y > $('#owl-carousel').position().top + 100) {
                 if (display_why_TLBT == false) {
                     $('#why_TLBT > .fadein_row').transition('fade down', '1500ms');
@@ -237,8 +237,8 @@
                 <div class="row">
                     <div class="column">
                         <h1 id="why_TLBT_header" class="center aligned ui header">
-                        為什麼成立 TLBT
-                    </h1>
+                            為什麼成立 TLBT
+                        </h1>
                         <div class="ui hidden divider"></div>
                     </div>
                 </div>

@@ -84,7 +84,7 @@
 
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
-
+            detectIEBrowser();
             ResponsiveWeb();
             $('body').fadeIn(1000);
             $(".ui.work.item").addClass('active');
@@ -457,7 +457,7 @@
                         </div>
                     </div>
                     <div class="ui inverted divider"></div>
-                    <div class="ui left floated inverted relaxed divided list">
+                    <div class="ui inverted relaxed divided list">
                         <div class="item" ng-if="section.header != ''" ng-repeat="article in article.related_articles">
                             <div class="content">
                                 <div class="nav header"><a ng-href="story_content.html?category={{category}}&article_id={{article.id}}">{{article.title}}</a></div>

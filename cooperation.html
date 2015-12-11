@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#'>
+
+<head>
+    <!-- Standard Meta -->
+    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/TLBT.jpg" rel="image_src" />
+    <title>TLBT 親師合作</title>
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="keywords" content="TLBT團隊希望能和各位師長們，能持續保持合作關係，我們能將最新的文章提供給您，但也期望能從您的孩子身上得到一些回饋，好讓我們能繼續改進往前。另外，TLBT團隊在明年度也會開始設計學習單及生涯規劃課程，如果師長們有需要，也可以連絡我們！我們很熱意將故事分享給更多一位孩子。">
+    <meta name="msvalidate.01" content="E6F465F37CBE3837BF96EDBE36FD07D7" />
+    <meta rel="icon" href="img/logo/square_logo.png" type="image/ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
+    <meta rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
+    <!-- Include Master -->
+    <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" href="dist/owl.carousel.css">
+    <link rel="stylesheet" href="dist/owl.theme.css">
+    <script src="dist/owl.carousel.js"></script>
+    <script src="js/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script>
+    $(document).ready(function() {
+        var display_what_is_TLBT = false;
+        var display_why_TLBT = false;
+
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $(window).resize(function() {
+            ResponsiveWeb();
+        });
+
+        /* Laoding Animation */
+        $(window).load(function() {
+            // Animate loader off screen
+            setTimeout(
+                function() {
+                    //do something specials
+                    $(".se-pre-con").fadeOut("slow");
+                }, 500);
+        });
+
+        $('#homepage_body').css("display", 'none');
+
+        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+
+            detectIEBrowser();
+            ResponsiveWeb();
+            $('#homepage_body').fadeIn(1000);
+            $(".cooperation.item").addClass('active');
+            $(".slide.inset.laptop").css("height", $(window).height() - $("#segment_master").height());
+            $("#owl-carousel").css("width", $(window).width());
+            $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
+
+
+        });
+
+        $('.ui.requirement.checkbox').checkbox();
+        $('.ui.feedback.checkbox').checkbox();
+
+        $('.list .master.checkbox')
+            .checkbox({
+                // check all children
+                onChecked: function() {
+                    var
+                        $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox');
+                    $childCheckbox.checkbox('check');
+                },
+                // uncheck all children
+                onUnchecked: function() {
+                    var
+                        $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox');
+                    $childCheckbox.checkbox('uncheck');
+                }
+            });
+
+        $('.list .child.checkbox')
+            .checkbox({
+                // Fire on load to set parent value
+                fireOnInit: true,
+                // Change parent state on each child checkbox change
+                onChange: function() {
+                    var
+                        $listGroup = $(this).closest('.list'),
+                        $parentCheckbox = $listGroup.closest('.item').children('.checkbox'),
+                        $checkbox = $listGroup.find('.checkbox'),
+                        allChecked = true,
+                        allUnchecked = true;
+                    // check to see if all other siblings are checked or unchecked
+                    $checkbox.each(function() {
+                        if ($(this).checkbox('is checked')) {
+                            allUnchecked = false;
+                        } else {
+                            allChecked = false;
+                        }
+                    });
+                    // set parent checkbox state, but dont trigger its onChange callback
+                    if (allChecked) {
+                        $parentCheckbox.checkbox('set checked');
+                    } else if (allUnchecked) {
+                        $parentCheckbox.checkbox('set unchecked');
+                    } else {
+                        $parentCheckbox.checkbox('set indeterminate');
+                    }
+                }
+            });
+
+        $(document).ajaxStop(function() {});
+
+        (function(e, t) {
+            "function" == typeof define && define.amd ? define(t) : "object" == typeof module && module.exports ? module.exports = t() : e.H5F = t()
+        })(this, function() {
+            var e, t, a, i, n, r, l, s, o, u, d, c, v, p, f, m, b, h, g, y, w, C, N, A, E, $, x = document,
+                k = x.createElement("input"),
+                q = /^[a-zA-Z0-9.!#$%&'*+-\/=?\^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                M = /[a-z][\-\.+a-z]*:\/\//i,
+                L = /^(input|select|textarea)$/i;
+            return r = function(e, t) {
+                var a = !e.nodeType || !1,
+                    i = {
+                        validClass: "valid",
+                        invalidClass: "error",
+                        requiredClass: "required",
+                        placeholderClass: "placeholder",
+                        onSubmit: Function.prototype,
+                        onInvalid: Function.prototype
+                    };
+                if ("object" == typeof t)
+                    for (var r in i) t[r] === void 0 && (t[r] = i[r]);
+                if (n = t || i, a)
+                    for (var s = 0, o = e.length; o > s; s++) l(e[s]);
+                else l(e)
+            }, l = function(a) {
+                var i, r = a.elements,
+                    l = r.length,
+                    c = !!a.attributes.novalidate;
+                if (g(a, "invalid", o, !0), g(a, "blur", o, !0), g(a, "input", o, !0), g(a, "keyup", o, !0), g(a, "focus", o, !0), g(a, "change", o, !0), g(a, "click", u, !0), g(a, "submit", function(i) {
+                        return e = !0, t || c || a.checkValidity() ? (n.onSubmit.call(a, i), void 0) : (w(i), void 0)
+                    }, !1), !v())
+                    for (a.checkValidity = function() {
+                            return d(a)
+                        }; l--;) i = !!r[l].attributes.required, "fieldset" !== r[l].nodeName.toLowerCase() && s(r[l])
+            }, s = function(e) {
+                var t = e,
+                    a = h(t),
+                    n = {
+                        type: t.getAttribute("type"),
+                        pattern: t.getAttribute("pattern"),
+                        placeholder: t.getAttribute("placeholder")
+                    },
+                    r = /^(email|url)$/i,
+                    l = /^(input|keyup)$/i,
+                    s = r.test(n.type) ? n.type : n.pattern ? n.pattern : !1,
+                    o = p(t, s),
+                    u = m(t, "step"),
+                    v = m(t, "min"),
+                    b = m(t, "max"),
+                    g = !("" === t.validationMessage || void 0 === t.validationMessage);
+                t.checkValidity = function() {
+                    return d.call(this, t)
+                }, t.setCustomValidity = function(e) {
+                    c.call(t, e)
+                }, t.validity = {
+                    valueMissing: a,
+                    patternMismatch: o,
+                    rangeUnderflow: v,
+                    rangeOverflow: b,
+                    stepMismatch: u,
+                    customError: g,
+                    valid: !(a || o || u || v || b || g)
+                }, n.placeholder && !l.test(i) && f(t)
+            }, o = function(e) {
+                var t = C(e) || e,
+                    a = /^(input|keyup|focusin|focus|change)$/i,
+                    r = /^(submit|image|button|reset)$/i,
+                    l = /^(checkbox|radio)$/i,
+                    u = !0;
+                !L.test(t.nodeName) || r.test(t.type) || r.test(t.nodeName) || (i = e.type, v() || s(t), t.validity.valid && ("" !== t.value || l.test(t.type)) || t.value !== t.getAttribute("placeholder") && t.validity.valid ? (A(t, [n.invalidClass, n.requiredClass]), N(t, n.validClass)) : a.test(i) ? t.validity.valueMissing && A(t, [n.requiredClass, n.invalidClass, n.validClass]) : t.validity.valueMissing ? (A(t, [n.invalidClass, n.validClass]), N(t, n.requiredClass)) : t.validity.valid || (A(t, [n.validClass, n.requiredClass]), N(t, n.invalidClass)), "input" === i && u && (y(t.form, "keyup", o, !0), u = !1))
+            }, d = function(t) {
+                var a, i, r, l, s, u = !1;
+                if ("form" === t.nodeName.toLowerCase()) {
+                    a = t.elements;
+                    for (var d = 0, c = a.length; c > d; d++) i = a[d], r = !!i.attributes.disabled, l = !!i.attributes.required, s = !!i.attributes.pattern, "fieldset" !== i.nodeName.toLowerCase() && !r && (l || s && l) && (o(i), i.validity.valid || u || (e && i.focus(), u = !0, n.onInvalid.call(t, i)));
+                    return !u
+                }
+                return o(t), t.validity.valid
+            }, c = function(e) {
+                var t = this;
+                t.validationMessage = e
+            }, u = function(e) {
+                var a = C(e);
+                a.attributes.formnovalidate && "submit" === a.type && (t = !0)
+            }, v = function() {
+                return E(k, "validity") && E(k, "checkValidity")
+            }, p = function(e, t) {
+                if ("email" === t) return !q.test(e.value);
+                if ("url" === t) return !M.test(e.value);
+                if (t) {
+                    var i = e.getAttribute("placeholder"),
+                        n = e.value;
+                    return a = RegExp("^(?:" + t + ")$"), n === i ? !1 : "" === n ? !1 : !a.test(e.value)
+                }
+                return !1
+            }, f = function(e) {
+                var t = {
+                        placeholder: e.getAttribute("placeholder")
+                    },
+                    a = /^(focus|focusin|submit)$/i,
+                    r = /^(input|textarea)$/i,
+                    l = /^password$/i,
+                    s = !!("placeholder" in k);
+                s || !r.test(e.nodeName) || l.test(e.type) || ("" !== e.value || a.test(i) ? e.value === t.placeholder && a.test(i) && (e.value = "", A(e, n.placeholderClass)) : (e.value = t.placeholder, g(e.form, "submit", function() {
+                    i = "submit", f(e)
+                }, !0), N(e, n.placeholderClass)))
+            }, m = function(e, t) {
+                var a = parseInt(e.getAttribute("min"), 10) || 0,
+                    i = parseInt(e.getAttribute("max"), 10) || !1,
+                    n = parseInt(e.getAttribute("step"), 10) || 1,
+                    r = parseInt(e.value, 10),
+                    l = (r - a) % n;
+                return h(e) || isNaN(r) ? "number" === e.getAttribute("type") ? !0 : !1 : "step" === t ? e.getAttribute("step") ? 0 !== l : !1 : "min" === t ? e.getAttribute("min") ? a > r : !1 : "max" === t ? e.getAttribute("max") ? r > i : !1 : void 0
+            }, b = function(e) {
+                var t = !!e.attributes.required;
+                return t ? h(e) : !1
+            }, h = function(e) {
+                var t = e.getAttribute("placeholder"),
+                    a = /^(checkbox|radio)$/i,
+                    i = !!e.attributes.required;
+                return !(!i || "" !== e.value && e.value !== t && (!a.test(e.type) || $(e)))
+            }, g = function(e, t, a, i) {
+                E(window, "addEventListener") ? e.addEventListener(t, a, i) : E(window, "attachEvent") && window.event !== void 0 && ("blur" === t ? t = "focusout" : "focus" === t && (t = "focusin"), e.attachEvent("on" + t, a))
+            }, y = function(e, t, a, i) {
+                E(window, "removeEventListener") ? e.removeEventListener(t, a, i) : E(window, "detachEvent") && window.event !== void 0 && e.detachEvent("on" + t, a)
+            }, w = function(e) {
+                e = e || window.event, e.stopPropagation && e.preventDefault ? (e.stopPropagation(), e.preventDefault()) : (e.cancelBubble = !0, e.returnValue = !1)
+            }, C = function(e) {
+                return e = e || window.event, e.target || e.srcElement
+            }, N = function(e, t) {
+                var a;
+                e.className ? (a = RegExp("(^|\\s)" + t + "(\\s|$)"), a.test(e.className) || (e.className += " " + t)) : e.className = t
+            }, A = function(e, t) {
+                var a, i, n = "object" == typeof t ? t.length : 1,
+                    r = n;
+                if (e.className)
+                    if (e.className === t) e.className = "";
+                    else
+                        for (; n--;) a = RegExp("(^|\\s)" + (r > 1 ? t[n] : t) + "(\\s|$)"), i = e.className.match(a), i && 3 === i.length && (e.className = e.className.replace(a, i[1] && i[2] ? " " : ""))
+            }, E = function(e, t) {
+                var a = typeof e[t],
+                    i = RegExp("^function|object$", "i");
+                return !!(i.test(a) && e[t] || "unknown" === a)
+            }, $ = function(e) {
+                for (var t = document.getElementsByName(e.name), a = 0; t.length > a; a++)
+                    if (t[a].checked) return !0;
+                return !1
+            }, {
+                setup: r
+            }
+        });
+
+    });
+    </script>
+    <div id="master"></div>
+    <!-- Site Properities -->
+    <link rel="stylesheet" type="text/css" href="css/cooperation.css">
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/semantic.css">
+    <script type='text/javascript' src="js/angular.js"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+</head>
+
+<body id="cooperation" ng-app="myApp" ng-controller="story_content_crtl">
+    <div class="se-pre-con"></div>
+    <div class="ui page centered very relaxed stackable grid">
+        <div class="row">
+            <div class="column">
+                <div class="header_divider"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="eight wide column">
+                <p>首先，非常感謝師長們的支持，TLBT記錄了各行各業工作者的故事，其實最想要的回饋對象就是正在就學的國高中生們，在求學的階段，如果能早點接觸各行各業的故事及開始思考自己未來的志向，也許在孩子選填志願的時候，就比較不會看到一些徬徨無住的臉龐。</p>
+                <p>TLBT團隊希望能和各位師長們，能持續保持合作關係，我們能將最新的文章提供給您，但也期望能從您的孩子身上得到一些回饋，好讓我們能繼續改進往前。另外，TLBT團隊在明年度也會開始設計學習單及生涯規劃課程，如果師長們有需要，也可以連絡我們！我們很熱意將故事分享給更多一位孩子。</p>
+                <p>以下是我們是因為我們想要建立親師合作關係，所需要的資料，資料不會外流，主要是要記錄及聯絡使用，謝謝　：）</p>
+            </div>
+            <div class="four wide column">
+                <img class="ui fluid rounded image" src="img/team/mimi_rect.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve wide column">
+                <div class="ui hidden divider"></div>
+                <div class="ui very padded red segment">
+                    <div class="ui form">
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
+{window.location='cooperation_submit.html';}"></iframe>
+                        <form action="https://docs.google.com/forms/d/1Y4qqTKgk5nKe99KLkeYs-pCfMhThud0e0oT6Jqwft3A/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                            <h2 class="ui header">TLBT 親師合作關係夥伴</h2>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label for="entry_268056998">姓名</label>
+                                    <input type="text" name="entry.268056998" value="" id="entry_268056998" dir="auto" aria-label=" 姓名  " aria-required="true" required="" title="" placeholder="Name">
+                                </div>
+                                <div class="field">
+                                    <label for="entry_1761247943">連絡電話</label>
+                                    <input type="text" placeholder="09XX-XXX-XXX" name="entry.1761247943" value="" id="entry_1761247943" dir="auto" aria-label="連絡電話" aria-required="true" required="" title="">
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label for="entry_1222035168">E-MAIL</label>
+                                    <input type="text" placeholder="xx@gmail.com" name="entry.1222035168" value="" id="entry_1222035168" dir="auto" aria-label="E-MAIL  " aria-required="true" required="" title="">
+                                </div>
+                                <div class="field">
+                                    <label for="entry_1723692651">臉書帳號</label>
+                                    <input type="text" placeholder="王小明 (Wang Xiaoming)" name="entry.1723692651" value="" id="entry_1723692651" dir="auto" aria-label="臉書帳號  " title="">
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label for="entry_1623705914">服務單位</label>
+                                    <input type="text" placeholder="學校全名" name="entry.1623705914" value="" dir="auto" aria-label="服務單位  " aria-required="true" required="" title="">
+                                </div>
+                                <div class="field">
+                                    <label for="entry_206086237">資源使用對象</label>
+                                    <input type="text" placeholder="班級、課程等等" name="entry.206086237" value="" id="entry_206086237" dir="auto" aria-label="資源使用對象  " aria-required="true" required="" title="">
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="grouped fields">
+                                    <label for="entry_69228600">資源需求 (需要 TLBT 以下哪些資源呢？)</label>
+                                    <div class="field">
+                                        <div class="ui requirement checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden" name="entry.177689874" value="&#23560;&#35370;&#25925;&#20107;&#27284;&#26696;" id="group_177689874_1" role="checkbox" aria-required="true">
+                                            <label>專訪故事檔案</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui requirement checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden" name="entry.177689874" value="&#23416;&#32722;&#21934;" id="group_177689874_2" role="checkbox" aria-required="true">
+                                            <label>學習單</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui requirement checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden" name="entry.177689874" value="&#21512;&#20316;&#35506;&#31243;" id="group_177689874_3" role="checkbox" class="ss-q-checkbox" aria-required="true">
+                                            <label>合作課程</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grouped fields">
+                                    <label for="entry_935449134">是否能提供孩子閱讀後意見</label>
+                                    <div class="field">
+                                        <div class="ui feedback checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden" name="entry.1858264799" value="&#26159;" id="group_1858264799_1" role="checkbox" aria-required="true">
+                                            <label>是</label>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="ui feedback checkbox">
+                                            <input type="checkbox" tabindex="0" class="hidden" name="entry.1858264799" value="&#21542;" id="group_1858264799_2" role="checkbox" aria-required="true">
+                                            <label>否</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="entry_1259986839">給TLBT平台的建議</label>
+                                <textarea name="entry.1259986839" rows="8" cols="0" class="ss-q-long" id="entry_1259986839" dir="auto" aria-label="給TLBT平台的建議  "></textarea>
+                            </div>
+                            <input type="submit" name="submit" value="&#25552;&#20132;" id="ss-submit" class="ui positive button">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui footer hidden divider"></div>
+    </div>
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>The Little Big <span>Things</span></h3>
+            <p class="footer-company-about">
+                The little big things all rights reserved.
+            </p>
+            <p class="footer-company-name">TLBT &copy; 2015</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>目前仍然居無定所，主要活動範圍在台南</span> Tainan, Taiwan</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>聯絡方式 : </p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">thelittlebigthings38@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Workshop</span> The little big things 是一個介紹各行各業甘苦談的網路平台，我們誠摯的邀請具有熱忱及意願的工作者，一起把您的工作故事，分享給更多孩子知道！
+            </p>
+        </div>
+    </footer>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-56789439-3', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>

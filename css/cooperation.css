@@ -19,3 +19,15 @@
 .header_divider{
 	height:3rem !important;
 }
+
+.display{
+	display:block !important;
+}
+
+.success.submit.message{
+	display:none;
+}
+
+.ui.submit.form{
+	display:none;
+}

@@ -56,58 +56,18 @@
             $("#owl-carousel").css("width", $(window).width());
             $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
 
+            var status = getURLParameter('status');
+
+            if (status == 'unsubmitted') {
+                $(".ui.submit.form").addClass('display');
+            } else if (status == 'submitted') {
+                $(".success.submit.message").addClass('display');
+            }
 
         });
 
         $('.ui.requirement.checkbox').checkbox();
         $('.ui.feedback.checkbox').checkbox();
-
-        $('.list .master.checkbox')
-            .checkbox({
-                // check all children
-                onChecked: function() {
-                    var
-                        $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox');
-                    $childCheckbox.checkbox('check');
-                },
-                // uncheck all children
-                onUnchecked: function() {
-                    var
-                        $childCheckbox = $(this).closest('.checkbox').siblings('.list').find('.checkbox');
-                    $childCheckbox.checkbox('uncheck');
-                }
-            });
-
-        $('.list .child.checkbox')
-            .checkbox({
-                // Fire on load to set parent value
-                fireOnInit: true,
-                // Change parent state on each child checkbox change
-                onChange: function() {
-                    var
-                        $listGroup = $(this).closest('.list'),
-                        $parentCheckbox = $listGroup.closest('.item').children('.checkbox'),
-                        $checkbox = $listGroup.find('.checkbox'),
-                        allChecked = true,
-                        allUnchecked = true;
-                    // check to see if all other siblings are checked or unchecked
-                    $checkbox.each(function() {
-                        if ($(this).checkbox('is checked')) {
-                            allUnchecked = false;
-                        } else {
-                            allChecked = false;
-                        }
-                    });
-                    // set parent checkbox state, but dont trigger its onChange callback
-                    if (allChecked) {
-                        $parentCheckbox.checkbox('set checked');
-                    } else if (allUnchecked) {
-                        $parentCheckbox.checkbox('set unchecked');
-                    } else {
-                        $parentCheckbox.checkbox('set indeterminate');
-                    }
-                }
-            });
 
         $(document).ajaxStop(function() {});
 
@@ -313,9 +273,9 @@
             <div class="twelve wide column">
                 <div class="ui hidden divider"></div>
                 <div class="ui very padded red segment">
-                    <div class="ui form">
+                    <div class="ui submit form">
                         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
-{window.location='cooperation_submit.html';}"></iframe>
+{window.location='cooperation.html?status=submitted';}"></iframe>
                         <form action="https://docs.google.com/forms/d/1Y4qqTKgk5nKe99KLkeYs-pCfMhThud0e0oT6Jqwft3A/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
                             <h2 class="ui header">TLBT 親師合作關係夥伴</h2>
                             <div class="two fields">
@@ -391,6 +351,14 @@
                                 <textarea name="entry.1259986839" rows="8" cols="0" class="ss-q-long" id="entry_1259986839" dir="auto" aria-label="給TLBT平台的建議  "></textarea>
                             </div>
                             <input type="submit" name="submit" value="&#25552;&#20132;" id="ss-submit" class="ui positive button">
+                        </form>
+                    </div>
+                    <div class="success submit message">
+                        <h2 class="ui header">TLBT 親師合作關係夥伴</h2>
+                        <div class="ui divider"></div>
+                        <p>
+                            您已成功填寫表單，TLBT 將會由內部人員確認後，用 e-mail 通知您資料有無錯誤並討論後續的合作，再次謝謝您。
+                        </p>
                     </div>
                 </div>
             </div>

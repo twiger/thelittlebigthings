@@ -1,6 +1,14 @@
+.no-js #loader {
+    display: none;
+}
 
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.js #loader {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+
 .se-pre-con {
     position: fixed;
     left: 0px;
@@ -11,23 +19,30 @@
     background: url(../img/ajax-loader.gif) center no-repeat #fff;
 }
 
-#cooperation{
-	background:white;
+#cooperation {
+    background: url(../img/logo.jpg) no-repeat;
+    background-size: 100%;
+    background-position-y: 115%;
 }
 
-
-.header_divider{
-	height:3rem !important;
+@media only screen and (max-width: 767px) {
+    #cooperation {
+        background:  no-repeat;
+    }
 }
 
-.display{
-	display:block !important;
+.header_divider {
+    height: 3rem !important;
 }
 
-.success.submit.message{
-	display:none;
+.display {
+    display: block !important;
 }
 
-.ui.submit.form{
-	display:none;
+.success.submit.message {
+    display: none;
+}
+
+.ui.submit.form {
+    display: none;
 }

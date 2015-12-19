@@ -22,8 +22,6 @@
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <script>
     $(document).ready(function() {
-        var display_what_is_TLBT = false;
-        var display_why_TLBT = false;
 
         $.ajaxSetup({
             cache: false
@@ -51,9 +49,6 @@
             ResponsiveWeb();
             $('#homepage_body').fadeIn(1000);
             $(".cooperation.item").addClass('active');
-            $(".slide.inset.laptop").css("height", $(window).height() - $("#segment_master").height());
-            $("#owl-carousel").css("width", $(window).width());
-            $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
 
             var status = getURLParameter('status');
 
@@ -233,20 +228,19 @@
 
 <body id="cooperation" ng-app="myApp" ng-controller="story_content_crtl">
     <div class="se-pre-con"></div>
-    <div class="ui page centered very relaxed stackable grid">
+    <div class="ui page centered cooperation very relaxed stackable grid">
         <div class="row">
             <div class="column">
                 <div class="header_divider"></div>
             </div>
         </div>
         <div class="computer only row">
-            <div class="eight wide column">
+            <div class="two wide column"></div>
+            <div class="ten wide column">
+                <!--<img class="ui medium right floated rounded image" src="img/logo.jpg">-->
                 <p>首先，非常感謝師長們的支持，TLBT記錄了各行各業工作者的故事，其實最想要的回饋對象就是正在就學的國高中生們，在求學的階段，如果能早點接觸各行各業的故事及開始思考自己未來的志向，也許在孩子選填志願的時候，就比較不會看到一些徬徨無住的臉龐。</p>
                 <p>TLBT團隊希望能和各位師長們，能持續保持合作關係，我們能將最新的文章提供給您，但也期望能從您的孩子身上得到一些回饋，好讓我們能繼續改進往前。另外，TLBT團隊在明年度也會開始設計學習單及生涯規劃課程，如果師長們有需要，也可以連絡我們！我們很熱意將故事分享給更多一位孩子。</p>
-                <p>以下是我們是因為我們想要建立親師合作關係，所需要的資料，資料不會外流，主要是要記錄及聯絡使用，謝謝　：）</p>
-            </div>
-            <div class="four wide column">
-                <img class="ui fluid rounded image" src="img/team/mimi_rect.jpg">
+                <p>以下是我們是因為我們想要建立親師合作關係，所需要的資料，資料不會外流，主要是要記錄及聯絡使用，謝謝　：）<br/><br/><br/></p>
             </div>
         </div>
         <div class="mobile only row">
@@ -256,15 +250,13 @@
                         <div class="ten wide column">
                             <h1 class="ui header">TLBT 親師<br/>合作關係夥伴</h1>
                         </div>
-                        <div class="six wide column">
-                            <img class="ui fluid rounded image" src="img/team/mimi_rect.jpg">
-                        </div>
                     </div>
                 </div>
                 <br/>
                 <p>首先，非常感謝師長們的支持，TLBT記錄了各行各業工作者的故事，其實最想要的回饋對象就是正在就學的國高中生們，在求學的階段，如果能早點接觸各行各業的故事及開始思考自己未來的志向，也許在孩子選填志願的時候，就比較不會看到一些徬徨無住的臉龐。</p>
                 <p>TLBT團隊希望能和各位師長們，能持續保持合作關係，我們能將最新的文章提供給您，但也期望能從您的孩子身上得到一些回饋，好讓我們能繼續改進往前。另外，TLBT團隊在明年度也會開始設計學習單及生涯規劃課程，如果師長們有需要，也可以連絡我們！我們很熱意將故事分享給更多一位孩子。</p>
                 <p>以下是我們是因為我們想要建立親師合作關係，所需要的資料，資料不會外流，主要是要記錄及聯絡使用，謝謝　：）</p>
+                <div class="ui hidden divider"></div>
             </div>
         </div>
         <div class="row">
@@ -358,6 +350,7 @@
                             您已成功填寫表單，TLBT 將會由內部人員確認後，用 e-mail 通知您資料有無錯誤並討論後續的合作，再次謝謝您。
                         </p>
                     </div>
+                    <div class="ui hidden divider"><br/><br/><br/><br/><br/><br/></div>
                 </div>
             </div>
         </div>

@@ -19,8 +19,11 @@
     background: url(../img/ajax-loader.gif) center no-repeat #fff;
 }
 
-html{
-    background:#d7efd7;
+html {
+    background: -webkit-linear-gradient(white, #c5dbc5);
+    background: -o-linear-gradient(white, #c5dbc5);
+    background: -moz-linear-gradient(white, #c5dbc5);
+    background: linear-gradient(white, #c5dbc5);
 }
 
 #cooperation {
@@ -31,7 +34,7 @@ html{
 
 @media only screen and (max-width: 767px) {
     #cooperation {
-        background:  no-repeat;
+        background: no-repeat;
     }
 }
 

@@ -19,6 +19,10 @@
     background: url(../img/ajax-loader.gif) center no-repeat #fff;
 }
 
+html{
+    background:#d7efd7;
+}
+
 #cooperation {
     background: url(../img/logo.jpg) no-repeat;
     background-size: 100%;

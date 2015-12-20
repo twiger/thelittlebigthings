@@ -24,6 +24,7 @@ html {
     background: -o-linear-gradient(white, #c5dbc5);
     background: -moz-linear-gradient(white, #c5dbc5);
     background: linear-gradient(white, #c5dbc5);
+    background-attachment:fixed;
 }
 
 #cooperation {

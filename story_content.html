@@ -26,6 +26,16 @@
     <script type='text/javascript' src="js/animatescroll.js"></script>
     <link rel="stylesheet" type="text/css" href="css/story_content.css">
     <script type='text/javascript'>
+    document.onmousedown = disableclick;
+    status = "Right Click Disabled";
+
+    function disableclick(event) {
+        if (event.button == 2) {
+
+            return false;
+        }
+    }
+
     $(document).ready(function() {
         var slide_img;
         article_id = getURLParameter('article_id');
@@ -271,7 +281,7 @@
     <script src="dist/photoswipe/photoswipe-ui-default.min.js"></script>
 </head>
 
-<body id="story_content" onscroll="sticky_relocate()">
+<body id="story_content" onscroll="sticky_relocate()" oncontextmenu="return false" oncopy="return false" oncut="return false" onpaste="return false">
     <div class="se-pre-con"></div>
     <div id="fb-root"></div>
     <script>

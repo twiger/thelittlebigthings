@@ -20,10 +20,10 @@
 }
 
 html {
-    background: -webkit-linear-gradient(white, #c5dbc5);
-    background: -o-linear-gradient(white, #c5dbc5);
-    background: -moz-linear-gradient(white, #c5dbc5);
-    background: linear-gradient(white, #c5dbc5);
+    background: -webkit-linear-gradient(white, #edf4ed, #c5dbc5);
+    background: -o-linear-gradient(white, #edf4ed, #c5dbc5);
+    background: -moz-linear-gradient(white,#edf4ed, #c5dbc5);
+    background: linear-gradient(white,#edf4ed, #c5dbc5);
     background-attachment:fixed;
 }
 

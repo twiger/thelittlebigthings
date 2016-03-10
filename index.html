@@ -324,22 +324,22 @@
                     <div class="ui centered stackable grid">
                         <div class="article row">
                             <div class="story_img_abst three wide column">
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="ui fluid rounded image">
+                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
                                     <img ng-src="{{article.square_img}}">
                                 </a>
                             </div>
                             <div class="story_abst thirteen wide column">
-                                <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}">
                                     <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
                                     <h5 class="ui remove_margin_bottom right floated header transition_red display_for_laptop">{{article.deploy_time}}</h5>
                                 </a>
                                 <div class="meta margin_top">
                                     <span class="brown">{{article.organization}}</span>
-                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="right_floated display_for_laptop more transition_red">...more</a>
-                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_laptop more transition_red">...more</a>
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
                                 </div>
                                 <div class="description">
-                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}#">
+                                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}">
                                         <p class="abstract description">
                                             {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}} {{article.content[1].segment[1]}}
                                         </p>

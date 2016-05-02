@@ -117,4 +117,14 @@
             <changefreq>weekly</changefreq>
             <priority>0.64</priority>
         </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_20</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_21</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
     </urlset>

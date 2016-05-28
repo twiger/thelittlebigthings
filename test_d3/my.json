@@ -1,0 +1,157 @@
+{
+    "name": "flare",
+    "children": [{
+        "name": "人文與教育",
+        "children": [{
+            "name": "文史哲學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 2000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "外語學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 3000 },
+                { "name": "CommunityStructure", "size": 6000 }
+            ]
+        }, {
+            "name": "教育學群",
+            "children": [
+                { "name": "AspectRatioBanker", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "社會科學",
+        "children": [{
+            "name": "法律與政治學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 2000 },
+                { "name": "CommunityStructure", "size": 8000 }
+            ]
+        }, {
+            "name": "社會與心理學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "資訊與傳播學群",
+            "children": [
+                { "name": "AspectRatioBanker", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "商業與管理",
+        "children": [{
+            "name": "商業與管理學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "財經學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "運動與休閒",
+        "children": [{
+            "name": "體育",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "觀光",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "餐飲",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "建築設計與藝術",
+        "children": [{
+            "name": "建築與設計學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "藝術學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "基礎科學",
+        "children": [{
+            "name": "數理化學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "地球與環境學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "工程",
+        "children": [{
+            "name": "資訊學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "工程學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "不分系學群",
+        "children": [{
+            "name": "不分系學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }, {
+        "name": "生命科學",
+        "children": [{
+            "name": "生命科學學群",
+            "children": [
+                { "name": "AgglomerativeCluster", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "生物資源學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }, {
+            "name": "醫藥衛生學群",
+            "children": [
+                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "CommunityStructure", "size": 5000 }
+            ]
+        }]
+    }]
+}

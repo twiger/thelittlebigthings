@@ -6,7 +6,7 @@
             "name": "文史哲學群",
             "children": [
                 { "name": "AgglomerativeCluster", "size": 2000 },
-                { "name": "CommunityStructure", "size": 5000 }
+                { "name": "CommunityStructure", "size": 2000 }
             ]
         }, {
             "name": "外語學群",
@@ -38,7 +38,7 @@
         }, {
             "name": "資訊與傳播學群",
             "children": [
-                { "name": "AspectRatioBanker", "size": 5000 },
+                { "name": "AspectRatioBanker", "size": 10000 },
                 { "name": "CommunityStructure", "size": 5000 }
             ]
         }]
@@ -47,13 +47,13 @@
         "children": [{
             "name": "商業與管理學群",
             "children": [
-                { "name": "AgglomerativeCluster", "size": 5000 },
-                { "name": "CommunityStructure", "size": 5000 }
+                { "name": "AgglomerativeCluster", "size": 1000 },
+                { "name": "CommunityStructure", "size": 2000 }
             ]
         }, {
             "name": "財經學群",
             "children": [
-                { "name": "BetweennessCentrality", "size": 5000 },
+                { "name": "BetweennessCentrality", "size": 1000 },
                 { "name": "CommunityStructure", "size": 5000 }
             ]
         }]
@@ -68,14 +68,14 @@
         }, {
             "name": "觀光",
             "children": [
-                { "name": "BetweennessCentrality", "size": 5000 },
-                { "name": "CommunityStructure", "size": 5000 }
+                { "name": "BetweennessCentrality", "size": 1000 },
+                { "name": "CommunityStructure", "size": 3000 }
             ]
         }, {
             "name": "餐飲",
             "children": [
-                { "name": "BetweennessCentrality", "size": 5000 },
-                { "name": "CommunityStructure", "size": 5000 }
+                { "name": "BetweennessCentrality", "size": 3000 },
+                { "name": "CommunityStructure", "size": 3000 }
             ]
         }]
     }, {

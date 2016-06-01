@@ -59,6 +59,10 @@ p {
     Header
 ---------------*/
 
+#master_logo{
+    cursor:pointer;
+}
+
 .logo_img{
     width:8.6rem !important;
 }

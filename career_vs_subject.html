@@ -54,6 +54,10 @@
             },
             radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
 
+        function filter_min_arc_size_text(d, i) {
+            return (d.dx * d.depth * radius / 3) > 14
+        };
+
         var hue = d3.scale.category10();
 
         var luminance = d3.scale.sqrt()
@@ -78,10 +82,8 @@
                 return d.x;
             })
             .endAngle(function(d) {
-                return d.x + d.dx;
+                return d.x + d.dx - .01 / (d.depth + .5);
             })
-            .padAngle(.01)
-            .padRadius(radius / 3)
             .innerRadius(function(d) {
                 return radius / 3 * d.depth;
             })
@@ -89,52 +91,62 @@
                 return radius / 3 * (d.depth + 1) - 1;
             });
 
+        //Tooltip description
+        var tooltip = d3.select("body")
+            .append("div")
+            .attr("id", "tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("opacity", 0);
 
-
-
-
-        function key(d) {
-            var k = [],
-                p = d;
-            while (p.depth) k.push(p.name), p = p.parent;
-            return k.reverse().join(".");
+        function format_number(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
-        function fill(d) {
-            var p = d;
-            while (p.depth > 1) p = p.parent;
-            var c = d3.lab(hue(p.name));
-            c.l = luminance(d.sum);
-            return c;
+
+        function format_description(d) {
+            var description = d.description;
+            return '<b>' + d.name + '</b></br>' + d.description + '<br> (' + format_number(d.value) + ')';
         }
 
-        function arcTween(b) {
-            var i = d3.interpolate(this._current, b);
-            this._current = i(0);
-            return function(t) {
-                return arc(i(t));
-            };
+        function computeTextRotation(d) {
+            var angle = (d.x + d.dx / 2) * 180 / Math.PI - 90
+
+            return angle;
         }
 
-        function updateArc(d) {
-            return {
-                depth: d.depth,
-                x: d.x,
-                dx: d.dx
-            };
+        function mouseOverArc(d) {
+            d3.select(this).attr("stroke", "black")
+
+            tooltip.html(format_description(d));
+            return tooltip.transition()
+                .duration(50)
+                .style("opacity", 0.9);
         }
 
-        d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
+        function mouseOutArc() {
+            d3.select(this).attr("stroke", "")
+            return tooltip.style("opacity", 0);
+        }
+
+        function mouseMoveArc(d) {
+            return tooltip
+                .style("top", (d3.event.pageY - 10) + "px")
+                .style("left", (d3.event.pageX + 10) + "px");
+        }
+
+        var root_ = null;
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             ResponsiveWeb();
             $('body').fadeIn(1000);
             $(".ui.career.item").addClass('active');
             d3.json("test_d3/my.json", function(error, root) {
-
+                if (error) return console.warn(error);
                 // Compute the initial layout on the entire tree to sum sizes.
                 // Also compute the full name and fill color for each node,
                 // and stash the children so they can be restored as we descend.
+
                 partition
                     .value(function(d) {
                         return d.size;
@@ -146,8 +158,6 @@
                         d.key = key(d);
                         d.fill = fill(d);
                     });
-
-                console.log(root);
 
                 // Now redefine the value function to use the previously-computed sum.
                 partition
@@ -165,20 +175,39 @@
                 center.append("title")
                     .text("zoom out");
 
+                var partitioned_data = partition.nodes(root).slice(1)
+
                 var path = svg.selectAll("path")
-                    .data(partition.nodes(root).slice(1))
+                    .data(partitioned_data)
                     .enter().append("path")
                     .attr("d", arc)
-                    .attr("data", function(d) {
-                        return d.key;
-                    })
                     .style("fill", function(d) {
                         return d.fill;
                     })
                     .each(function(d) {
                         this._current = updateArc(d);
                     })
-                    .on("click", zoomIn);
+                    .on("click", zoomIn)
+                    .on("mouseover", mouseOverArc)
+                    .on("mousemove", mouseMoveArc)
+                    .on("mouseout", mouseOutArc);
+
+
+                var texts = svg.selectAll("text")
+                    .data(partitioned_data)
+                    .enter().append("text")
+                    .filter(filter_min_arc_size_text)
+                    .attr("transform", function(d) {
+                        return "rotate(" + computeTextRotation(d) + ")";
+                    })
+                    .attr("x", function(d) {
+                        return radius / 3 * d.depth;
+                    })
+                    .attr("dx", "6") // margin
+                    .attr("dy", ".35em") // vertical-align    
+                    .text(function(d, i) {
+                        return d.name
+                    })
 
                 function zoomIn(p) {
                     if (p.depth > 1) p = p.parent;
@@ -226,15 +255,13 @@
 
                     center.datum(root);
 
-                    circle_test = $("circle").position()
-                    console.log(root);
-                    $("#test_position").css({top: p.dx, left: p.dy, position:'absolute'});
-
                     // When zooming in, arcs enter from the outside and exit to the inside.
                     // Entering outside arcs start from the old layout.
                     if (root === p) enterArc = outsideArc, exitArc = insideArc, outsideAngle.range([p.x, p.x + p.dx]);
 
-                    path = path.data(partition.nodes(root).slice(1), function(d) {
+                    var new_data = partition.nodes(root).slice(1)
+
+                    path = path.data(new_data, function(d) {
                         return d.key;
                     });
 
@@ -259,13 +286,14 @@
                             .style("fill", function(d) {
                                 return d.fill;
                             })
-                            .attr("data", function(d) {
-                                return d.key;
-                            })
                             .on("click", zoomIn)
+                            .on("mouseover", mouseOverArc)
+                            .on("mousemove", mouseMoveArc)
+                            .on("mouseout", mouseOutArc)
                             .each(function(d) {
                                 this._current = enterArc(d);
                             });
+
 
                         path.transition()
                             .style("fill-opacity", 1)
@@ -274,9 +302,71 @@
                             });
 
 
+
                     });
+
+
+                    texts = texts.data(new_data, function(d) {
+                        return d.key;
+                    })
+
+                    texts.exit()
+                        .remove()
+                    texts.enter()
+                        .append("text")
+
+                    texts.style("opacity", 0)
+                        .attr("transform", function(d) {
+                            return "rotate(" + computeTextRotation(d) + ")";
+                        })
+                        .attr("x", function(d) {
+                            return radius / 3 * d.depth;
+                        })
+                        .attr("dx", "6") // margin
+                        .attr("dy", ".35em") // vertical-align
+                        .filter(filter_min_arc_size_text)
+                        .text(function(d, i) {
+                            return d.name
+                        })
+                        .transition().delay(750).style("opacity", 1)
+
+
                 }
             });
+
+            function key(d) {
+                var k = [],
+                    p = d;
+                while (p.depth) k.push(p.name), p = p.parent;
+                return k.reverse().join(".");
+            }
+
+            function fill(d) {
+                var p = d;
+                while (p.depth > 1) p = p.parent;
+                var c = d3.lab(hue(p.name));
+                c.l = luminance(d.sum);
+                return c;
+            }
+
+            function arcTween(b) {
+                var i = d3.interpolate(this._current, b);
+                this._current = i(0);
+                return function(t) {
+                    return arc(i(t));
+                };
+            }
+
+            function updateArc(d) {
+                return {
+                    depth: d.depth,
+                    x: d.x,
+                    dx: d.dx
+                };
+            }
+
+            d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
+
         });
         $(document).ajaxStop(function() {
 
@@ -297,7 +387,8 @@
         </div>
         <div class="row">
             <div class="twelve wide column">
-                <div id="bilevel_partition"><div id="test_position">●</div></div>
+                <div id="bilevel_partition">
+                </div>
             </div>
             <div class="four wide column">
             </div>

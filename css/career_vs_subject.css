@@ -29,6 +29,11 @@ circle {
     pointer-events: all;
 }
 
+#tooltip { background-color: white;
+              padding: 3px 5px;
+              border: 1px solid black;
+              text-align: center;}
+
 #career_vs_subject{
     background:white !important;
 }

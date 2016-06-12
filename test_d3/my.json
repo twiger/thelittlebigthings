@@ -25,8 +25,25 @@
         "name": "社會科學",
         "children": [{
             "name": "法律與政治學群",
-            "children": [
-                { "name": "AgglomerativeCluster", "size": 2000 },
+            "children": [{
+                    "name": "蘋果日報記者",
+                    "size": 2000,
+                    "info": {
+                        "date":"2016/5/31",
+                        "job_title": "記者",
+                        "company": "notDisplay",
+                        "seniority": "五年以上",
+                        "certification_or_license": "不用",
+                        "skill_or_personality": "當記者需要，擁有好奇心及敏銳的觀察力，懂得聆聽採訪者的心聲，同時觀察周遭環境，並依據自己的專業能力做出最佳的判斷，告訴讀者真相是什麼？",
+                        "industry_status": "報紙媒體已經是夕陽工業，在現今網路手機平台盛行，大家已經不看報紙了，只看手機新聞及訊息，導致廣告大量流失，營收出現虧損，公司紛紛網網路平台發展即時新聞，滿足大眾的需求，企圖找出另一條出路．",
+                        "major_department": "政治系",
+                        "university": "Error",
+                        "relationship_with_major": "有",
+                        "how_to_become": "政治系是社會人文科學，跟新聞傳播相關，同樣都是文字工作者說應具備的能力，不管是新聞寫作或時事的分析，都可以應用的上．",
+                        "classmate_work": "公務員、學校教書、黨工",
+                        "suggestion": "多充實自己的專業能力及寫作分析能力"
+                    }
+                },
                 { "name": "CommunityStructure", "size": 8000 }
             ]
         }, {

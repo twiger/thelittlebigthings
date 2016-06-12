@@ -17,6 +17,7 @@
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dist/propeller.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/semantic.css">
     <link rel="image_src" href="img/logo/square_logo.png" />
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
@@ -45,14 +46,21 @@
         });
         $('body').css("display", 'none');
 
+        var windowLen = Math.min($(window).width(), $(window).height());
+
+        if (windowLen > 700) {
+            diameter = 650
+        } else {
+            diameter = windowLen - 60
+        }
 
         var margin = {
-                top: 350,
-                right: 480,
-                bottom: 350,
-                left: 480
+                top: diameter / 2,
+                right: (diameter + 100) / 2,
+                bottom: diameter / 2,
+                left: (diameter + 100) / 2
             },
-            radius = Math.min(margin.top, margin.right, margin.bottom, margin.left) - 10;
+            radius = Math.min(margin.top, margin.right, margin.bottom, margin.left);
 
         function filter_min_arc_size_text(d, i) {
             return (d.dx * d.depth * radius / 3) > 14
@@ -142,6 +150,7 @@
             $('body').fadeIn(1000);
             $(".ui.career.item").addClass('active');
             d3.json("test_d3/my.json", function(error, root) {
+
                 if (error) return console.warn(error);
                 // Compute the initial layout on the entire tree to sum sizes.
                 // Also compute the full name and fill color for each node,
@@ -180,6 +189,9 @@
                 var path = svg.selectAll("path")
                     .data(partitioned_data)
                     .enter().append("path")
+                    .attr("path_name", function(d) {
+                        return d.key;
+                    })
                     .attr("d", arc)
                     .style("fill", function(d) {
                         return d.fill;
@@ -210,9 +222,50 @@
                     })
 
                 function zoomIn(p) {
-                    if (p.depth > 1) p = p.parent;
-                    if (!p.children) return;
+                    if (p.depth > 2)
+                        p = p.parent;
+                    if (typeof p.info !== "undefined") {
+                        $.when(createCareerModal(p.info)).then(displayCarrerModal());
+                    }
+                    if (!p.children)
+                        return;
                     zoom(p, p);
+                }
+
+                function createCareerModal(info) {
+                    //console.log(info);
+                    var career_modal = '<div class="ui small career modal">\
+                                            <i class="close icon"></i>\
+                                                <div class="header">'+
+                                                    info.job_title +'<space class="float_right">'+info.date+'</space>'
+                                                +'</div>\
+                                            <div class="content">\
+                                                 <div class="description">'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?</div>'+
+                                                    '<p>'+info.certification_or_license+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>目前這個產業的現狀</div>'+
+                                                    '<p>'+info.industry_status+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問您大學就讀的科系及相關系所?</div>'+
+                                                    '<p>'+info.major_department+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問您就讀的大學/研究所??</div>'+
+                                                    '<p>'+info.university+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>您目前從事的職業是否與所念科系相關?</div>'+
+                                                    '<p>'+info.relationship_with_major+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?</div>'+
+                                                    '<p>'+info.how_to_become+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?</div>'+
+                                                    '<p>'+info.classmate_work+'</p>'+
+                                                    '<div class="ui small header"><i class="angle double right icon"></i>給未來想從事這個工作的讀者的建議</div>'+
+                                                    '<p>'+info.suggestion+'</p>'
+                                                +'</div>\
+                                            </div>\
+                                        </div>';
+                    $('#career_modal_space').append(career_modal);
+                }
+
+                function displayCarrerModal(){
+                    console.log("display");
+                    $('.ui.career.modal').modal('show');
                 }
 
                 function zoomOut(p) {
@@ -367,6 +420,13 @@
 
             d3.select(self.frameElement).style("height", margin.top + margin.bottom + "px");
 
+            /*
+                $('#bilevel_partition').propeller({
+                    inertia: 0.9,
+                    speed: 0
+                });
+            */
+
         });
         $(document).ajaxStop(function() {
 
@@ -378,6 +438,7 @@
 </head>
 
 <body>
+    <div id="career_modal_space"></div>
     <div id="career_vs_subject" class="ui page stackable grid">
         <div class="se-pre-con"></div>
         <div class="row">

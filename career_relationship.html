@@ -23,7 +23,7 @@
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" />
     <script src="js/global.js"></script>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/career_vs_subject.css">
+    <link rel="stylesheet" type="text/css" href="css/career_relationship.css">
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
     $(document).ready(function() {
@@ -241,21 +241,24 @@
                                                 +'</div>\
                                             <div class="content">\
                                                  <div class="description">'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?</div>'+
+                                                    '<div class="ui inverted blue header segment">工作所需資格</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?</div>'+
                                                     '<p>'+info.certification_or_license+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>目前這個產業的現狀</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>目前這個產業的現狀</div>'+
                                                     '<p>'+info.industry_status+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問您大學就讀的科系及相關系所?</div>'+
+                                                    '<div class="ui divider"></div>\
+                                                    <div class="ui inverted blue header segment">專業背景與工作關聯</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?</div>'+
                                                     '<p>'+info.major_department+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>請問您就讀的大學/研究所??</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>請問您就讀的大學/研究所??</div>'+
                                                     '<p>'+info.university+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>您目前從事的職業是否與所念科系相關?</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?</div>'+
                                                     '<p>'+info.relationship_with_major+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?</div>'+
                                                     '<p>'+info.how_to_become+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?</div>'+
                                                     '<p>'+info.classmate_work+'</p>'+
-                                                    '<div class="ui small header"><i class="angle double right icon"></i>給未來想從事這個工作的讀者的建議</div>'+
+                                                    '<div class="ui small header"><i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議</div>'+
                                                     '<p>'+info.suggestion+'</p>'
                                                 +'</div>\
                                             </div>\
@@ -439,7 +442,7 @@
 
 <body>
     <div id="career_modal_space"></div>
-    <div id="career_vs_subject" class="ui page stackable grid">
+    <div id="career_relationship" class="ui page stackable grid">
         <div class="se-pre-con"></div>
         <div class="row">
             <div class="column">

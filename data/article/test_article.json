@@ -1392,8 +1392,8 @@
         "photography": "雅云",
         "fb_comment_href": "https://www.facebook.com/992120404140331/photos/a.993892917296413.1073741828.992120404140331/1067395796612791/?type=3&theater",
         "related_articles": [{
-            "id": "article_4",
-            "title": "藝術設計 ▋一雙繪製夢想的手"
+            "id": "article_22",
+            "title": "傳播藝術 ▋帶給人美麗與感動的工作者"
         }, {
             "id": "article_9",
             "title": "美容美髮 ▋永遠只呈現最美麗的樣貌"
@@ -1442,7 +1442,7 @@
             ]
         }]
     }, {
-        "title": "幕後執行 ▋帶給人美麗與感動的工作者",
+        "title": "傳播藝術 ▋帶給人美麗與感動的工作者",
         "web_title": "【TLBT 專訪 - 職業介紹】說故事家──帶給人美麗與感動的工作者",
         "web_description": "「我的工作就是將生活過程中所感受到的好訊息，以適合媒材來訴說故事，並且傳達出去。」這句話來自楊士毅先生，他是一位身兼多職的剪紙藝術家、導演、編劇者及攝影師，將美好的人事物呈現在大家眼前的「說故事人」。",
         "deploy_time": "2016.06.16",
@@ -1460,22 +1460,27 @@
             "id": "article_4",
             "title": "藝術設計 ▋一雙繪製夢想的手"
         }, {
-            "id": "article_6",
-            "title": "文字編譯 ▋在平淡中創造精彩的文字藝術家"
+            "id": "article_21",
+            "title": "美容美髮 ▋在頭頂上作畫的藝術家"
         }, {
             "id": "article_11",
             "title": "傳播藝術 ▋拍下每個幸福的瞬間"
         }],
         "fb_comment_href": "https://www.facebook.com/permalink.php?story_fbid=1142319912453712&id=992120404140331",
         "background_img": [
+            "http://i.imgur.com/cGPb8OJ.jpg",
             "http://imgur.com/EtNAEZk.jpg",
             "http://imgur.com/T2aY5qz.jpg",
             "http://imgur.com/5AUb9Lw.jpg"
         ],
         "photo_gallary": [
+            "http://imgur.com/HGXhiiA.jpg",
             "http://imgur.com/FznYEvv.jpg",
             "http://imgur.com/1V55OXW.jpg",
-            "http://imgur.com/g8KSLBX.jpg"
+            "http://imgur.com/g8KSLBX.jpg",
+            "http://i.imgur.com/yAbMrVs.jpg",
+            "http://i.imgur.com/zCeqfc7.jpg",
+            "http://i.imgur.com/etDuqyN.jpg"
         ],
         "cover_img": "http://imgur.com/HGXhiiA.jpg",
         "square_img": "http://imgur.com/qWrxmjZ.jpg",

@@ -1441,7 +1441,7 @@
                 "最後，讀者們是不是對美髮師這個行業有更多的了解了呢？下次若有機會，不妨和你的美髮師多聊聊，也許會有更多不同的故事在等著你哦！"
             ]
         }]
-	}, {
+    }, {
         "title": "幕後執行 ▋帶給人美麗與感動的工作者",
         "web_title": "【TLBT 專訪 - 職業介紹】說故事家──帶給人美麗與感動的工作者",
         "web_description": "「我的工作就是將生活過程中所感受到的好訊息，以適合媒材來訴說故事，並且傳達出去。」這句話來自楊士毅先生，他是一位身兼多職的剪紙藝術家、導演、編劇者及攝影師，將美好的人事物呈現在大家眼前的「說故事人」。",
@@ -1451,7 +1451,7 @@
         "prev_id": "article_21",
         "status": "new",
         "organization": "七逃咖啡廳",
-        "interview": "喻",
+        "interview": "傅喻",
         "editor": "婷玟",
         "art_editor": "鴨子",
         "photography": "婷玟",
@@ -1468,17 +1468,17 @@
         }],
         "fb_comment_href": "https://www.facebook.com/permalink.php?story_fbid=1142319912453712&id=992120404140331",
         "background_img": [
-            "http://imgur.com/NzxSBxr",
-            "http://imgur.com/ImJBfZE",
-            "http://imgur.com/AvjwHdV"
+            "http://imgur.com/NzxSBxr.jpg",
+            "http://imgur.com/ImJBfZE.jpg",
+            "http://imgur.com/AvjwHdV.jpg"
         ],
         "photo_gallary": [
-            "http://imgur.com/NzxSBxr",
-            "http://imgur.com/ImJBfZE",
+            "http://imgur.com/NzxSBxr.jpg",
+            "http://imgur.com/ImJBfZE.jpg",
             "http://imgur.com/yZde3UJ.jpg"
         ],
-        "cover_img": "http://imgur.com/HGXhiiA",
-        "square_img": "http://imgur.com/AvjwHdV",
+        "cover_img": "http://imgur.com/HGXhiiA.jpg",
+        "square_img": "http://imgur.com/AvjwHdV.jpg",
         "content": [{
             "header": "  ",
             "segment": [

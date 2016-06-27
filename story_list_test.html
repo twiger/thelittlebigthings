@@ -5,7 +5,7 @@
     <!-- Standard Meta -->
     <link rel="shortcut icon" href="img/logo/square_logo.png">
     <title>專訪故事 X 最重要的小事 The little big things</title>
-    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/CareerStory.jpg" rel="image_src"/>
+    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/CareerStory.jpg" rel="image_src" />
     <meta rel="icon" href="img/logo/square_logo.png" type="image/ico" />
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
@@ -46,32 +46,7 @@
         $('#story_content').css("display", 'none');
         $('body').css("background-color", 'initial');
 
-        var app = angular.module('myApp', []);
-        app.controller('story_content_crtl', function($scope, $http) {
-            $scope.content = null;
 
-            category = getURLParameter('category');
-
-            $http({
-                method: 'GET',
-                url: 'data/article/' + category + '.json'
-            }).
-            success(function(data, status, headers, config) {
-                //$scope.contents = data;
-                $scope.articles = data.articles.reverse();
-                $scope.category = category;
-
-
-            }).error(function(data, status, headers, config) {
-                console.log("Fail to load cetering.json");
-            });
-        });
-
-        app.filter('reverse', function() {
-            return function(items) {
-                return items.slice().reverse();
-            };
-        });
 
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             ResponsiveWeb();
@@ -89,55 +64,13 @@
         });
 
 
-        /*  Related to carier head slide show */
-        var options = {
-            $AutoPlay: true, //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-            $AutoPlaySteps: 1, //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-            $AutoPlayInterval: 0, //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-            $PauseOnHover: 4, //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
-
-            $ArrowKeyNavigation: true, //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-            $SlideEasing: $JssorEasing$.$EaseLinear, //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
-            $SlideDuration: 1600, //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-            $MinDragOffsetToSlide: 20, //[Optional] Minimum drag offset to trigger slide , default value is 20
-            $SlideWidth: 140, //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-            //$SlideHeight: 100,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
-            $SlideSpacing: 0, //[Optional] Space between each slide in pixels, default value is 0
-            $DisplayPieces: 7, //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
-            $ParkingPosition: 0, //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
-            $UISearchMode: 1, //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
-            $PlayOrientation: 1, //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
-            $DragOrientation: 1 //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-        };
-
-        var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-
-        //responsive code begin
-        //you can remove responsive code if you don't want the slider scales while window resizes
-        function ScaleSlider() {
-
-            var bodyWidth = document.body.clientWidth;
-            if (bodyWidth)
-                jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1600));
-            else
-                window.setTimeout(ScaleSlider, 30);
-        }
-
-        ScaleSlider();
-
-        $(window).bind("load", ScaleSlider);
-        $(window).bind("resize", ScaleSlider);
-        $(window).bind("orientationchange", ScaleSlider);
-        //responsive code end
-
     });
-
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
     <div id="master"></div>
     <!-- Site Properities -->
     <title>The little big things</title>
-    <link rel="stylesheet" type="text/css" href="css/story_list.css">
+    <link rel="stylesheet" type="text/css" href="css/story_list_test.css">
     <link rel="stylesheet" type="text/css" href="css/global.css">
 </head>
 
@@ -162,131 +95,50 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button id="hidden_SL_button_for_mobile" class="pulse hidden left aligned circular massive inverted ui red icon button">
-                        <i class="arrow down icon"></i>
-                    </button>
-                </div>
-                <div id="slider1_container" style="width: 980px;height: 130px; top: 10px;overflow: hidden;" class="row laptop">
-                    <div u="slides" style="width: 100%;height: 130px; top: 10px; overflow: hidden;left: 0px;" class="categoty_menu ui images">
-                        <div>
-                            <a class="ui tiny role image" data-content="我很清楚指令，也明白做消防員，不應該一命換一命，我們只是希望，能救一個是一個。">
-                                <img src="data/icon/firefighting.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="藝術家要做的事情並不是向絕望屈服，而是要找到一劑排遣精神空虛的解藥。">
-                                <img src="data/icon/painter.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="兩位裡面請喔~！吧檯在這，逃生出口在那裡，廁所在前面，兩位坐這。">
-                                <img src="data/icon/service.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="你累了嗎？ 精力充沛！ 保力達蠻牛！">
-                                <img src="data/icon/worker.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="來~來~看我這裡，這題會考喔~！OK~？">
-                                <img src="data/icon/teacher.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="歡迎您收看XX電台，接下來這一小時將由我來陪你一起度過。">
-                                <img src="data/icon/media.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="不要擔心程式運作有問題。因為如果他一切正常，那你就失業了。">
-                                <img src="data/icon/computer.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="感謝您的搭乘，祝您旅途愉快。">
-                                <img src="data/icon/skygirl.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="選擇醫學可能是偶然，但你一旦選擇了，就必須用一生的忠誠和熱情去對待。">
-                                <img src="data/icon/doctor.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="不能養成良好的理財習慣，即使擁有博士學位，也難讓你脫離貧窮。">
-                                <img src="data/icon/ecnomy.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="料理是要帶給人幸福！">
-                                <img src="data/icon/cook.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="是不是都無所謂。不管他有沒有殺人，都和我無關。檢察廳的證據不足，所以他被無罪釋放了，這就是法。">
-                                <img src="data/icon/law.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="道歉有用的話，那要警察幹嘛！">
-                                <img src="data/icon/police.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="辦公司就是辦人。人才是利潤最高的商品，能夠經營好人才的企業才是最終的贏家。">
-                                <img src="data/icon/manager.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="一顆青~青青採來青青茶~遍遍採來遍遍青~ 采呀采呀遍遍採來遍遍青~ 采滿一框~ 又一框~">
-                                <img src="data/icon/tea_girl.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="如果你的東西和大家都一樣，那幹嘛還設計它？">
-                                <img src="data/icon/designer.png">
-                            </a>
-                        </div>
-                        <div>
-                            <a class="ui tiny role image" data-content="咕嚕咕嚕都嚕啪啦咕嚕搭阿啪嚕嚕嚕...">
-                                <img src="data/icon/driver.png">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="career_list_content" class="ui very relaxed stackable grid page">
-            <div class="row" ng-repeat="article in articles">
-                <div class="ui centered stackable grid">
-                    <div class="row">
-                        <div class="story_img_abst three wide column">
-                            <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
-                                <img ng-src="{{article.square_img}}">
-                            </a>
-                        </div>
-                        <div class="story_abst thirteen wide column">
-                            <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}">
-                                <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                <h5 class="ui remove_margin_bottom right floated header transition_red display_for_laptop">{{article.deploy_time}}</h5>
-                            </a>
-                            <div class="meta margin_top">
-                                <span class="brown">{{article.organization}}</span>
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_laptop more transition_red">...more</a>
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
+                    <div class="sixteen wide column">
+                        <div class="ui centered very relaxed stackable five column page grid">
+                            <div class="row">
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/computer.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/cook.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/police.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/doctor.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/teacher.png">
+                                </div>
                             </div>
-                            <div class="description">
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}">
-                                    <p class="abstract description">
-                                        {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}} {{article.content[1].segment[1]}}
-                                    </p>
-                                </a>
-                                <div class="ui hidden divider"></div>
+                            <div class="row">
+                                <div class="column">
+                                    <div class="ui hidden divider"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/ecnomy.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/law.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/tea_girl.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/worker.png">
+                                </div>
+                                <div class="column">
+                                    <img class="ui fluid image" src="data/icon/painter.png">
+                                </div>
                             </div>
                         </div>
+                        <div class="ui hidden divider"></div>
                     </div>
-                    <div class="row"></div>
                 </div>
             </div>
         </div>

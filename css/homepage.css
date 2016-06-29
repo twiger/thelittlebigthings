@@ -63,8 +63,9 @@ h2.ui.light.header{
 
 #what_is_TLBT{
     padding: 5rem 0.5rem !important;
-    background-image:url("../data/img/paper-bg.jpg");
+    background-image: url("../img/bg_4.jpg");
     background-repeat:no-repeat;
+    background-position:bottom;
     background-size: cover;
     //background-image:url("../data/img/pic3.png"), url("../data/img/pic4.png");
 	//background-position: -17% 96%, 103% 96%;
@@ -72,7 +73,7 @@ h2.ui.light.header{
 }
 
 .what_is_TLBT_bg{
-    //background-image:url("../data/img/paper-bg.jpg");
+    //background-image: url("../img/story_category_bg.jpg");
 	//background-repeat:no-repeat;
 	//background-size: cover;
 }

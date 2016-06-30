@@ -51,10 +51,10 @@
                 function() {
                     //do something special
                     $(".se-pre-con").fadeOut("slow");
-                }, 1000);
+                }, 500);
         });
 
-        var app = angular.module('myApp', []);
+        var app = angular.module('myApp', ['angularLazyImg']);
         app.controller('story_content_crtl', function($scope, $http, $filter) {
             $scope.content = null;
             $http({
@@ -76,7 +76,8 @@
 
                 $.backstretch(article.background_img, {
                     duration: 15000,
-                    fade: 1000
+                    fade: 1000,
+                    preload:0
                 });
 
                 slide_img = article.photo_gallary;
@@ -192,7 +193,7 @@
             // optionName: 'option value'
             // for example:
             index: 0, // start at first slide
-            preload: [1, 3]
+            preload: [1, 2]
         };
 
         // Initializes and opens PhotoSwipe
@@ -272,6 +273,7 @@
     }
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
+    <script src="dist/angular-lazy-img.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <!-- For photoswipe -->
     <link rel="stylesheet" href="dist/photoswipe/photoswipe.css">
@@ -401,7 +403,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img class="ui main attached image" ng-src="{{article.cover_img}}" rel="image_src" type="image/jpeg">
+                            <img class="ui main attached image" src="img/white-loader.gif" lazy-img="{{article.cover_img}}" rel="image_src" type="image/jpeg">
                             <button class="mobile fluid ui bottom attached photo button">觀看相簿</button>
                         </div>
                     </div>

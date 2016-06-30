@@ -42,7 +42,7 @@
                 function() {
                     //do something specials
                     $(".se-pre-con").fadeOut("slow");
-                }, 2000);
+                }, 500);
         });
 
         $('#homepage_body').css("display", 'none');
@@ -85,7 +85,7 @@
         });
 
         /* Loading Data by angularJS */
-        var app = angular.module('myApp', []);
+        var app = angular.module('myApp', ['angularLazyImg']);
         app.controller('story_content_crtl', function($scope, $http, $filter) {
             $scope.content = null;
             $http({
@@ -117,7 +117,12 @@
 
         });
 
-
+        /* Handle Lazy loading */
+        $(function() {
+            $(".lazy_loading").lazyload({
+                effect : "fadeIn"
+            });
+        });
 
 
     });
@@ -128,6 +133,8 @@
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/semantic.css">
     <script type='text/javascript' src="js/angular.js"></script>
+    <script src="dist/angular-lazy-img.js"></script>
+    <script src="dist/jquery.lazyload.js"></script>
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </head>
 
@@ -146,7 +153,7 @@
                     <div class="sixteen wide column">
                         <div id="owl-carousel" class="owl-carousel owl-theme">
                             <div class="item">
-                                <div class="slide inset laptop slide_1">
+                                <div class="lazy_loading slide inset laptop slide_1">
                                     <div class="ui slide page grid">
                                         <div class="row">
                                             <div class="column">
@@ -163,7 +170,7 @@
                                     </div>
                                 </div>
                                 <div class="mobile">
-                                    <img class="ui fluid image" src="img/tlbthings/slide_1.jpg">
+                                    <img class="ui fluid image"  src="img/tlbthings/slide_1_mobile.jpg">
                                     <div class="hide segment">
                                         <p>你知道一棟房子是怎麼蓋出來的嗎？</p>
                                         <p>建築工人，是工地裡最前線的作業人員。通常都是體力吃重的工作，所以大多數也都是男性為主。裡面還包含了許多不同的技術， 像是灌水泥、燒焊、木工、電工等。
@@ -173,7 +180,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="slide inset laptop slide_2">
+                                <div class="lazy_loading slide inset laptop slide_2">
                                     <div class="ui slide page grid laptop">
                                         <div class="row">
                                             <div class="column">
@@ -194,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="mobile">
-                                    <img class="ui fluid image" src="img/tlbthings/slide_2.jpg">
+                                    <img class="ui fluid image" src="img/tlbthings/slide_2_mobile.jpg">
                                     <div class="hide segment">
                                         <p>你注意過她們嗎？頒獎典禮中總有個幫忙遞獎狀的小姐，她們是，禮賓小姐。</p>
                                         <p>禮賓人員的工作包含廣泛，從接待各場合貴賓，到各種大小典禮中，她們在準確的時間做正確的事，協助活動順利進行。</p>
@@ -203,7 +210,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="slide inset laptop slide_3">
+                                <div class="lazy_loading slide inset laptop slide_3">
                                     <div class="ui slide page grid laptop">
                                         <div class="row">
                                             <div class="column">
@@ -221,7 +228,7 @@
                                     </div>
                                 </div>
                                 <div class="mobile">
-                                    <img class="ui fluid image" src="img/tlbthings/slide_3.jpg" alt="便利商店">
+                                    <img class="ui fluid image" src="img/tlbthings/slide_3_mobile.jpg" alt="便利商店">
                                     <div class="hide segment">
                                         <p>你今天有走進便利商店嗎？從商品上架到煮咖啡，再從繳費到寄收包裹，隨著便利商店的功能越多，店員們也更忙碌了。</p>
                                         <p>下次，也記得跟店員說聲謝謝吧！</p>
@@ -261,7 +268,7 @@
                     </div>
                 </div>
             </div>
-            <div class="what_is_TLBT_bg">
+            <div class="lazy_loading what_is_TLBT_bg">
                 <div id="what_is_TLBT" class="ui centered sixteen very relaxed stackable grid page">
                     <div class="row">
                         <div class="column">
@@ -325,7 +332,7 @@
                         <div class="article row">
                             <div class="story_img_abst three wide column">
                                 <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
-                                    <img ng-src="{{article.square_img}}">
+                                    <img src="img/small-loadder.gif" lazy-img="{{article.square_img}}">
                                 </a>
                             </div>
                             <div class="story_abst thirteen wide column">

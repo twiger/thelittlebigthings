@@ -38,7 +38,7 @@
                 function() {
                     //do something special
                     $(".se-pre-con").fadeOut("slow");
-                }, 2000);
+                }, 500);
         });
 
         $('#story_list').css("display", 'none');
@@ -46,7 +46,7 @@
         $('#story_content').css("display", 'none');
         $('body').css("background-color", 'initial');
 
-        var app = angular.module('myApp', []);
+        var app = angular.module('myApp', ['angularLazyImg']);
         app.controller('story_content_crtl', function($scope, $http) {
             $scope.content = null;
 
@@ -134,6 +134,7 @@
 
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
+    <script src="dist/angular-lazy-img.js"></script>
     <div id="master"></div>
     <!-- Site Properities -->
     <title>The little big things</title>
@@ -263,7 +264,7 @@
                     <div class="row">
                         <div class="story_img_abst three wide column">
                             <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
-                                <img ng-src="{{article.square_img}}">
+                                <img src="img/small-loadder.gif" lazy-img="{{article.square_img}}">
                             </a>
                         </div>
                         <div class="story_abst thirteen wide column">

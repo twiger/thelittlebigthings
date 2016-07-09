@@ -47,3 +47,9 @@ circle {
     background: -o-linear-gradient(right, #2185d0, white);
     background: -moz-linear-gradient(right, #2185d0, white);
 }
+
+
+.header_divider{
+    margin:10px;
+}
+

@@ -103,3 +103,13 @@
 .our_team_margin{
 	padding: 1rem !important;
 }
+
+.one_text_line{
+	overflow:hidden;
+	height:2rem;
+	display:inline-block;
+}
+
+.retires_tr{
+	cursor:pointer;
+}

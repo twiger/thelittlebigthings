@@ -113,3 +113,7 @@
 .retires_tr{
 	cursor:pointer;
 }
+
+.center_aligned{
+	text-align: center;
+}

@@ -77,7 +77,7 @@
                 $.backstretch(article.background_img, {
                     duration: 15000,
                     fade: 1000,
-                    preload:0
+                    preload: 0
                 });
 
                 slide_img = article.photo_gallary;
@@ -416,6 +416,25 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{paragraph}}
                             </p>
                             <br/>
+                        </div>
+                    </div>
+                    <div class="row" ng-if="article.profile.visible == 'true'">
+                        <div class="column">
+                            <div class="ui inverted dividing header">受訪者簡介</div>
+                            <div class="ui grid">
+                                <div class="row">
+                                    <div class="five wide column">
+                                        <img class="ui fluid image" src="img/white-loader.gif" lazy-img="{{article.profile.img}}" rel="image_src" type="image/jpeg"></img>
+                                    </div>
+                                    <div class="eleven wide column">
+                                        <p>{{article.profile.description}}</p>
+                                        <div ng-repeat="href in article.profile.hrefs">
+                                            <div>{{href.name}} : <a href="{{href.url}}" target="_blank"><strong>CLICK ME</strong></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
                         </div>
                     </div>
                     <div class="row">

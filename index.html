@@ -56,6 +56,7 @@
             $(".slide.inset.laptop").css("height", $(window).height() - $("#segment_master").height());
             $("#owl-carousel").css("width", $(window).width());
             $(".ui.inverted.slide.head.segment").css("bottom", "0rem");
+            $('.ui.embed').embed();
 
 
         });
@@ -120,7 +121,7 @@
         /* Handle Lazy loading */
         $(function() {
             $(".lazy_loading").lazyload({
-                effect : "fadeIn"
+                effect: "fadeIn"
             });
         });
 
@@ -170,7 +171,7 @@
                                     </div>
                                 </div>
                                 <div class="mobile">
-                                    <img class="ui fluid image"  src="img/tlbthings/slide_1_mobile.jpg">
+                                    <img class="ui fluid image" src="img/tlbthings/slide_1_mobile.jpg">
                                     <div class="hide segment">
                                         <p>你知道一棟房子是怎麼蓋出來的嗎？</p>
                                         <p>建築工人，是工地裡最前線的作業人員。通常都是體力吃重的工作，所以大多數也都是男性為主。裡面還包含了許多不同的技術， 像是灌水泥、燒焊、木工、電工等。
@@ -286,30 +287,38 @@
                         </div>
                     </div>
                     <div class="fadein_row row">
-                        <div class="ui four column center aligned stackable grid">
-                            <div class="column">
-                                <div class="ui inverted red icon header">
-                                    <i class="comments icon"></i> 實地訪談
+                        <div class="ui center aligned stackable grid">
+                            <div class="three column row">
+                                <div class="column">
+                                    <div class="ui inverted red icon header">
+                                        <i class="comments icon"></i> 實地訪談
+                                    </div>
+                                    <p>團隊會與您聯繫並且簽定訪問合約
+                                        <br/>及確定訪談時間，約兩個小時。
+                                    </p>
                                 </div>
-                                <p>團隊會與您聯繫並且簽定訪問合約
-                                    <br/>及確定訪談時間，約兩個小時。
-                                </p>
+                                <div class="column">
+                                    <div class="ui icon header">
+                                        <i class="newspaper icon"></i> 文章編撰
+                                    </div>
+                                    <p>採訪完後，團隊會將內容進行編撰，
+                                        <br/>並且經由受訪者同意後，將文章分享！
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <div class="ui blue icon header">
+                                        <i class="world icon"></i> 平台推廣
+                                    </div>
+                                    <p>希望利用學校輔導室及網路平台，
+                                        <br/>讓更多孩子能夠閱讀到各行各業的工作故事！
+                                    </p>
+                                </div>
                             </div>
-                            <div class="column">
-                                <div class="ui icon header">
-                                    <i class="newspaper icon"></i> 文章編撰
+                            <div class="row">
+                                <div class="column">
+                                    <div class="ui embed" data-source="youtube" data-id="2w6rQboyhMs">
+                                    </div>
                                 </div>
-                                <p>採訪完後，團隊會將內容進行編撰，
-                                    <br/>並且經由受訪者同意後，將文章分享！
-                                </p>
-                            </div>
-                            <div class="column">
-                                <div class="ui blue icon header">
-                                    <i class="world icon"></i> 平台推廣
-                                </div>
-                                <p>希望利用學校輔導室及網路平台，
-                                    <br/>讓更多孩子能夠閱讀到各行各業的工作故事！
-                                </p>
                             </div>
                         </div>
                     </div>

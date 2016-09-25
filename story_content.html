@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix='og: http://ogp.me/ns#' ng-app="myApp" ng-controller="story_content_crtl">
+<html prefix='og: http://ogp.me/ns#' ng-app="myApp" ng-controller="article_crtl">
 
 <head>
     <!-- Standard Meta -->
@@ -55,7 +55,7 @@
         });
 
         var app = angular.module('myApp', ['angularLazyImg']);
-        app.controller('story_content_crtl', function($scope, $http, $filter) {
+        app.controller('article_crtl', function($scope, $http, $filter) {
             $scope.content = null;
             $http({
                 method: 'GET',

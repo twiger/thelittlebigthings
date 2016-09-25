@@ -47,7 +47,7 @@
         $('body').css("background-color", 'initial');
 
         var app = angular.module('myApp', ['angularLazyImg']);
-        app.controller('story_content_crtl', function($scope, $http) {
+        app.controller('article_crtl', function($scope, $http) {
             $scope.content = null;
 
             category = getURLParameter('category');
@@ -142,7 +142,7 @@
     <link rel="stylesheet" type="text/css" href="css/global.css">
 </head>
 
-<body id="story_list" ng-app="myApp" ng-controller="story_content_crtl">
+<body id="story_list" ng-app="myApp" ng-controller="article_crtl">
     <div class="se-pre-con"></div>
     <div class="ui stackable grid">
         <div class="career_list_header_bg">

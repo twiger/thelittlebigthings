@@ -87,7 +87,7 @@
 
         /* Loading Data by angularJS */
         var app = angular.module('myApp', ['angularLazyImg']);
-        app.controller('story_content_crtl', function($scope, $http, $filter) {
+        app.controller('article_crtl', function($scope, $http, $filter) {
             $scope.content = null;
             $http({
                 method: 'GET',
@@ -139,7 +139,7 @@
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 </head>
 
-<body id="homepage_body" ng-app="myApp" ng-controller="story_content_crtl">
+<body id="homepage_body" ng-app="myApp">
     <div class="se-pre-con"></div>
     <div class="ui stackable grid">
         <div id="tlbthings">
@@ -326,7 +326,7 @@
                     </div>
                 </div>
             </div>
-            <div id="new_list_content" class="ui very relaxed stackable page grid">
+            <div ng-controller="article_crtl" id="new_list_content" class="ui very relaxed stackable page grid">
                 <div class="row">
                     <h1 id="what_is_TLBT_header" class="ui dividing header">
                         <div class="content">

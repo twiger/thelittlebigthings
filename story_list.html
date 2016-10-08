@@ -51,6 +51,7 @@
         // Load the master
         $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
             // when master.html is loaded, fade in the body.
+            detectBrowser();
             ResponsiveWeb();
             $('body').fadeIn(1000);
             $(".ui.work.item").addClass('active');

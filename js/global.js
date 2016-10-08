@@ -1,10 +1,22 @@
-function detectIEBrowser() {
+function detectBrowser() {
 
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    // Firefox 1.0+
+    var isFirefox = typeof InstallTrigger !== 'undefined';
+    // Safari <= 9 "[object HTMLElementConstructor]" 
+    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+    // Chrome 1+
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    // Blink engine detection
+    var isBlink = (isChrome || isOpera) && !!window.CSS;
 
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
-        alert("很抱歉，我們暫時不支援 IE ( Internet Explorer ) 瀏覽器，為了讓您無礙的翻閱我們的故事，請改用 Chrome 或 Firefox，謝謝。");
+    if (!(isFirefox || isSafari || isChrome)) // If Internet Explorer, return version number
+        alert("很抱歉，為了讓您無礙的翻閱我們的故事，請改用 Chrome、Firefox、Safari，謝謝。");
 
     return false;
 }
@@ -64,10 +76,10 @@ function showStillWorking(selector) {
 
 
 function arraysEqual(arr1, arr2) {
-    if(arr1.length !== arr2.length)
+    if (arr1.length !== arr2.length)
         return false;
-    for(var i = arr1.length; i--;) {
-        if(arr1[i] !== arr2[i])
+    for (var i = arr1.length; i--;) {
+        if (arr1[i] !== arr2[i])
             return false;
     }
     return true;

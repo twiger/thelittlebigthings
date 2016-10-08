@@ -24,10 +24,12 @@
     <script src="js/global.js"></script>
     <script>
     $(document).ready(function() {
+        
         $.ajaxSetup({
             cache: false
         });
 
+        // When the window size is changed, adjust the elements.
         $(window).resize(function() {
             ResponsiveWeb();
         });
@@ -41,45 +43,48 @@
                 }, 500);
         });
 
+        // Hide the visible elements during loading
         $('#story_list').css("display", 'none');
-
         $('#story_content').css("display", 'none');
         $('body').css("background-color", 'initial');
 
-        var app = angular.module('myApp', ['angularLazyImg']);
-        app.controller('article_crtl', function($scope, $http) {
-            $scope.content = null;
+        // Load the master
+        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
+            // when master.html is loaded, fade in the body.
+            ResponsiveWeb();
+            $('body').fadeIn(1000);
+            $(".ui.work.item").addClass('active');
+        });
 
+        // Initialize the angularJS app with lazy loading plugin
+        var app = angular.module('myApp', ['angularLazyImg']);
+
+        // Initialize the contorller for handling article with two variable
+        // $scope: object for exchange information between view and controller
+        // $http: onject for sendding http request
+        app.controller('article_crtl', function($scope, $http) {
+            
+            // access the parameter from url
+            // it determine loading which kind of article category
             category = getURLParameter('category');
 
+            // Send request for loading the article 
             $http({
                 method: 'GET',
                 url: 'data/article/' + category + '.json'
             }).
             success(function(data, status, headers, config) {
-                //$scope.contents = data;
-                $scope.articles = data.articles.reverse();
-                $scope.category = category;
 
+                // When success to send the request, execute these statement
+
+                // reverse the order of article
+                $scope.articles = data.articles.reverse();
 
             }).error(function(data, status, headers, config) {
-                console.log("Fail to load cetering.json");
+                // When fail to send the request, execute these statement
+                console.log("Fail to load category.json");
             });
         });
-
-        app.filter('reverse', function() {
-            return function(items) {
-                return items.slice().reverse();
-            };
-        });
-
-
-        $("#master").load("master.html", function(responseTxt, statusTxt, xhr) {
-            ResponsiveWeb();
-            $('body').fadeIn(1000);
-            $(".ui.work.item").addClass('active');
-        });
-        $(document).ajaxStop(function() {});
 
 
         $('.tiny.role.image').popup();
@@ -89,7 +94,6 @@
                 'scrollTop': $('#career_list_content').offset().top
             }, 1000);
         });
-
 
         /*  Related to carier head slide show */
         var options = {
@@ -133,7 +137,6 @@
         //responsive code end
 
     });
-
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
     <script src="dist/angular-lazy-img.js"></script>
@@ -304,63 +307,6 @@
             </div>
         </h1>
     </div>
-    <!--
-    <div class="ui bottom attached segment pushable">
-        <div class="ui visible inverted left vertical sidebar menu">
-            <a class="item">
-                <i class="home icon"></i> Home
-            </a>
-            <a class="item">
-                <i class="block layout icon"></i> Topics
-            </a>
-            <a class="item">
-                <i class="smile icon"></i> Friends
-            </a>
-            <a class="item">
-                <i class="calendar icon"></i> History
-            </a>
-        </div>
-        <div class="pusher">
-            <div class="ui basic segment">
-                <div id="" class="ui stackable grid page">
-                    <div class="ui hidden divider"></div>
-                    <h1 class="left aligned ui header">
-                        各行各業甘苦談
-                    </h1>
-                    <h3 class="left aligned ui header">
-                            人因夢想而偉大！但有多少人在逐夢的過程中而陣亡？<br/>
-                            有多少人終其一生可以使夢想成真？<br/>
-                            The Little Big Things 紀載了人們的夢想，來看看他們的故事吧！
-                    </h3>
-                    <div class="ui divider"></div>
-                    <div class="row" ng-repeat="article in articles">
-                        <div class="story_img_abst three wide column">
-                            <div class="ui fluid rounded image">
-                                <a ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#" class="ui image">
-                                    <img ng-src="{{article.square_img}}">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="story_abst ten wide column">
-                            <a class="header" ng-href="story_content.html?category={{category}}&article_id={{article.article_id}}#">{{article.title}}</a>
-                            <div class="meta">
-                                <span>{{article.abstraction}}</span>
-                            </div>
-                            <div class="description">
-                                <p class="abstract description">
-                                    {{article.content[0].segment[0]}}
-                                    <br/> {{article.content[0].segment[1]}}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="ui career_list_content divider"></div>
-                    </div>
-                    <div class="bottom margin"></div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>The Little Big <span>Things</span></h3>

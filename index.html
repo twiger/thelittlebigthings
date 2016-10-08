@@ -96,12 +96,30 @@
             success(function(data, status, headers, config) {
                 //$scope.contents = data;
 
+                // Deprecated: Use filter to filter old article
+                /*
                 var articles = $filter('filter')(data.articles, {
                     "status": "new"
                 });
+                */
 
-                $scope.articles = articles.reverse();
+                // Display the latest four article.
+                $scope.articles = data.articles.reverse().slice(0, 4);
+                
+                // Determine whether display "new aticle" label to hint there are some latest published article 
+                var article_ids = [];
+                var article_ids_in_localStorage = JSON.parse(window.localStorage.getItem("article_ids"));
 
+                data.articles.forEach(function(article){
+                    article_ids.push(article['article_id']);
+                });
+
+                if (!arraysEqual(article_ids, article_ids_in_localStorage)){
+                    console.log("There are some new article.");
+                    $('#new_article_label').fadeIn();
+                }
+
+                localStorage.setItem('article_ids', JSON.stringify(article_ids));
 
             }).error(function(data, status, headers, config) {
                 console.log("Fail to load cetering.json");
@@ -337,7 +355,7 @@
                 </div>
                 <div class="row"></div>
                 <div class="row" ng-repeat="article in articles">
-                    <div class="ui centered stackable grid">
+                    <div class="ui relaxed centered stackable grid">
                         <div class="article row">
                             <div class="story_img_abst three wide column">
                                 <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">

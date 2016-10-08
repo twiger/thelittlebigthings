@@ -39,7 +39,7 @@ p {
     -moz-transition: .3s !important;
     -webkit-transition: .3s !important;
     transition: .3s !important;
-    color:black;
+    color: black;
 }
 
 .transition_red:hover {
@@ -47,14 +47,14 @@ p {
     border-color: #f26f60 !important;
 }
 
-.transition_red.active{
+.transition_red.active {
     color: black !important;
     border-color: black !important;
     font-weight: 600 !important;
 }
 
-space.float_right{
-    float:right;
+space.float_right {
+    float: right;
 }
 
 
@@ -62,16 +62,16 @@ space.float_right{
     Header
 ---------------*/
 
-#master_logo{
-    cursor:pointer;
+#master_logo {
+    cursor: pointer;
 }
 
-.logo_img{
-    width:8.6rem !important;
+.logo_img {
+    width: 8.6rem !important;
 }
 
-.sub.logo.header{
-    font:normal 36px 'Cookie', cursive;
+.sub.logo.header {
+    font: normal 36px 'Cookie', cursive;
 }
 
 span.menu_text {
@@ -82,11 +82,17 @@ span.menu_text {
     font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif !important;
 }
 
-.non-pointer{
+
+#new_article_label {
+    background-color: #f26f60 !important;
+    display: none;
+}
+
+.non-pointer {
     cursor: default !important;
 }
 
-.no-margin{
+.no-margin {
     margin: 0rem !important;
 }
 
@@ -111,7 +117,7 @@ span.menu_text {
     padding-bottom: 15px;
     padding-top: 15px;
     z-index: +100;
-    width:101%;
+    width: 101%;
     box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.3);
     -moz-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
     -webkit-box-shadow: 2px 1px 9px 1px rgba(20%, 20%, 40%, 0.5);
@@ -129,7 +135,6 @@ span.menu_text {
 .display_for_laptop {
     display: block;
 }
-
 
 @media only screen and (min-width: 1400px) {
     .ui.page.grid {

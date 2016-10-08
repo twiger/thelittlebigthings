@@ -5,7 +5,7 @@
     <!-- Standard Meta -->
     <link rel="shortcut icon" href="img/logo/square_logo.png">
     <title>專訪故事 X 最重要的小事 The little big things</title>
-    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/CareerStory.jpg" rel="image_src"/>
+    <meta property="og:image" content="http://www.thelittlebigthings.idv.tw/img/CareerStory.jpg" rel="image_src" />
     <meta rel="icon" href="img/logo/square_logo.png" type="image/ico" />
     <meta http-equiv="content-language" content="zh-tw">
     <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
@@ -24,7 +24,7 @@
     <script src="js/global.js"></script>
     <script>
     $(document).ready(function() {
-        
+
         $.ajaxSetup({
             cache: false
         });
@@ -63,7 +63,7 @@
         // $scope: object for exchange information between view and controller
         // $http: onject for sendding http request
         app.controller('article_crtl', function($scope, $http) {
-            
+
             // access the parameter from url
             // it determine loading which kind of article category
             category = getURLParameter('category');
@@ -263,41 +263,41 @@
                 </div>
             </div>
         </div>
-        <div id="career_list_content" class="ui very relaxed stackable grid page">
+        <div id="career_list_content" class="ui relaxed stackable grid page">
             <div class="row" ng-repeat="article in articles">
-                <div class="ui centered stackable relaxed grid">
-                    <div class="row">
-                        <div class="story_img_abst three wide column">
-                            <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
-                                <img src="img/small-loadder.gif" lazy-img="{{article.square_img}}">
-                            </a>
-                        </div>
-                        <div class="story_abst thirteen wide column">
-                            <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}">
-                                <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
-                                <h5 class="ui remove_margin_bottom right floated header transition_red display_for_laptop">{{article.deploy_time}}</h5>
-                            </a>
-                            <div class="meta margin_top">
-                                <span class="brown">{{article.organization}}</span>
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_laptop more transition_red">...more</a>
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
-                            </div>
-                            <div class="description">
-                                <a ng-href="story_content.html?category=general&article_id={{article.article_id}}">
-                                    <p class="abstract description">
-                                        {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}} {{article.content[1].segment[1]}}
-                                    </p>
-                                </a>
-                                <div class="ui hidden divider"></div>
-                            </div>
-                        </div>
+                <div class="story_img_abst three wide column">
+                    <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
+                        <img src="img/small-loadder.gif" lazy-img="{{article.square_img}}">
+                    </a>
+                </div>
+                <div class="story_abst thirteen wide column">
+                    <a class="header" ng-href="story_content.html?category=general&article_id={{article.article_id}}">
+                        <h3 class="ui remove_margin_bottom left floated blue header">{{article.title}}</h3>
+                        <h5 class="ui remove_margin_bottom right floated header transition_red display_for_laptop">{{article.deploy_time}}</h5>
+                    </a>
+                    <div class="meta margin_top">
+                        <span class="brown">{{article.organization}}</span>
+                        <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_laptop more transition_red">...more</a>
+                        <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="right_floated display_for_mobile more transition_red">{{article.deploy_time}}</a>
                     </div>
-                    <div class="row"></div>
+                    <div class="description">
+                        <a ng-href="story_content.html?category=general&article_id={{article.article_id}}">
+                            <p class="abstract description">
+                                {{article.content[0].segment[0]}} {{article.content[0].segment[1]}} {{article.content[1].segment[0]}} {{article.content[1].segment[1]}}
+                            </p>
+                        </a>
+                        <br/>
+                        <br/>
+                        <div class="ui hidden divider"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
+    <button class="mobile move_top circular google plus ui icon button">
+        <i class="icon arrow up"></i>
+    </button>
     <div class="ui basic modal">
         <h1 class="ui icon inverted header">
             <i class="warning sign icon"></i>

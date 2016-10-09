@@ -68,6 +68,7 @@
             // access the parameter from url
             // it determine loading which kind of article category
             category = getURLParameter('category');
+            page = getURLParameter('page');
 
             // Send request for loading the article 
             $http({
@@ -79,7 +80,12 @@
                 // When success to send the request, execute these statement
 
                 // reverse the order of article
-                $scope.articles = data.articles.reverse();
+                var pageNum = page 
+                if (pageNum){
+                  $scope.articles = data.articles.reverse().slice((pageNum-1)*10,((pageNum-1)*10)+10);
+                } else {
+                  $scope.articles = data.articles.reverse().slice(0,10);
+                }
 
             }).error(function(data, status, headers, config) {
                 // When fail to send the request, execute these statement
@@ -353,3 +359,4 @@
     ga('send', 'pageview');
     </script>
 </body>
+

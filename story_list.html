@@ -80,12 +80,14 @@
                 // When success to send the request, execute these statement
 
                 // reverse the order of article
-                var pageNum = page 
-                if (pageNum){
-                  $scope.articles = data.articles.reverse().slice((pageNum-1)*10,((pageNum-1)*10)+10);
+                var pageNum = page
+                if (pageNum) {
+                    $scope.articles = data.articles.reverse().slice((pageNum - 1) * 10, ((pageNum - 1) * 10) + 10);
                 } else {
-                  $scope.articles = data.articles.reverse().slice(0,10);
+                    $scope.articles = data.articles.reverse().slice(0, 10);
                 }
+
+                $scope.pages = new Array(Math.ceil(data.articles.length / 10));
 
             }).error(function(data, status, headers, config) {
                 // When fail to send the request, execute these statement
@@ -299,8 +301,12 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="ui borderless menu">
+                    <a class="item" data-ng-repeat="i in pages track by $index" href="?category=general&?page={{$index+1}}">{{$index+1}}</a>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <button class="mobile move_top circular google plus ui icon button">
         <i class="icon arrow up"></i>
@@ -359,4 +365,3 @@
     ga('send', 'pageview');
     </script>
 </body>
-

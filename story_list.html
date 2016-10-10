@@ -68,6 +68,7 @@
             // access the parameter from url
             // it determine loading which kind of article category
             category = getURLParameter('category');
+            page = getURLParameter('page');
 
             // Send request for loading the article 
             $http({
@@ -79,7 +80,34 @@
                 // When success to send the request, execute these statement
 
                 // reverse the order of article
-                $scope.articles = data.articles.reverse();
+
+                var pageNum = page
+                if (pageNum) {
+                    $scope.articles = data.articles.reverse().slice((pageNum - 1) * 10, ((pageNum - 1) * 10) + 10);
+                } else {
+                    $scope.articles = data.articles.reverse().slice(0, 10);
+                }
+
+                $scope.pages = new Array(Math.ceil(data.articles.length / 10));
+
+                $scope.currentPage = getURLParameter('page')
+
+                if ($scope.currentPage == 1) {
+                    $scope.prevPage = $scope.currentPage;
+                } else {
+                    $scope.prevPage = parseInt($scope.currentPage) - 1;
+                }
+
+                if ($scope.currentPage == $scope.pages.length) {
+                    $scope.nextPage = $scope.currentPage;
+                } else {
+                    $scope.nextPage = parseInt($scope.currentPage) + 1;
+                }
+
+                $scope.isActive = function(viewLocation) {
+                    var active = (viewLocation === $scope.currentPage);
+                    return active;
+                }
 
             }).error(function(data, status, headers, config) {
                 // When fail to send the request, execute these statement
@@ -264,7 +292,7 @@
                 </div>
             </div>
         </div>
-        <div id="career_list_content" class="ui relaxed stackable grid page">
+        <div id="career_list_content" class="ui relaxed stackable centered grid page">
             <div class="row" ng-repeat="article in articles">
                 <div class="story_img_abst three wide column">
                     <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
@@ -291,6 +319,14 @@
                         <br/>
                         <div class="ui hidden divider"></div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ui pointing menu">
+                    <a class="item" ng-href="?category=general&page={{prevPage}}">
+                        <<</a>
+                            <a class="item" data-ng-repeat="i in pages track by $index" ng-class="{active: isActive('{{$index+1}}')}" ng-href="?category=general&page={{$index+1}}">{{$index+1}}</a>
+                            <a class="item" ng-href="?category=general&page={{nextPage}}">>></a>
                 </div>
             </div>
         </div>

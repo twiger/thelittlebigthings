@@ -89,6 +89,11 @@
 
                 $scope.pages = new Array(Math.ceil(data.articles.length / 10));
 
+                $scope.isActive = function (viewLocation){
+                    var active = (viewLocation === pageNum);
+                    return active;
+                }
+
             }).error(function(data, status, headers, config) {
                 // When fail to send the request, execute these statement
                 console.log("Fail to load category.json");
@@ -272,7 +277,7 @@
                 </div>
             </div>
         </div>
-        <div id="career_list_content" class="ui relaxed stackable grid page">
+        <div id="career_list_content" class="ui relaxed stackable centered grid page">
             <div class="row" ng-repeat="article in articles">
                 <div class="story_img_abst three wide column">
                     <a ng-href="story_content.html?category=general&article_id={{article.article_id}}" class="ui fluid rounded image">
@@ -301,12 +306,16 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="ui borderless menu">
-                    <a class="item" data-ng-repeat="i in pages track by $index" href="?category=general&?page={{$index+1}}">{{$index+1}}</a>
+            <div class="row">
+                <div class="ui pointing menu">
+                    <a class="item" ng-href="?category=general&page={{page-1}}">
+                        <<</a>
+                    <a class="item" data-ng-repeat="i in pages track by $index" ng-class="{active: isActive('{{$index+1}}')}" ng-href="?category=general&page={{$index+1}}">{{$index+1}}</a>
+                    <a class="item">>></a>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <button class="mobile move_top circular google plus ui icon button">
         <i class="icon arrow up"></i>

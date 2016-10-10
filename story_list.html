@@ -80,6 +80,7 @@
                 // When success to send the request, execute these statement
 
                 // reverse the order of article
+
                 var pageNum = page
                 if (pageNum) {
                     $scope.articles = data.articles.reverse().slice((pageNum - 1) * 10, ((pageNum - 1) * 10) + 10);
@@ -89,8 +90,22 @@
 
                 $scope.pages = new Array(Math.ceil(data.articles.length / 10));
 
-                $scope.isActive = function (viewLocation){
-                    var active = (viewLocation === pageNum);
+                $scope.currentPage = getURLParameter('page')
+
+                if ($scope.currentPage == 1) {
+                    $scope.prevPage = $scope.currentPage;
+                } else {
+                    $scope.prevPage = parseInt($scope.currentPage) - 1;
+                }
+
+                if ($scope.currentPage == $scope.pages.length) {
+                    $scope.nextPage = $scope.currentPage;
+                } else {
+                    $scope.nextPage = parseInt($scope.currentPage) + 1;
+                }
+
+                $scope.isActive = function(viewLocation) {
+                    var active = (viewLocation === $scope.currentPage);
                     return active;
                 }
 
@@ -308,10 +323,10 @@
             </div>
             <div class="row">
                 <div class="ui pointing menu">
-                    <a class="item" ng-href="?category=general&page={{page-1}}">
+                    <a class="item" ng-href="?category=general&page={{prevPage}}">
                         <<</a>
-                    <a class="item" data-ng-repeat="i in pages track by $index" ng-class="{active: isActive('{{$index+1}}')}" ng-href="?category=general&page={{$index+1}}">{{$index+1}}</a>
-                    <a class="item">>></a>
+                            <a class="item" data-ng-repeat="i in pages track by $index" ng-class="{active: isActive('{{$index+1}}')}" ng-href="?category=general&page={{$index+1}}">{{$index+1}}</a>
+                            <a class="item" ng-href="?category=general&page={{nextPage}}">>></a>
                 </div>
             </div>
         </div>

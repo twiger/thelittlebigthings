@@ -16,12 +16,12 @@
 #our_team{
 	padding: 5rem 0rem !important;
 	padding-bottom: 15rem !important;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 #our_team_bg{
-	background: url("../img/bg3.jpg");
-	background-size: cover;
+	background: url("../img/bg.jpg");
+	background-size: contain;
 }
 
 .blue{

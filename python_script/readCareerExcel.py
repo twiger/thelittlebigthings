@@ -20,6 +20,4 @@ for idx, row in enumerate(response.rows):
 career_relationship['data'] = data
 
 with codecs.open('career_relationship.json', 'w', 'utf8') as f:
-     f.write(json.dumps(career_relationship, sort_keys = True, ensure_ascii=False))
-		
-			
+	f.write(json.dumps(career_relationship, sort_keys = True, ensure_ascii=False,indent=4, separators=(',', ':')))

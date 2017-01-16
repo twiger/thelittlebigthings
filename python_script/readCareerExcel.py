@@ -14,6 +14,7 @@ for idx, row in enumerate(response.rows):
 			#print cell.value
 			item.append(cell.value)
 		item[0] = str(item[0])
+		item[0] = item[0][:10]
 		per_person = {k: v for k, v in zip(item_name, item)}
 		data.append(per_person)
 

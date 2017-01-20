@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/career_relationship.css">
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
-    var app = angular.module('career_app', []);
+    var app = angular.module('career_app', ['angularLazyImg']);
     app.controller('career_ctrl', function($scope, $http) {
 
         $.ajaxSetup({
@@ -64,6 +64,77 @@
                 context: '#content'
             });
 
+        $scope.catagories = [{
+            "school_name": "基礎科學",
+            "deparments": [{
+                "deparment_name": "數理化學群"
+            }, {
+                "deparment_name": "地球與環境學群"
+            }]
+        }, {
+            "school_name": "工程",
+            "deparments": [{
+                "deparment_name": "工程學群"
+            }, {
+                "deparment_name": "資訊學群"
+            }]
+        }, {
+            "school_name": "建築設計與藝術",
+            "deparments": [{
+                "deparment_name": "建築與設計學群"
+            }, {
+                "deparment_name": "藝術學群"
+            }]
+        }, {
+            "school_name": "生命科學",
+            "deparments": [{
+                "deparment_name": "生命科學學群"
+            }, {
+                "deparment_name": "生物資源學群"
+            }, {
+                "deparment_name": "醫藥衛生學群"
+            }]
+        }, {
+            "school_name": "社會科學",
+            "deparments": [{
+                "deparment_name": "法律與政治學群"
+            }, {
+                "deparment_name": "社會與心理學群"
+            }, {
+                "deparment_name": "資訊與傳播學群"
+            }]
+        }, {
+            "school_name": "運動與休閒",
+            "deparments": [{
+                "deparment_name": "觀光"
+            }, {
+                "deparment_name": "餐飲"
+            }, {
+                "deparment_name": "體育"
+            }]
+        }, {
+            "school_name": "人文與教育",
+            "deparments": [{
+                "deparment_name": "外語學群"
+            }, {
+                "deparment_name": "教育學群"
+            }, {
+                "deparment_name": "文史哲學群"
+            }]
+        }, {
+            "school_name": "商業與管理",
+            "deparments": [{
+                "deparment_name": "商業與管理學群"
+            }, {
+                "deparment_name": "財經學群"
+            }]
+        }, {
+            "school_name": "不分系學群",
+            "deparments": [{
+                "deparment_name": "不分系學群"
+            }]
+        }]
+
 
     });
     </script>
@@ -86,189 +157,22 @@
                     <div class="ui right dividing rail">
                         <div class="ui sticky fix top">
                             <div class="ui basic segment">
-                                <div class="ui vertical following fluid accordion text menu">
+                                <div class="ui vertical following fluid accordion text menu" ng-repeat="school in catagories">
                                     <div class="item">
                                         <a class="title active">
                                             <i class="dropdown icon"></i>
-                                            <b>基礎科學</b>
+                                            <b>{{school.school_name}}</b>
                                         </a>
                                         <div class="active content">
-                                            <div class="ui vertical following fluid accordion text menu">
+                                            <div class="ui vertical following fluid accordion text menu" ng-repeat="deparment in school.deparments">
                                                 <div class="item">
                                                     <a class="title active">
                                                         <i class="dropdown icon"></i>
-                                                        <b>數理化學群</b>
+                                                        <b>{{deparment.department_name}}</b>
                                                     </a>
                                                     <div class="content active">
                                                         <div class="ui vertical fluid text menu">
-                                                            <a class="item">學者</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>地球與環境學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">天文學家</a>
-                                                            <a class="item">測量師</a>
-                                                            <a class="item">環保署環境評估人員</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a class="title active">
-                                            <i class="dropdown icon"></i>
-                                            <b>工程</b>
-                                        </a>
-                                        <div class="active content">
-                                            <div class="ui vertical following fluid accordion text menu">
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>工程學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">機械工程師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>資訊學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">軟體工程師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a class="title active">
-                                            <i class="dropdown icon"></i>
-                                            <b>建築設計與藝術</b>
-                                        </a>
-                                        <div class="active content">
-                                            <div class="ui vertical following fluid accordion text menu">
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>建築與設計學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">建築工程師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>藝術學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">導演</a>
-                                                            <a class="item">畫家</a>
-                                                            <a class="item">聲樂家</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a class="title active">
-                                            <i class="dropdown icon"></i>
-                                            <b>生命科學</b>
-                                        </a>
-                                        <div class="active content">
-                                            <div class="ui vertical following fluid accordion text menu">
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>生命科學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">助理研究員</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>生物資源學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">生態學家</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>醫藥衛生學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">醫師</a>
-                                                            <a class="item">護理師</a>
-                                                            <a class="item">藥師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a class="title active">
-                                            <i class="dropdown icon"></i>
-                                            <b>社會科學</b>
-                                        </a>
-                                        <div class="active content">
-                                            <div class="ui vertical following fluid accordion text menu">
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>法律與政治學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">律師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>社會與心理學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">臨床心理師</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <a class="title active">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>資訊與傳播學群</b>
-                                                    </a>
-                                                    <div class="content active">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">記者</a>
+                                                            <a class="item">XX職業</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -281,6 +185,118 @@
                         </div>
                     </div>
                     <p>This place put article</p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <br/>
                     <br/>
                     <br/>

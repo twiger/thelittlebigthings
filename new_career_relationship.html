@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html prefix='og: http://ogp.me/ns#' ng-app="career_app" ng-controller="career_ctrl">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,6 @@
     <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
-    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/propeller.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="js/angular.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/semantic.css">
@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/career_relationship.css">
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
-    var app = angular.module('career_app', ['angularLazyImg']);
+    var app = angular.module('career_app',[]);
     app.controller('career_ctrl', function($scope, $http) {
 
         $.ajaxSetup({
@@ -61,7 +61,7 @@
 
         $('.ui.sticky')
             .sticky({
-                context: '#content'
+                context: '#career_catagory'
             });
 
         $scope.catagories = [{
@@ -133,15 +133,16 @@
             "deparments": [{
                 "deparment_name": "不分系學群"
             }]
-        }]
+        }];
 
 
     });
     </script>
+    <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <div id="master"></div>
 </head>
 
-<body ng-app="career_app" ng-controller="career_ctrl">
+<body>
     <div id="career_modal_space"></div>
     <div id="career_relationship" class="ui page stackable grid">
         <div class="se-pre-con"></div>
@@ -404,3 +405,5 @@
     ga('send', 'pageview');
     </script>
 </body>
+
+</html>

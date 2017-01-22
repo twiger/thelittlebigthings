@@ -166,17 +166,9 @@
                                             <b>{{school.school_name}}</b>
                                         </a>
                                         <div class="content">
-                                            <div class="ui vertical following fluid text menu" ng-repeat="deparment in school.deparments">
+                                            <div class="ui vertical fluid text menu" ng-repeat="deparment in school.deparments">
                                                 <div class="item">
-                                                    <a class="title">
-                                                        <i class="dropdown icon"></i>
-                                                        <b>{{deparment.department_name}}</b>
-                                                    </a>
-                                                    <div class="content">
-                                                        <div class="ui vertical fluid text menu">
-                                                            <a class="item">XX職業</a>
-                                                        </div>
-                                                    </div>
+                                                    {{deparment.department_name}}
                                                 </div>
                                             </div>
                                         </div>

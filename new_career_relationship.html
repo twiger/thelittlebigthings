@@ -56,16 +56,14 @@
             ResponsiveWeb();
             $('#homepage_body').fadeIn(1000);
             $(".career.item").addClass('active');
+            $('.ui.accordion')
+                .accordion();
+            $('.ui.sticky')
+                .sticky({
+                    context: '#career_catagory'
+                });
 
         });
-
-        $('.ui.sticky')
-            .sticky({
-                context: '#career_catagory'
-            });
-
-        $('.ui.accordion')
-            .accordion();
 
         $scope.catagories = [{
             "school_name": "基礎科學",
@@ -168,9 +166,9 @@
                                             <b>{{school.school_name}}</b>
                                         </a>
                                         <div class="content">
-                                            <div class="ui vertical following fluid accordion text menu" ng-repeat="deparment in school.deparments">
+                                            <div class="ui vertical following fluid text menu" ng-repeat="deparment in school.deparments">
                                                 <div class="item">
-                                                    <a class="active">
+                                                    <a class="title">
                                                         <i class="dropdown icon"></i>
                                                         <b>{{deparment.department_name}}</b>
                                                     </a>
@@ -360,7 +358,6 @@
                     <p>hello!!!!!!!!!!!!!!</p>
                 </div>
             </div>
-            <div class="four wide column"></div>
         </div>
     </div>
     <footer class="footer-distributed">

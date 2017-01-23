@@ -70,6 +70,11 @@ span.bottom.right.floated{
     bottom: 1rem;
 }
 
+.one_line{
+    white-space:nowrap;
+    overflow:hidden;
+}
+
 /*--------------
    Article
 ---------------*/
@@ -82,10 +87,10 @@ span.bottom.right.floated{
     -webkit-box-orient: vertical;
     width: 100%;
     max-height: 8rem;
-    min-height: 6rem;
+    min-height: 8rem;
     margin-top: 0.5rem;
     color: black;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 2rem;
 }
 ​

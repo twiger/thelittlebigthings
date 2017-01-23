@@ -166,7 +166,7 @@
                 for (j = 0; j < $scope.categories.length; j++) {
                     var school = $scope.categories[j];
                     if (school.school_name == article.groupby_major) {
-                        article["id"] = i+1;
+                        article["id"] = i + 1;
                         school.cards.push(article);
                     }
                 }
@@ -248,53 +248,53 @@
                                         <div class="extra content">
                                             <span class="right floated">
                                     <a ng-click="more_career(card.id)">more...</a>
-                                </span>
+                                    </span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ui small career modal" id="{{card.id}}">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        {{card.position}}
-                                        <span class="right floated">{{card.time}}</span>
-                                    </div>
-                                    <div class="content">
-                                        <div class="description">
-                                            <div class="ui inverted blue header segment">工作所需資格</div>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
+                                    <div class="ui small career modal" ng-attr-id="{{card.id}}">
+                                        <i class="close icon"></i>
+                                        <div class="header">
+                                            {{card.position}}
+                                            <span class="right floated">{{card.time}}</span>
+                                        </div>
+                                        <div class="content">
+                                            <div class="description">
+                                                <div class="ui inverted blue header segment">工作所需資格</div>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
+                                                </div>
+                                                <p>{{card.certification}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>目前這個產業的現狀
+                                                </div>
+                                                <p>{{card.industry_status}}</p>
+                                                <div class="ui divider"></div>
+                                                <div class="ui inverted blue header segment">專業背景與工作關聯</div>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?
+                                                </div>
+                                                <p>{{card.major}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>請問您就讀的大學/研究所??
+                                                </div>
+                                                <p>{{card.education}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?
+                                                </div>
+                                                <p>{{card.related_to_major}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?
+                                                </div>
+                                                <p>{{card.ability_from_major}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?
+                                                </div>
+                                                <p>{{card.job_based_on_major}}</p>
+                                                <div class="ui small header">
+                                                    <i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議
+                                                </div>
+                                                <p>{{card.sug_to_reader}}</p>
                                             </div>
-                                            <p>{{card.certification}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>目前這個產業的現狀
-                                            </div>
-                                            <p>{{card.industry_status}}</p>
-                                            <div class="ui divider"></div>
-                                            <div class="ui inverted blue header segment">專業背景與工作關聯</div>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?
-                                            </div>
-                                            <p>{{card.major}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>請問您就讀的大學/研究所??
-                                            </div>
-                                            <p>{{card.education}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?
-                                            </div>
-                                            <p>{{card.related_to_major}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?
-                                            </div>
-                                            <p>{{card.ability_from_major}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?
-                                            </div>
-                                            <p>{{card.job_based_on_major}}</p>
-                                            <div class="ui small header">
-                                                <i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議
-                                            </div>
-                                            <p>{{card.sug_to_reader}}</p>
                                         </div>
                                     </div>
                                 </div>

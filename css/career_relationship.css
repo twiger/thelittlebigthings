@@ -60,6 +60,9 @@ circle {
     cursor: pointer;
 }
 
+span.float_right.ng-binding{
+    float:right;
+}
 
 /*--------------
    Article

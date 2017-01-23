@@ -60,35 +60,43 @@
                 .accordion();
             $('.ui.sticky')
                 .sticky({
-                    context: '#career_catagory'
+                    context: '#career_category'
                 });
 
         });
 
-        $scope.catagories = [{
+        $scope.categories = [{
             "school_name": "基礎科學",
-            "deparments": [{
+            "figure": "computer.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "數理化學群"
             }, {
                 "department_name": "地球與環境學群"
             }]
         }, {
             "school_name": "工程",
-            "deparments": [{
+            "figure": "worker.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "工程學群"
             }, {
                 "department_name": "資訊學群"
             }]
         }, {
             "school_name": "建築設計與藝術",
-            "deparments": [{
+            "figure": "painter.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "建築與設計學群"
             }, {
                 "department_name": "藝術學群"
             }]
         }, {
             "school_name": "生命科學",
-            "deparments": [{
+            "figure": "doctor.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "生命科學學群"
             }, {
                 "department_name": "生物資源學群"
@@ -97,7 +105,9 @@
             }]
         }, {
             "school_name": "社會科學",
-            "deparments": [{
+            "figure": "law.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "法律與政治學群"
             }, {
                 "department_name": "社會與心理學群"
@@ -106,7 +116,9 @@
             }]
         }, {
             "school_name": "運動與休閒",
-            "deparments": [{
+            "figure": "cook.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "觀光"
             }, {
                 "department_name": "餐飲"
@@ -115,7 +127,9 @@
             }]
         }, {
             "school_name": "人文與教育",
-            "deparments": [{
+            "figure": "teacher.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "外語學群"
             }, {
                 "department_name": "教育學群"
@@ -124,17 +138,52 @@
             }]
         }, {
             "school_name": "商業與管理",
-            "deparments": [{
+            "figure": "ecnomy.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "商業與管理學群"
             }, {
                 "department_name": "財經學群"
             }]
         }, {
             "school_name": "不分系學群",
-            "deparments": [{
+            "figure": "police.png",
+            "cards": [],
+            "departments": [{
                 "department_name": "不分系學群"
             }]
         }];
+
+        $http({
+            //Access career relationship data
+            method: 'GET',
+            url: "data/article/career_relationship.json"
+        }).success(function(data, status, headers, config) {
+            // When success to send the request, execute these statement
+            $scope.articles = data.data
+            for (i = 0; i < $scope.articles.length; i++) {
+                var article = $scope.articles[i]
+                for (j = 0; j < $scope.categories.length; j++) {
+                    var school = $scope.categories[j];
+                    if (school.school_name == article.groupby_major) {
+                        article["id"] = i+1;
+                        school.cards.push(article);
+                    }
+                }
+            }
+        }).error(function(data, status, headers, config) {
+            // When fail to send the request, execute these statement
+            console.log("Fail to load career_relationship.json");
+        });
+
+        $scope.more_career = function(id) {
+            console.log("User click more...")
+            console.log(id)
+            $('#' + id).modal('show');
+
+        }
+
+
 
 
     });
@@ -155,199 +204,104 @@
         </div>
         <div class="very relaxed row">
             <div class="twelve wide column">
-                <div class="ui basic segment" id="career_catagory">
+                <div class="ui basic segment" id="career_category">
+                    <!-- Here starts the catagory rail !-->
                     <div class="ui right dividing rail">
                         <div class="ui sticky fix top">
                             <div class="ui basic segment">
-                                <div class="ui vertical following fluid accordion text menu" ng-repeat="school in catagories">
+                                <div class="ui vertical following fluid accordion text menu" ng-repeat="school in categories">
                                     <div class="item">
                                         <a class="title">
                                             <i class="dropdown icon"></i>
                                             <b>{{school.school_name}}</b>
                                         </a>
                                         <div class="content">
-                                            <div class="ui vertical fluid text menu" ng-repeat="deparment in school.deparments">
-                                                <div class="item">
-                                                    {{deparment.department_name}}
-                                                </div>
+                                            <div class="ui vertical fluid text menu" ng-repeat="department in school.departments">
+                                                <a class="item" ng-href="#{{department.department_name}}">
+                                                    {{department.department_name}}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Any arbitrary content !-->
                         </div>
                     </div>
-                    <p>This place put article</p>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <p>hello!!!!!!!!!!!!!!</p>
+                    <!-- Ends the catagory rail !-->
+                    <!-- Here starts the occupation articles !-->
+                    <div class="ui basic segment" ng-repeat="school in categories">
+                        <h1 class="ui header">
+                        <img ng-src="data/icon/{{school.figure}}" class="ui circular image">
+                        {{school.school_name}}
+                    </h1>
+                        <div class="ui raised segment" ng-repeat="department in school.departments">
+                            <h2 class="ui header" id="{{department.department_name}}">{{department.department_name}}</h2>
+                            <div class="ui divider"></div>
+                            <div class="ui three stackable cards">
+                                <div class="brown card" ng-repeat="card in school.cards">
+                                    <div class="content">
+                                        <div class="header">{{card.position}}</div>
+                                        <div class="meta">畢業科系: {{card.major}}</div>
+                                        <div class="description">
+                                            {{card.prof_ability}}
+                                        </div>
+                                        <div class="extra content">
+                                            <span class="right floated">
+                                    <a ng-click="more_career(card.id)">more...</a>
+                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui small career modal" id="{{card.id}}">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        {{card.position}}
+                                        <span class="right floated">{{card.time}}</span>
+                                    </div>
+                                    <div class="content">
+                                        <div class="description">
+                                            <div class="ui inverted blue header segment">工作所需資格</div>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
+                                            </div>
+                                            <p>{{card.certification}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>目前這個產業的現狀
+                                            </div>
+                                            <p>{{card.industry_status}}</p>
+                                            <div class="ui divider"></div>
+                                            <div class="ui inverted blue header segment">專業背景與工作關聯</div>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?
+                                            </div>
+                                            <p>{{card.major}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>請問您就讀的大學/研究所??
+                                            </div>
+                                            <p>{{card.education}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?
+                                            </div>
+                                            <p>{{card.related_to_major}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?
+                                            </div>
+                                            <p>{{card.ability_from_major}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?
+                                            </div>
+                                            <p>{{card.job_based_on_major}}</p>
+                                            <div class="ui small header">
+                                                <i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議
+                                            </div>
+                                            <p>{{card.sug_to_reader}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ends the occupation articles !-->
                 </div>
             </div>
         </div>

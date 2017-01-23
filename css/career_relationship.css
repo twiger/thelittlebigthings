@@ -48,15 +48,29 @@ circle {
     background: -moz-linear-gradient(right, #2185d0, white);
 }
 
-
-.header_divider{
-    margin:10px;
+.header_divider {
+    margin: 10px;
 }
 
-.margin_bot_less{
+.margin_bot_less {
     margin-bottom: 0px !important;
 }
 
-.showCareerModal{
-    cursor:pointer;
+.showCareerModal {
+    cursor: pointer;
 }
+
+
+/*--------------
+   Article
+---------------*/
+
+.abstract.description {
+    width: 100px;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    text-overflow: ellipsis;
+}
+
+​

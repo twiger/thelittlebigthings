@@ -234,19 +234,19 @@
                         <img ng-src="data/icon/{{school.figure}}" class="ui circular image">
                         {{school.school_name}}
                     </h1>
-                        <div class="ui raised segment" ng-repeat="department in school.departments">
+                        <div class="ui raised padded segment" ng-repeat="department in school.departments">
                             <h2 class="ui header" id="{{department.department_name}}">{{department.department_name}}</h2>
                             <div class="ui divider"></div>
                             <div class="ui three stackable cards">
-                                <div class="brown card" ng-repeat="card in school.cards">
+                                <div class="brown career card" ng-repeat="card in school.cards">
                                     <div class="content">
-                                        <div class="header">{{card.position}}</div>
-                                        <div class="meta">畢業科系: {{card.major}}</div>
+                                        <div class="one_line header">{{card.position}}</div>
+                                        <div class="one_line meta">畢業科系: {{card.major}}</div>
                                         <div class="abstract description">
                                             {{card.prof_ability}}
                                         </div>
                                         <div class="extra content">
-                                            <span class="right floated">
+                                            <span class="bottom right floated">
                                     <a ng-click="more_career(card.id)">more...</a>
                                     </span>
                                         </div>

@@ -64,6 +64,12 @@ span.float_right.ng-binding{
     float:right;
 }
 
+span.bottom.right.floated{
+    position: aboslute;
+    right:1rem;
+    bottom: 1rem;
+}
+
 /*--------------
    Article
 ---------------*/
@@ -75,10 +81,12 @@ span.float_right.ng-binding{
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     width: 100%;
-    max-height: 10rem;
+    max-height: 8rem;
+    min-height: 6rem;
     margin-top: 0.5rem;
     color: black;
     margin-bottom: 2rem;
     line-height: 2rem;
 }
 ​
+

@@ -68,88 +68,100 @@
         $scope.categories = [{
             "school_name": "基礎科學",
             "figure": "computer.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "數理化學群"
             }, {
+                "cards": [],
                 "department_name": "地球與環境學群"
             }]
         }, {
             "school_name": "工程",
             "figure": "worker.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "工程學群"
             }, {
+                "cards": [],
                 "department_name": "資訊學群"
             }]
         }, {
             "school_name": "建築設計與藝術",
             "figure": "painter.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "建築與設計學群"
             }, {
+                "cards": [],
                 "department_name": "藝術學群"
             }]
         }, {
             "school_name": "生命科學",
             "figure": "doctor.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "生命科學學群"
             }, {
+                "cards": [],
                 "department_name": "生物資源學群"
             }, {
+                "cards": [],
                 "department_name": "醫藥衛生學群"
             }]
         }, {
             "school_name": "社會科學",
             "figure": "law.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "法律與政治學群"
             }, {
+                "cards": [],
                 "department_name": "社會與心理學群"
             }, {
+                "cards": [],
                 "department_name": "資訊與傳播學群"
             }]
         }, {
             "school_name": "運動與休閒",
             "figure": "cook.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "觀光"
             }, {
+                "cards": [],
                 "department_name": "餐飲"
             }, {
-                "department_name": "體育"
+                "cards": [],
+                "department_name": "休憩與運動"
             }]
         }, {
             "school_name": "人文與教育",
             "figure": "teacher.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "外語學群"
             }, {
+                "cards": [],
                 "department_name": "教育學群"
             }, {
+                "cards": [],
                 "department_name": "文史哲學群"
             }]
         }, {
             "school_name": "商業與管理",
             "figure": "ecnomy.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "商業與管理學群"
             }, {
+                "cards": [],
                 "department_name": "財經學群"
             }]
         }, {
             "school_name": "不分系學群",
             "figure": "police.png",
-            "cards": [],
             "departments": [{
+                "cards": [],
                 "department_name": "不分系學群"
             }]
         }];
@@ -165,9 +177,12 @@
                 var article = $scope.articles[i]
                 for (j = 0; j < $scope.categories.length; j++) {
                     var school = $scope.categories[j];
-                    if (school.school_name == article.groupby_major) {
-                        article["id"] = i + 1;
-                        school.cards.push(article);
+                    for (k = 0; k < school.departments.length; k++) {
+                        var department = school.departments[k]
+                        if (department.department_name == article.groupby_department) {
+                            article["id"] = i + 1;
+                            department.cards.push(article);
+                        }
                     }
                 }
             }
@@ -238,14 +253,14 @@
                             <h2 class="ui header" id="{{department.department_name}}">{{department.department_name}}</h2>
                             <div class="ui divider"></div>
                             <div class="ui three stackable cards">
-                                <div class="brown career card" ng-repeat="card in school.cards">
+                                <div class="brown career card" ng-repeat="card in department.cards">
                                     <div class="content">
                                         <div class="one_line header">{{card.position}}</div>
                                         <div class="one_line meta">畢業科系: {{card.major}}</div>
                                         <div class="abstract description">
                                             {{card.prof_ability}}
                                         </div>
-                                        <span class="bottom right floated">
+                                        <span class="right floated">
                                             <a ng-click="more_career(card.id)">more...</a>
                                         </span>
                                     </div>
@@ -273,7 +288,7 @@
                                                 </div>
                                                 <p>{{card.major}}</p>
                                                 <div class="ui small header">
-                                                    <i class="angle double right red icon"></i>請問您就讀的大學/研究所??
+                                                    <i class="angle double right red icon"></i>請問您就讀的大學/研究所?
                                                 </div>
                                                 <p>{{card.education}}</p>
                                                 <div class="ui small header">

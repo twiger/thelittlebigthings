@@ -5,7 +5,7 @@ wb = openpyxl.load_workbook('career_relationship.xlsx', data_only=True)
 response = wb['Response']
 career_relationship = {}
 data = []
-item_name = ['time', 'name', 'email', 'sign', 'position', 'orgnization', 'org_sign', 'exp_years', 'certification', 'prof_ability', 'industry_status', 'sug_to_high_school_stu', 'major', 'related_to_major', 'ability_from_major', 'job_based_on_major', 'sug_to_reader', 'education', 'groupby_major', 'groupby_job'  ]
+item_name = ['time', 'name', 'email', 'sign', 'position', 'orgnization', 'org_sign', 'exp_years', 'certification', 'prof_ability', 'industry_status', 'sug_to_high_school_stu', 'major', 'related_to_major', 'ability_from_major', 'job_based_on_major', 'sug_to_reader', 'education', 'groupby_school', 'groupby_department', 'groupby_job'  ]
 
 for idx, row in enumerate(response.rows):
 	if idx != 0:

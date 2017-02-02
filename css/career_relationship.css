@@ -48,15 +48,44 @@ circle {
     background: -moz-linear-gradient(right, #2185d0, white);
 }
 
-
-.header_divider{
-    margin:10px;
+.header_divider {
+    margin: 10px;
 }
 
-.margin_bot_less{
+.margin_bot_less {
     margin-bottom: 0px !important;
 }
 
-.showCareerModal{
-    cursor:pointer;
+.showCareerModal {
+    cursor: pointer;
 }
+
+span.float_right.ng-binding{
+    float:right;
+}
+
+.one_line{
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+/*--------------
+   Article
+---------------*/
+
+.abstract.description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    max-height: 8rem;
+    min-height: 8rem;
+    margin-top: 0.5rem;
+    color: black;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+​
+

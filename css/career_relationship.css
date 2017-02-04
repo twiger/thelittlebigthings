@@ -69,6 +69,10 @@ span.float_right.ng-binding{
     overflow:hidden;
 }
 
+.segment_hidden_divider{
+    margin-bottom: 3rem !important;
+}
+
 /*--------------
    Article
 ---------------*/

@@ -230,10 +230,12 @@
                                             <b>{{school.school_name}}</b>
                                         </a>
                                         <div class="content">
-                                            <div class="ui vertical fluid text menu" ng-repeat="department in school.departments">
-                                                <a class="item" ng-href="#{{department.department_name}}">
+                                            <div ng-repeat="department in school.departments">
+                                                <div class="ui vertical fluid text menu" ng-if="department.cards.length>0">
+                                                    <a class="item" ng-href="#{{department.department_name}}">
                                                     {{department.department_name}}
                                                 </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -60,7 +60,11 @@
                 .sticky({
                     context: '#career_category'
                 });
-            $('.ui.accordion').accordion();
+            $('.ui.accordion').accordion({
+                selector: {
+                    trigger: '.title .icon'
+                }
+            });
 
         });
 
@@ -197,8 +201,12 @@
 
         }
 
+        $scope.states_activeItem = "";
 
-
+        $scope.isActive = function(active_name){
+            console.log(active_name + " was clicked!")
+            $scope.states_activeItem = active_name;
+        }
 
     });
     </script>
@@ -225,14 +233,16 @@
                             <div class="ui basic segment">
                                 <div class="ui vertical following fluid accordion text menu" ng-repeat="school in categories">
                                     <div ng-click="toggle_submenu()" class="active item">
-                                        <a class="title">
+                                        <div class="title">
                                             <i class="dropdown icon"></i>
-                                            <b>{{school.school_name}}</b>
-                                        </a>
+                                            <a ng-href="#{{school.school_name}}" ng-class="{'active': school.school_name == states_activeItem}" ng-click="isActive(school.school_name)">
+                                                <b>{{school.school_name}}</b>
+                                            </a>
+                                        </div>
                                         <div class="content">
                                             <div ng-repeat="department in school.departments">
                                                 <div class="ui vertical fluid text menu" ng-if="department.cards.length>0">
-                                                    <a class="item" ng-href="#{{department.department_name}}">
+                                                    <a class="item" ng-href="#{{department.department_name}}" ng-class="{'active': department.department_name == states_activeItem}" ng-click="isActive(department.department_name)">
                                                     {{department.department_name}}
                                                 </a>
                                                 </div>
@@ -247,7 +257,7 @@
                     <!-- Here starts the occupation articles !-->
                     <div class="ui basic segment" ng-repeat="school in categories">
                         <h1 class="ui header">
-                            <img ng-src="data/icon/{{school.figure}}" class="ui circular image">
+                            <img ng-src="data/icon/{{school.figure}}" class="ui circular image" id="{{school.school_name}}">
                             {{school.school_name}}
                         </h1>
                         <div ng-repeat="department in school.departments">

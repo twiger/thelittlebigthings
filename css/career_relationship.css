@@ -52,6 +52,18 @@ circle {
     margin: 10px;
 }
 
+#career_category .title a{
+    color: black;
+}
+
+#career_category .title a:hover{
+    color: #f26f60;
+}
+
+#career_category a.active{
+    color: #438496;
+}
+
 .margin_bot_less {
     margin-bottom: 0px !important;
 }

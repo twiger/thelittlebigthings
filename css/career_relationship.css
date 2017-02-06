@@ -52,6 +52,18 @@ circle {
     margin: 10px;
 }
 
+#career_category .title a{
+    color: black;
+}
+
+#career_category .title a:hover{
+    color: #f26f60;
+}
+
+#career_category a.active{
+    color: #438496;
+}
+
 .margin_bot_less {
     margin-bottom: 0px !important;
 }
@@ -67,6 +79,10 @@ span.float_right.ng-binding{
 .one_line{
     white-space:nowrap;
     overflow:hidden;
+}
+
+.segment_hidden_divider{
+    margin-bottom: 3rem !important;
 }
 
 /*--------------

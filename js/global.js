@@ -27,6 +27,10 @@ function ResponsiveWeb() {
     var device_width = $(document).width();
     var device_height = $(document).height();
     var footer_pos = $('#footer').position();
+    var pathname = window.location.pathname;
+    var url      = window.location.href;
+    console.log(pathname)
+    console.log(url)
 
 
     if (device_width < 2000) {
@@ -61,6 +65,13 @@ function ResponsiveWeb() {
                     "display": "none"
                 });
             });
+
+        // Here all for new_career_relationship page 
+        if (pathname == "/new_career_relationship.html"){
+            $('#career_relationship').toggleClass('page');
+            $('.each_school').toggleClass("ui basic segment");
+            $('#all_articles').toggleClass("pusher")
+        }
     }
 
 };

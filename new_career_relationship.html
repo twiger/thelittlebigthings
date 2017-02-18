@@ -203,9 +203,19 @@
 
         $scope.states_activeItem = "";
 
-        $scope.isActive = function(active_name){
+        $scope.isActive = function(active_name) {
             console.log(active_name + " was clicked!")
             $scope.states_activeItem = active_name;
+        }
+
+        $scope.hamburger = function() {
+            console.log("user hit hamburger")
+            $('#context .ui.sidebar')
+                .sidebar({
+                    context: $('#context #career_category'),
+                    transition: 'push'
+                })
+                .sidebar('attach events', '#context .menu .item');
         }
 
     });
@@ -219,16 +229,21 @@
     <div id="career_relationship" class="ui page stackable grid">
         <div class="se-pre-con"></div>
         <div class="row">
-            <div class="column">
+            <div class="laptop column">
                 <div class="header_divider">
                 </div>
             </div>
         </div>
         <div class="very relaxed row">
-            <div class="twelve wide column">
+            <div class="twelve wide column" id="context">
+                <div class="mobile ui top attached demo menu">
+                    <a class="item" ng-click="hamburger()">
+                        <i class="sidebar icon"></i> Menu
+                    </a>
+                </div>
                 <div class="ui basic segment" id="career_category">
                     <!-- Here starts the catagory rail !-->
-                    <div class="ui right dividing rail">
+                    <div class="laptop ui right dividing rail">
                         <div class="ui sticky fix top">
                             <div class="ui basic segment">
                                 <div class="ui vertical following fluid accordion text menu" ng-repeat="school in categories">
@@ -254,72 +269,88 @@
                         </div>
                     </div>
                     <!-- Ends the catagory rail !-->
+                    <div class="mobile ui inverted labeled icon left inline vertical sidebar menu">
+                        <a class="item">
+                            <i class="home icon"></i> Home
+                        </a>
+                        <a class="item">
+                            <i class="block layout icon"></i> Topics
+                        </a>
+                        <a class="item">
+                            <i class="smile icon"></i> Friends
+                        </a>
+                        <a class="item">
+                            <i class="calendar icon"></i> History
+                        </a>
+                    </div>
                     <!-- Here starts the occupation articles !-->
-                    <div class="ui basic segment" ng-repeat="school in categories">
-                        <h1 class="ui header">
+                    <div id="all_articles" class="">
+                        <div class="each_school ui basic segment" ng-repeat="school in categories">
+                            <h1 class="ui header">
                             <img ng-src="data/icon/{{school.figure}}" class="ui circular image" id="{{school.school_name}}">
                             {{school.school_name}}
                         </h1>
-                        <div ng-repeat="department in school.departments">
-                            <div ng-if="department.cards.length > 0">
-                                <div class="ui raised padded segment segment_hidden_divider">
-                                    <h2 class="ui header" id="{{department.department_name}}">{{department.department_name}}</h2>
-                                    <div class="ui divider"></div>
-                                    <div class="ui three stackable cards">
-                                        <div class="brown career card" ng-repeat="card in department.cards">
-                                            <div class="content">
-                                                <div class="one_line header">{{card.position}}</div>
-                                                <div class="one_line meta">畢業科系: {{card.major}}</div>
-                                                <div class="abstract description">
-                                                    {{card.prof_ability}}
-                                                </div>
-                                                <span class="right floated">
+                            <div ng-repeat="department in school.departments">
+                                <div ng-if="department.cards.length > 0">
+                                    <div class="ui raised padded segment segment_hidden_divider">
+                                        <h2 class="ui header" id="{{department.department_name}}">{{department.department_name}}</h2>
+                                        <div class="ui divider"></div>
+                                        <div class="ui three stackable cards">
+                                            <div class="brown career card" ng-repeat="card in department.cards">
+                                                <div class="content">
+                                                    <div class="one_line header">{{card.position}}</div>
+                                                    <div class="one_line meta">畢業科系: {{card.major}}</div>
+                                                    <div class="abstract description">
+                                                        {{card.prof_ability}}
+                                                    </div>
+                                                    <span class="right floated">
                                             <a ng-click="more_career(card.id)">more...</a>
                                         </span>
-                                            </div>
-                                            <div class="ui small career modal" ng-attr-id="{{card.id}}">
-                                                <i class="close icon"></i>
-                                                <div class="header">
-                                                    {{card.position}}
-                                                    <span class="float_right">{{card.time}}</span>
                                                 </div>
-                                                <div class="content">
-                                                    <div class="description">
-                                                        <div class="ui inverted blue header segment">工作所需資格</div>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
+                                                <div class="ui small career modal" ng-attr-id="{{card.id}}">
+                                                    <i class="close icon"></i>
+                                                    <div class="header">
+                                                        {{card.position}}
+                                                        <span class="float_right">{{card.time}}</span>
+                                                    </div>
+                                                    <div class="content">
+                                                        <div class="description">
+                                                            <div class="ui inverted blue header segment">工作所需資格</div>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
+                                                            </div>
+                                                            <p>{{card.certification}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>目前這個產業的現狀
+                                                            </div>
+                                                            <p>{{card.industry_status}}</p>
+                                                            <div class="ui divider"></div>
+                                                            <div class="ui inverted blue header segment">專業背景與工作關聯</div>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?
+                                                            </div>
+                                                            <p>{{card.major}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>請問您就讀的大學/研究所?
+                                                            </div>
+                                                            <p>{{card.education}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?
+                                                            </div>
+                                                            <p>{{card.related_to_major}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?
+                                                            </div>
+                                                            <p>{{card.ability_from_major}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?
+                                                            </div>
+                                                            <p>{{card.job_based_on_major}}</p>
+                                                            <div class="ui small header">
+                                                                <i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議
+                                                            </div>
+                                                            <p>{{card.sug_to_reader}}</p>
                                                         </div>
-                                                        <p>{{card.certification}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>目前這個產業的現狀
-                                                        </div>
-                                                        <p>{{card.industry_status}}</p>
-                                                        <div class="ui divider"></div>
-                                                        <div class="ui inverted blue header segment">專業背景與工作關聯</div>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>請問您大學就讀的科系及相關系所?
-                                                        </div>
-                                                        <p>{{card.major}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>請問您就讀的大學/研究所?
-                                                        </div>
-                                                        <p>{{card.education}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>您目前從事的職業是否與所念科系相關?
-                                                        </div>
-                                                        <p>{{card.related_to_major}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>承上題，若有關，就讀科系會培養什麼樣的能力對工作有什麼幫助 ; 若無關，是怎麼培養相關能力的?
-                                                        </div>
-                                                        <p>{{card.ability_from_major}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>同樣是這個系所畢業的同學，目前分別的工作是甚麼?
-                                                        </div>
-                                                        <p>{{card.job_based_on_major}}</p>
-                                                        <div class="ui small header">
-                                                            <i class="angle double right red icon"></i>給未來想從事這個工作的讀者的建議
-                                                        </div>
-                                                        <p>{{card.sug_to_reader}}</p>
                                                     </div>
                                                 </div>
                                             </div>

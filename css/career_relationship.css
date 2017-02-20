@@ -85,6 +85,20 @@ span.float_right.ng-binding{
     margin-bottom: 3rem !important;
 }
 
+.hamburger.ui.google.plus.button{
+    background: #FAB526;
+}
+
+.hamburger{
+    position: fixed;
+    bottom: 4rem !important;
+    right: 2rem !important;
+}
+
+#hamburger_menu .content a{
+    color: white !important;
+}
+
 /*--------------
    Article
 ---------------*/

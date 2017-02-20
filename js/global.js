@@ -70,7 +70,6 @@ function ResponsiveWeb() {
         if (pathname == "/new_career_relationship.html"){
             $('#career_relationship').toggleClass('page');
             $('.each_school').toggleClass("ui basic segment");
-            $('#all_articles').toggleClass("pusher")
         }
     }
 

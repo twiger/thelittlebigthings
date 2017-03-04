@@ -99,6 +99,18 @@ span.float_right.ng-binding{
     color: white !important;
 }
 
+.ui.career_introduction.page.grid{
+    background-image: url("../img/bg_4.jpg");
+    background-repeat:no-repeat;
+    background-position:bottom;
+    background-size: cover;
+    padding-bottom: 4rem;
+}
+
+.margin-top{
+    margin-top: 1rem !important;
+}
+
 
 @media only screen and (max-width: 767px) {
     .ui.stackable.cards > .card{

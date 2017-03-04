@@ -67,7 +67,7 @@ function ResponsiveWeb() {
             });
 
         // Here all for new_career_relationship page 
-        if (pathname == "/new_career_relationship.html"){
+        if (pathname.includes("new_career_relationship.html")){
             $('#career_relationship').toggleClass('page');
             $('.each_school').toggleClass("ui basic segment");
         }

@@ -99,6 +99,18 @@ span.float_right.ng-binding{
     color: white !important;
 }
 
+
+@media only screen and (max-width: 767px) {
+    .ui.stackable.cards > .card{
+        margin-top: 2rem !important;
+        margin-bottom:2rem !important;
+    }
+    .ui.department_name.divider{
+        margin-top: 1rem !important;
+    }
+}
+
+
 /*--------------
    Article
 ---------------*/
@@ -118,4 +130,3 @@ span.float_right.ng-binding{
     line-height: 2rem;
 }
 ​
-

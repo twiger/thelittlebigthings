@@ -85,6 +85,44 @@ span.float_right.ng-binding{
     margin-bottom: 3rem !important;
 }
 
+.hamburger.ui.google.plus.button{
+    background: #FAB526;
+}
+
+.hamburger{
+    position: fixed;
+    bottom: 4rem !important;
+    right: 2rem !important;
+}
+
+#hamburger_menu .content a{
+    color: white !important;
+}
+
+.ui.career_introduction.page.grid{
+    background-image: url("../img/bg_4.jpg");
+    background-repeat:no-repeat;
+    background-position:bottom;
+    background-size: cover;
+    padding-bottom: 4rem;
+}
+
+.margin-top{
+    margin-top: 1rem !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .ui.stackable.cards > .card{
+        margin-top: 2rem !important;
+        margin-bottom:2rem !important;
+    }
+    .ui.department_name.divider{
+        margin-bottom: 2rem !important;
+    }
+}
+
+
 /*--------------
    Article
 ---------------*/
@@ -104,4 +142,3 @@ span.float_right.ng-binding{
     line-height: 2rem;
 }
 ​
-

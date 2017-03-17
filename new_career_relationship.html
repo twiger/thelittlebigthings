@@ -164,6 +164,13 @@
                 "cards": [],
                 "department_name": "不分系學群"
             }]
+        }, {
+            "school_name": "成大專區",
+            "figure": "ncku.png",
+            "departments": [{
+                "cards": [],
+                "department_name": "成大校友"
+            }]
         }];
 
         $http({
@@ -172,7 +179,9 @@
             url: "data/article/career_relationship.json"
         }).success(function(data, status, headers, config) {
             // When success to send the request, execute these statement
+            console.log(data.data.length)
             $scope.articles = data.data
+            console.log($scope.articles.length)
             for (i = 0; i < $scope.articles.length; i++) {
                 var article = $scope.articles[i]
                 for (j = 0; j < $scope.categories.length; j++) {
@@ -183,9 +192,17 @@
                             article["id"] = i + 1;
                             department.cards.push(article);
                         }
+                        if (department.department_name == "成大校友") {
+                            if (article.is_ncku == true) {
+                                console.log("yes")
+                                article["id"] = i + 1;
+                                department.cards.push(article);
+                            }
+                        }
                     }
                 }
             }
+
         }).error(function(data, status, headers, config) {
             // When fail to send the request, execute these statement
             console.log("Fail to load career_relationship.json");
@@ -360,6 +377,10 @@
                                                 <div class="content">
                                                     <div class="description">
                                                         <div class="ui inverted blue header segment">工作所需資格</div>
+                                                        <div class="ui small header">
+                                                            <i class="angle double right red icon"></i>從事該行業所需要的專業能力或應培養的人格特質
+                                                        </div>
+                                                        <p>{{card.prof_ability}}</p>
                                                         <div class="ui small header">
                                                             <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
                                                         </div>

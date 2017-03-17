@@ -19,12 +19,13 @@ for idx, row in enumerate(response.rows):
 		per_person = {k: v for k, v in zip(item_name, item)}
 		edu = u'{0}'.format(per_person['education'])
 		if re.search(u'\u6210\u5927', edu) or re.search(u'\u6210\u529f\u5927\u5b78', edu) or re.search(u'NCKU', edu) or re.search(u'National Cheng Kung University', edu):
-			print "yes"
+			#print "yes"
 			per_person['is_ncku'] = True
 		else:
-			print "no"
+			#print "no"
 			per_person['is_ncku'] = False
 		data.append(per_person)
+print len(data)
 career_relationship['data'] = data
 
 with codecs.open('career_relationship.json', 'w', 'utf8') as f:

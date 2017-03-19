@@ -13,6 +13,11 @@
             <priority>0.80</priority>
         </url>
         <url>
+            <loc>http://www.thelittlebigthings.idv.tw/career_relationship</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.80</priority>
+        </url>
+        <url>
             <loc>http://www.thelittlebigthings.idv.tw/cooperation.html?status=submitted</loc>
             <changefreq>weekly</changefreq>
             <priority>0.64</priority>
@@ -144,6 +149,31 @@
         </url>
         <url>
             <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_25</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_26</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_27</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_28</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_29</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc>http://www.thelittlebigthings.idv.tw/story_content.html?category=general&amp;article_id=article_30</loc>
             <changefreq>weekly</changefreq>
             <priority>0.64</priority>
         </url>

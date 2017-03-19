@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="img/logo/square_logo.png">
-    <title>TLBT 職業科系連連看</title>
+    <title>職業誌 X 最重要的小事 The little big things</title>
     <link property="og:image" src="img/TLBT.jpg" rel="image_src" />
     <link rel="icon" href="img/logo/square_logo.png" type="image/ico" />
     <meta http-equiv="content-language" content="zh-tw">
-    <meta name="keywords" content="職業科系連連看，The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
-    <meta name="description" content="科系X職業 連連看，是我們今年新推出的企劃，希望能藉由工作者學經歷背景的分享，讓讀者們初步的了解目前該產業的情況，及該如何準備好自己來勝任這份工作。因為整個計畫必須從零開始，所以我們需要各位熱心的工作者，您的分享!">
+    <meta name="keywords" content="The little big things，最重要的小事，TLBT，生涯規畫，職業誌，甘苦談">
+    <meta name="description" content="The little big things (TLBT) 是一個介紹各行各業甘苦談的網路平台 (職業誌)，讓孩子能藉由閱讀這些故事，規劃自己未來的生涯。">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="TLBT 職業科系連連看" />
-    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="TLBT 職業科系連連看" />
+    <link rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
+    <link rel="image_src" href="img/logo/rectangle_logo_for_phone.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
     <!-- Include Master -->
     <script language="JavaScript" type="text/javascript" src="dist/jquery-2.1.4.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/propeller.min.js"></script>
@@ -164,6 +164,13 @@
                 "cards": [],
                 "department_name": "不分系學群"
             }]
+        }, {
+            "school_name": "成大專區",
+            "figure": "ncku.png",
+            "departments": [{
+                "cards": [],
+                "department_name": "成大校友"
+            }]
         }];
 
         $http({
@@ -172,7 +179,9 @@
             url: "data/article/career_relationship.json"
         }).success(function(data, status, headers, config) {
             // When success to send the request, execute these statement
+            console.log(data.data.length)
             $scope.articles = data.data
+            console.log($scope.articles.length)
             for (i = 0; i < $scope.articles.length; i++) {
                 var article = $scope.articles[i]
                 for (j = 0; j < $scope.categories.length; j++) {
@@ -183,9 +192,17 @@
                             article["id"] = i + 1;
                             department.cards.push(article);
                         }
+                        if (department.department_name == "成大校友") {
+                            if (article.is_ncku == true) {
+                                console.log("yes")
+                                article["id"] = i + 1;
+                                department.cards.push(article);
+                            }
+                        }
                     }
                 }
             }
+
         }).error(function(data, status, headers, config) {
             // When fail to send the request, execute these statement
             console.log("Fail to load career_relationship.json");
@@ -360,6 +377,10 @@
                                                 <div class="content">
                                                     <div class="description">
                                                         <div class="ui inverted blue header segment">工作所需資格</div>
+                                                        <div class="ui small header">
+                                                            <i class="angle double right red icon"></i>從事該行業所需要的專業能力或應培養的人格特質
+                                                        </div>
+                                                        <p>{{card.prof_ability}}</p>
                                                         <div class="ui small header">
                                                             <i class="angle double right red icon"></i>請問從事這項工作需要通過專業檢定考試/證照等能力證明?
                                                         </div>

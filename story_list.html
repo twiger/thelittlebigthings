@@ -80,6 +80,8 @@
 
                 // reverse the order of article
 
+                $('.tiny.role.image').popup();
+
                 var pageNum = page
                 if (pageNum) {
                     $scope.articles = data.articles.reverse().slice((pageNum - 1) * 10, ((pageNum - 1) * 10) + 10);
@@ -125,8 +127,6 @@
                 console.log("Fail to load category.json");
             });
         });
-
-        $('.tiny.role.image').popup();
 
         $('.button.circular.massive.inverted.ui.red.icon.button').click(function() {
             $(document.body).animate({

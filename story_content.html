@@ -4,7 +4,7 @@
 <head>
     <!-- Standard Meta -->
     <link rel="shortcut icon" href="img/logo/square_logo.png">
-    <!-- <title>{{ article.web_title }}</title> -->
+    <title>{{ article.web_title }}</title>
     <meta rel="icon" href="img/logo/square_logo.png" type="image/ico" />
     <meta property="og:image" content="{{article.cover_img|trusted}}" rel="image_src" />
     <meta property="og:title" content="{{ article.web_title }}" />
@@ -12,7 +12,6 @@
     <meta name="keywords" content="The little big things，最重要的小事，TLBT，職業介紹，生涯規畫，職業誌，甘苦談">
     <meta name="description" content="{{ article.web_description }}">
     <meta charset="utf-8" />
-    <title>{{ article.web_title }}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta rel="image_src" href="img/logo/square_logo.png" alt="職業誌 X 最重要的小事 The Little Big Things" title="職業誌 X 最重要的小事 The Little Big Things" />
@@ -65,7 +64,7 @@
                 }, 500);
         });
 
-        var app = angular.module('myApp', ['angularLazyImg', 'ngMeta']);
+        var app = angular.module('myApp', ['angularLazyImg']);
         app.controller('article_crtl', function($scope, $http, $filter) {
             $scope.content = null;
             $http({
@@ -74,6 +73,33 @@
             }).
             success(function(data, status, headers, config) {
                 //$scope.contents = data;
+
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId: '370761066715205',
+                        autoLogAppEvents: true,
+                        xfbml: true,
+                        version: 'v2.10'
+                    });
+                    FB.AppEvents.logPageView();
+                    FB.ui({
+                        method: 'share_open_graph',
+                        action_type: 'og.shares',
+                        action_properties: JSON.stringify({
+                            object: {
+                                'og:url': "redirection url from facebook", // your url to share
+                                'og:title': "Title of post",
+                                'og:site_name': 'Name of post',
+                                'og:description': 'description about post',
+                                'og:image': 'Image of post',
+                                'og:image:width': '200', //size of image in pixel
+                                'og:image:height': '200'
+                            }
+                        })
+                    }, function(response) {
+                        console.log("response is ", response);
+                    });
+                };
 
                 var article = $filter('filter')(data.articles, {
                     "article_id": article_id
@@ -285,7 +311,6 @@
     </script>
     <script type='text/javascript' src="js/angular.js"></script>
     <script src="dist/angular-lazy-img.js"></script>
-    <script src="dist/ngMeta.js"></script>
     <script language="JavaScript" type="text/javascript" src="dist/semantic.js"></script>
     <!-- For photoswipe -->
     <link rel="stylesheet" href="dist/photoswipe/photoswipe.css">
